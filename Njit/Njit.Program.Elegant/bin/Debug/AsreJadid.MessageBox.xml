@@ -1,0 +1,846 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+AsreJadid.MessageBox
+</name>
+</assembly>
+<members>
+<member name="T:AsreJadid.MessageBox.VDialogForm">
+	<summary>
+ The VDialog form.
+ </summary>
+</member><member name="T:AsreJadid.MessageBox.Label">
+	<summary>
+ Label which measures its size in a “message box”-like way.
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogDefaultButton.None">
+	<summary>
+ No button on the VDialog is the default button.
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogDefaultButton.Button1">
+	<summary>
+ The first button on the VDialog is the default button.
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogDefaultButton.Button2">
+	<summary>
+ The second button on the VDialog is the default button.
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogDefaultButton.Button3">
+	<summary>
+ The third button on the VDialog is the default button.
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogDefaultButton.Button4">
+	<summary>
+ The fourth button on the VDialog is the default button.
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogDefaultButton.Button5">
+	<summary>
+ The fifth button on the VDialog is the default button.
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogDefaultButton.Button6">
+	<summary>
+ The sixth button on the VDialog is the default button.
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogDefaultButton.Button7">
+	<summary>
+ The seventh button on the VDialog is the default button.
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogDefaultButton.Button8">
+	<summary>
+ The eight button on the VDialog is the default button.
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogDefaultButton.Button9">
+	<summary>
+ The first ninth on the VDialog is the default button.
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogDefaultButton.Button10">
+	<summary>
+ The tenth button on the VDialog is the default button.
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogDefaultButton.Button11">
+	<summary>
+ The eleventh button on the VDialog is the default button.
+ </summary>
+</member><member name="T:AsreJadid.MessageBox.VDialogDefaultButton">
+	<summary>
+ Specifies constants defining the default button on a VDialog.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources._Error">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.AbortText">
+	<summary>
+  Looks up a localized string similar to &amp;لغو کردن.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.ArrowDisabled">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.ArrowDisabledRtl">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.ArrowHovered">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.ArrowHoveredRtl">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.ArrowNormal">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.ArrowNormalRtl">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.CancelText">
+	<summary>
+  Looks up a localized string similar to ان&amp;صراف.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.ChevronLess">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.ChevronLessHovered">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.ChevronLessPressed">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.ChevronMore">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.ChevronMoreHovered">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.ChevronMorePressed">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.CloseText">
+	<summary>
+  Looks up a localized string similar to خ&amp;روج.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.CollapsedText">
+	<summary>
+  Looks up a localized string similar to جزئیات بیشتر.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.ContinueText">
+	<summary>
+  Looks up a localized string similar to &amp;ادامه.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.ExpandedText">
+	<summary>
+  Looks up a localized string similar to مخفی کردن جزئیات.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.IgnoreText">
+	<summary>
+  Looks up a localized string similar to &amp;گذشتن.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.Information">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.NoneText">
+	<summary>
+  Looks up a localized string similar to None.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.NoText">
+	<summary>
+  Looks up a localized string similar to &amp;خیر.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.NoToAllText">
+	<summary>
+  Looks up a localized string similar to خیر برای همه.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.OKText">
+	<summary>
+  Looks up a localized string similar to &amp;تایید.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.Question">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.RetryText">
+	<summary>
+  Looks up a localized string similar to &amp;سعی مجدد.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.Security">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.SecurityError">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.SecurityQuestion">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.SecuritySuccess">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.SecurityWarning">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.SmallError">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.SmallInformation">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.SmallQuestion">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.SmallSecurity">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.SmallSecurityError">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.SmallSecurityQuestion">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.SmallSecuritySucess">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.SmallSecurityWarning">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.SmallWarning">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.Warning">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.YesText">
+	<summary>
+  Looks up a localized string similar to &amp;بله.
+</summary>
+</member><member name="P:AsreJadid.MessageBox.My.Resources.Resources.YesToAllText">
+	<summary>
+  Looks up a localized string similar to بله برای همه.
+</summary>
+</member><member name="T:AsreJadid.MessageBox.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:AsreJadid.MessageBox.VDialog.Show(System.String)">
+	<summary>
+ Displays a Vista-like message box with specified text.
+ </summary>
+	<param name="text">The text to display in the Vista-like message box.</param>
+	<returns>One of the DialogResult values.</returns>
+</member><member name="M:AsreJadid.MessageBox.VDialog.Show(System.Windows.Forms.IWin32Window,System.String)">
+	<summary>
+ Displays a Vista-like message box in front of the specified object and with the specified text.
+ </summary>
+	<param name="owner">An implementation of IWin32Window that will own the modal dialog box.</param>
+	<param name="text">The text to display in the Vista-like message box.</param>
+	<returns>One of the DialogResult values.</returns>
+</member><member name="M:AsreJadid.MessageBox.VDialog.Show(System.String,System.String)">
+	<summary>
+ Displays a Vista-like message box with specified text and caption.
+ </summary>
+	<param name="text">The text to display in the Vista-like message box.</param>
+	<param name="caption">The text to display in the title bar of the Vista-like message box.</param>
+	<returns>One of the DialogResult values.</returns>
+</member><member name="M:AsreJadid.MessageBox.VDialog.Show(System.Windows.Forms.IWin32Window,System.String,System.String)">
+	<summary>
+ Displays a Vista-like message box in front of the specified object and with the specified text and caption.
+ </summary>
+	<param name="owner">An implementation of IWin32Window that will own the modal dialog box.</param>
+	<param name="text">The text to display in the Vista-like message box.</param>
+	<param name="caption">The text to display in the title bar of the Vista-like message box.</param>
+	<returns>One of the DialogResult values.</returns>
+</member><member name="M:AsreJadid.MessageBox.VDialog.Show(System.String,System.String,System.Windows.Forms.MessageBoxButtons)">
+	<summary>
+ Displays a Vista-like message box with specified text, caption, and buttons.
+ </summary>
+	<param name="text">The text to display in the Vista-like message box.</param>
+	<param name="caption">The text to display in the title bar of the Vista-like message box.</param>
+	<param name="buttons">One of the MessageBoxButtons values that specifies which buttons to display in the Vista-like message box.</param>
+	<returns>One of the DialogResult values.</returns>
+</member><member name="M:AsreJadid.MessageBox.VDialog.Show(System.Windows.Forms.IWin32Window,System.String,System.String,System.Windows.Forms.MessageBoxButtons)">
+	<summary>
+ Displays a Vista-like message box in front of the specified object and with the specified text, caption, and buttons.
+ </summary>
+	<param name="owner">An implementation of IWin32Window that will own the modal dialog box.</param>
+	<param name="text">The text to display in the Vista-like message box.</param>
+	<param name="caption">The text to display in the title bar of the Vista-like message box.</param>
+	<param name="buttons">One of the MessageBoxButtons values that specifies which buttons to display in the Vista-like message box.</param>
+	<returns>One of the DialogResult values.</returns>
+</member><member name="M:AsreJadid.MessageBox.VDialog.Show(System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon)">
+	<summary>
+ Displays a Vista-like message box with specified text, caption, buttons, and icon.
+ </summary>
+	<param name="text">The text to display in the Vista-like message box.</param>
+	<param name="caption">The text to display in the title bar of the Vista-like message box.</param>
+	<param name="buttons">One of the MessageBoxButtons values that specifies which buttons to display in the Vista-like message box.</param>
+	<param name="icon">One of the MessageBoxIcon values that specifies which icon to display in the Vista-like message box.</param>
+	<returns>One of the DialogResult values.</returns>
+</member><member name="M:AsreJadid.MessageBox.VDialog.Show(System.Windows.Forms.IWin32Window,System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon)">
+	<summary>
+ Displays a Vista-like message box in front of the specified object and with the specified text, caption, buttons, and icon.
+ </summary>
+	<param name="owner">An implementation of IWin32Window that will own the modal dialog box.</param>
+	<param name="text">The text to display in the Vista-like message box.</param>
+	<param name="caption">The text to display in the title bar of the Vista-like message box.</param>
+	<param name="buttons">One of the MessageBoxButtons values that specifies which buttons to display in the Vista-like message box.</param>
+	<param name="icon">One of the MessageBoxIcon values that specifies which icon to display in the Vista-like message box.</param>
+	<returns>One of the DialogResult values.</returns>
+</member><member name="M:AsreJadid.MessageBox.VDialog.Show(System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon,System.Windows.Forms.MessageBoxDefaultButton)">
+	<summary>
+ Displays a Vista-like message box with specified text, caption, buttons, icon, and default button.
+ </summary>
+	<param name="text">The text to display in the Vista-like message box.</param>
+	<param name="caption">The text to display in the title bar of the Vista-like message box.</param>
+	<param name="buttons">One of the MessageBoxButtons values that specifies which buttons to display in the Vista-like message box.</param>
+	<param name="icon">One of the MessageBoxIcon values that specifies which icon to display in the Vista-like message box.</param>
+	<param name="defaultButton">One of the MessageBoxDefaultButton values that specifies the default button for the Vista-like message box.</param>
+	<returns>One of the DialogResult values.</returns>
+</member><member name="M:AsreJadid.MessageBox.VDialog.Show(System.Windows.Forms.IWin32Window,System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon,System.Windows.Forms.MessageBoxDefaultButton)">
+	<summary>
+ Displays a Vista-like message box in front of the specified object and with specified text, caption, buttons, icon, and default button.
+ </summary>
+	<param name="owner">An implementation of IWin32Window that will own the modal dialog box.</param>
+	<param name="text">The text to display in the Vista-like message box.</param>
+	<param name="caption">The text to display in the title bar of the Vista-like message box.</param>
+	<param name="buttons">One of the MessageBoxButtons values that specifies which buttons to display in the Vista-like message box.</param>
+	<param name="icon">One of the MessageBoxIcon values that specifies which icon to display in the Vista-like message box.</param>
+	<param name="defaultButton">One of the MessageBoxDefaultButton values that specifies the default button for the Vista-like message box.</param>
+	<returns>One of the DialogResult values.</returns>
+</member><member name="M:AsreJadid.MessageBox.VDialog.Show">
+	<summary>
+ Shows the VDialog form as a modal dialog box.
+ </summary>
+	<returns>One of the VDialogResult values.</returns>
+</member><member name="M:AsreJadid.MessageBox.VDialog.Close(AsreJadid.MessageBox.VDialogResult)">
+	<summary>
+ Closes the VDialog form.
+ </summary>
+	<param name="result">A VDialogResult that represents the result of the form.</param>
+</member><member name="P:AsreJadid.MessageBox.VDialog.Sound">
+	<summary>
+ Gets or sets a sound played when the Vista-like task dialog is shown.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialog.Owner">
+	<summary>
+ Gets or sets an implementation of IWin32Window that will own the modal task dialog.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialog.Content">
+	<summary>
+ Gets or sets the text to display in the Vista-like task dialog.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialog.ContentLinks">
+	<summary>
+ The collection of links contained within the Content LinkLabel.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialog.WindowTitle">
+	<summary>
+ Gets or sets the text to display in the title bar of the Vista-like task dialog.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialog.MainInstruction">
+	<summary>
+ Gets or sets the text to be used for the main instruction of the Vista-like task dialog.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialog.Buttons">
+	<summary>
+ Gets or sets the array of the VDialogButtons that specifies which buttons to display in the Vista-like task dialog.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialog.MainIcon">
+	<summary>
+ Gets or sets the one of the VDialogIcon values that specifies which icon on what background to display in the Vista-like task dialog.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialog.CustomMainIcon">
+	<summary>
+ Gets or sets the custom image to display in the Vista-like task dialog.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialog.FooterIcon">
+	<summary>
+ Gets or sets the one of the VDialogIcon values that specifies which icon to display in the footer of the Vista-like task dialog.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialog.CustomFooterIcon">
+	<summary>
+ Gets or sets the custom image to display in the footer of the Vista-like task dialog.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialog.FooterText">
+	<summary>
+ Gets or sets the text to display in the footer of the Vista-like task dialog.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialog.FooterLinks">
+	<summary>
+ The collection of links contained within the Footer LinkLabel.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialog.DefaultButton">
+	<summary>
+ Gets or sets one of the VDialogDefaultButton values that specifies the default button for the Vista-like task dialog.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialog.RightToLeft">
+	<summary>
+ Gets or sets a value indicating whether the text appears from right to left, such as when using Hebrew or Arabic fonts.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialog.RightToLeftLayout">
+	<summary>
+ Gets or sets a value indicating whether right-to-left mirror placement is turned on.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialog.Result">
+	<summary>
+ Gets or sets the dialog result for the VDialog form.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialog.LockSystem">
+	<summary>
+ Determines whether to lock system while showing the Vista-like task dialog.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialog.CustomControl">
+	<summary>
+ Gets or sets the custom control to display in the Vista-like task dialog.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialog.VerificationFlagChecked">
+	<summary>
+ Gets or sets a value indicating whether the verification checkbox in the dialog should be checked when the dialog is initially displayed.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialog.VerificationText">
+	<summary>
+ Gets or sets the string to be used to label the verification checkbox. If this parameter is Nothing (null), the verification checkbox is not displayed in the Vista-like task dialog.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialog.ExpandFooterArea">
+	<summary>
+ Gets or sets a value indicating whether the the string specified by the ExpandedInformation property should be displayed at the bottom of the Vista-like task dialog's footer area instead of immediately after the Vista-like task dialog's content.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialog.ExpandedByDefault">
+	<summary>
+ Gets or sets a value indicating whether the string specified by the ExpandedInformation property should be displayed when the Vista-like task dialog is initially displayed.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialog.ExpandedInformation">
+	<summary>
+ Gets or sets the string to be used for displaying additional information. The additional information is displayed either immediately below the content or below the footer text depending on whether the ExpandFooterArea property is set.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialog.ExpandedInformationLinks">
+	<summary>
+ The collection of links contained within the Footer LinkLabel.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialog.ExpandedControlText">
+	<summary>
+ Gets or sets the string to be used to label the button for collapsing the expandable information.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialog.CollapsedControlText">
+	<summary>
+ Gets or sets the string to be used to label the button for expanding the expandable information.
+ </summary>
+</member><member name="T:AsreJadid.MessageBox.VDialog">
+	<summary>
+ Displays a Vista-like message box or task dialog that can contain text, buttons, symbols and other elements that inform and instruct the user.
+ </summary>
+</member><member name="T:AsreJadid.MessageBox.VDialogLockSystemParameters">
+	<summary>
+ Helper class required by LockSystem feature.
+ </summary>
+</member><member name="T:AsreJadid.MessageBox.Extensions">
+	<summary>
+ Helper methods…
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogResult.None">
+	<summary>
+ Nothing is returned from the VDialog. This means that the modal dialog continues running.
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogResult.OK">
+	<summary>
+ The VDialog return value is OK (usually sent from a button labeled OK).
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogResult.Cancel">
+	<summary>
+ The VDialog return value is Cancel (usually sent from a button labeled Cancel).
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogResult.Close">
+	<summary>
+ The VDialog return value is Close (usually sent from a button labeled Close).
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogResult.Yes">
+	<summary>
+ The VDialog return value is Yes (usually sent from a button labeled Yes).
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogResult.No">
+	<summary>
+ The VDialog return value is No (usually sent from a button labeled No).
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogResult.YesToAll">
+	<summary>
+ The VDialog return value is YesToAll (usually sent from a button labeled Yes to All).
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogResult.NoToAll">
+	<summary>
+ The VDialog return value is NoToAll (usually sent from a button labeled No to All).
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogResult.Abort">
+	<summary>
+ The VDialog return value is Abort (usually sent from a button labeled Abort).
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogResult.Retry">
+	<summary>
+ The VDialog return value is Retry (usually sent from a button labeled Retry).
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogResult.Ignore">
+	<summary>
+ The VDialog return value is Ignore (usually sent from a button labeled Ignore).
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogResult.Continue">
+	<summary>
+ The VDialog return value is Continue (usually sent from a button labeled Continue).
+ </summary>
+</member><member name="T:AsreJadid.MessageBox.VDialogResult">
+	<summary>
+ Specifies identifiers to indicate the return value of a VDialog.
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogIcon.None">
+	<summary>
+ The VDialog contains no icon. The background is white.
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogIcon.Information">
+	<summary>
+ The VDialog contains a symbol consisting of a lowercase letter i in a circle. The background is white.
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogIcon.Question">
+	<summary>
+ The VDialog contains a symbol consisting of a question mark in a circle. The background is white.
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogIcon.Warning">
+	<summary>
+ The VDialog contains a symbol consisting of an exclamation point in a yellow triangle. The background is white.
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogIcon.Error">
+	<summary>
+ The VDialog contains a symbol consisting of white X in a red circle. The background is white.
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogIcon.SecuritySuccess">
+	<summary>
+ The VDialog contains a symbol consisting of white check mark in a green shield. The background is green.
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogIcon.SecurityQuestion">
+	<summary>
+ The VDialog contains a symbol consisting of a question mark in a blue shield. The background is blue.
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogIcon.SecurityWarning">
+	<summary>
+ The VDialog contains a symbol consisting of an exclamation point in a yellow shield. The background is yellow.
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogIcon.SecurityError">
+	<summary>
+ The VDialog contains a symbol consisting of white X in a red shield. The background is red.
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogIcon.SecurityShield">
+	<summary>
+ The VDialog contains a symbol of a multicolored shield. The background is white.
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogIcon.SecurityShieldBlue">
+	<summary>
+ The VDialog contains a symbol of a multicolored shield. The background is blue-to-green gradient.
+ </summary>
+</member><member name="F:AsreJadid.MessageBox.VDialogIcon.SecurityShieldGray">
+	<summary>
+ The VDialog contains a symbol of a multicolored shield. The background is gray.
+ </summary>
+</member><member name="T:AsreJadid.MessageBox.VDialogIcon">
+	<summary>
+ Specifies constants defining which icon to display on what background.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.CommandLink.BackColor">
+	<summary> 
+ Gets or sets the background color of the control. 
+ </summary>
+	<returns>A <see cref="T:System.Drawing.Color"/> value representing the background color.</returns>
+</member><member name="P:AsreJadid.MessageBox.CommandLink.ForeColor">
+	<summary> 
+ Gets or sets the foreground color of the control. 
+ </summary>
+	<returns>The foreground <see cref="T:System.Drawing.Color"/> of the control.</returns>
+</member><member name="P:AsreJadid.MessageBox.CommandLink.HotForeColor">
+	<summary> 
+ Gets or sets the hot foreground color of the control. 
+ </summary>
+	<returns>The hot foreground <see cref="T:System.Drawing.Color"/> of the control.</returns>
+</member><member name="P:AsreJadid.MessageBox.CommandLink.ShowElevationIcon">
+	<summary>
+ Determines whether to show the elevation icon (shield).
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.CommandLink.State">
+	<summary> 
+ Gets the state of the button control. 
+ </summary>
+	<value>The state of the button control.</value>
+</member><member name="E:AsreJadid.MessageBox.CommandLink.HotForeColorChanged">
+	<summary>Occurs when the value of the <see cref="P:Glass.GlassButton.HotForeColor"/> property changes.</summary>
+</member><member name="M:AsreJadid.MessageBox.CommandLink.OnHotForeColorChanged(System.EventArgs)">
+	<summary> 
+ Raises the <see cref="E:Glass.GlassButton.HotForeColorChanged"/> event. 
+ </summary>
+	<param name="e">An <see cref="T:EventArgs"/> that contains the event data.</param>
+</member><member name="E:AsreJadid.MessageBox.CommandLink.InnerBorderColorChanged">
+	<summary>Occurs when the value of the <see cref="P:Glass.GlassButton.InnerBorderColor"/> property changes.</summary>
+</member><member name="M:AsreJadid.MessageBox.CommandLink.OnInnerBorderColorChanged(System.EventArgs)">
+	<summary> 
+ Raises the <see cref="E:Glass.GlassButton.InnerBorderColorChanged"/> event. 
+ </summary>
+	<param name="e">An <see cref="T:EventArgs"/> that contains the event data.</param>
+</member><member name="E:AsreJadid.MessageBox.CommandLink.OuterBorderColorChanged">
+	<summary>Occurs when the value of the <see cref="P:Glass.GlassButton.OuterBorderColor"/> property changes.</summary>
+</member><member name="M:AsreJadid.MessageBox.CommandLink.OnOuterBorderColorChanged(System.EventArgs)">
+	<summary> 
+ Raises the <see cref="E:Glass.GlassButton.OuterBorderColorChanged"/> event. 
+ </summary>
+	<param name="e">An <see cref="T:EventArgs"/> that contains the event data.</param>
+</member><member name="E:AsreJadid.MessageBox.CommandLink.ShineColorChanged">
+	<summary>Occurs when the value of the <see cref="P:Glass.GlassButton.ShineColor"/> property changes.</summary>
+</member><member name="M:AsreJadid.MessageBox.CommandLink.OnShineColorChanged(System.EventArgs)">
+	<summary> 
+ Raises the <see cref="E:Glass.GlassButton.ShineColorChanged"/> event. 
+ </summary>
+	<param name="e">An <see cref="T:EventArgs"/> that contains the event data.</param>
+</member><member name="E:AsreJadid.MessageBox.CommandLink.GlowColorChanged">
+	<summary>Occurs when the value of the <see cref="P:Glass.GlassButton.GlowColor"/> property changes.</summary>
+</member><member name="M:AsreJadid.MessageBox.CommandLink.OnGlowColorChanged(System.EventArgs)">
+	<summary> 
+ Raises the <see cref="E:Glass.GlassButton.GlowColorChanged"/> event. 
+ </summary>
+	<param name="e">An <see cref="T:EventArgs"/> that contains the event data.</param>
+</member><member name="M:AsreJadid.MessageBox.CommandLink.OnEnabledChanged(System.EventArgs)">
+	<summary> 
+ Raises the <see cref="E:System.Windows.Forms.Control.EnabledChanged"/> event. 
+ </summary>
+	<param name="e">An <see cref="T:EventArgs"/> that contains the event data.</param>
+</member><member name="M:AsreJadid.MessageBox.CommandLink.OnSizeChanged(System.EventArgs)">
+	<summary> 
+ Raises the <see cref="E:System.Windows.Forms.Control.SizeChanged"/> event. 
+ </summary>
+	<param name="e">An <see cref="T:EventArgs"/> that contains the event data.</param>
+</member><member name="M:AsreJadid.MessageBox.CommandLink.OnClick(System.EventArgs)">
+	<summary> 
+ Raises the <see cref="E:System.Windows.Forms.Control.Click"/> event. 
+ </summary>
+	<param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member><member name="M:AsreJadid.MessageBox.CommandLink.OnEnter(System.EventArgs)">
+	<summary> 
+ Raises the <see cref="E:System.Windows.Forms.Control.GotFocus"/> event. 
+ </summary>
+	<param name="e">An <see cref="T:EventArgs"/> that contains the event data.</param>
+</member><member name="M:AsreJadid.MessageBox.CommandLink.OnLeave(System.EventArgs)">
+	<summary> 
+ Raises the <see cref="E:System.Windows.Forms.Control.Leave"/> event. 
+ </summary>
+	<param name="e">An <see cref="T:EventArgs"/> that contains the event data.</param>
+</member><member name="M:AsreJadid.MessageBox.CommandLink.OnKeyDown(System.Windows.Forms.KeyEventArgs)">
+	<summary> 
+ Raises the <see cref="M:System.Windows.Forms.ButtonBase.OnKeyUp(System.Windows.Forms.KeyEventArgs)"/> event. 
+ </summary>
+	<param name="e">A <see cref="T:System.Windows.Forms.KeyEventArgs"/> that contains the event data.</param>
+</member><member name="M:AsreJadid.MessageBox.CommandLink.OnKeyUp(System.Windows.Forms.KeyEventArgs)">
+	<summary> 
+ Raises the <see cref="M:System.Windows.Forms.ButtonBase.OnKeyUp(System.Windows.Forms.KeyEventArgs)"/> event. 
+ </summary>
+	<param name="e">A <see cref="T:System.Windows.Forms.KeyEventArgs"/> that contains the event data.</param>
+</member><member name="M:AsreJadid.MessageBox.CommandLink.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+	<summary> 
+ Raises the <see cref="E:System.Windows.Forms.Control.MouseDown"/> event. 
+ </summary>
+	<param name="e">A <see cref="T:System.Windows.Forms.MouseEventArgs"/> that contains the event data.</param>
+</member><member name="M:AsreJadid.MessageBox.CommandLink.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+	<summary> 
+ Raises the <see cref="E:System.Windows.Forms.Control.MouseUp"/> event. 
+ </summary>
+	<param name="e">A <see cref="T:System.Windows.Forms.MouseEventArgs"/> that contains the event data.</param>
+</member><member name="M:AsreJadid.MessageBox.CommandLink.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+	<summary> 
+ Raises the <see cref="M:System.Windows.Forms.Control.OnMouseMove(System.Windows.Forms.MouseEventArgs)"/> event. 
+ </summary>
+	<param name="e">A <see cref="T:System.Windows.Forms.MouseEventArgs"/> that contains the event data.</param>
+</member><member name="M:AsreJadid.MessageBox.CommandLink.OnMouseEnter(System.EventArgs)">
+	<summary> 
+ Raises the <see cref="E:System.Windows.Forms.Control.MouseEnter"/> event. 
+ </summary>
+	<param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member><member name="M:AsreJadid.MessageBox.CommandLink.OnMouseLeave(System.EventArgs)">
+	<summary> 
+ Raises the <see cref="E:System.Windows.Forms.Control.MouseLeave"/> event. 
+ </summary>
+	<param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+</member><member name="M:AsreJadid.MessageBox.CommandLink.OnPaint(System.Windows.Forms.PaintEventArgs)">
+	<summary> 
+ Raises the <see cref="M:System.Windows.Forms.ButtonBase.OnPaint(System.Windows.Forms.PaintEventArgs)"/> event. 
+ </summary>
+	<param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs"/> that contains the event data.</param>
+</member><member name="E:AsreJadid.MessageBox.CommandLink.Paint">
+	<summary> 
+ Occurs when the control is redrawn. 
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.CommandLink.FlatAppearance">
+	<summary>This property is not relevant for this class.</summary>
+	<returns>This property is not relevant for this class.</returns>
+</member><member name="P:AsreJadid.MessageBox.CommandLink.FlatStyle">
+	<summary>This property is not relevant for this class.</summary>
+	<returns>This property is not relevant for this class.</returns>
+</member><member name="P:AsreJadid.MessageBox.CommandLink.UseVisualStyleBackColor">
+	<summary>This property is not relevant for this class.</summary>
+	<returns>This property is not relevant for this class.</returns>
+</member><member name="T:AsreJadid.MessageBox.CommandLink">
+	<summary>
+ Vista-like command link.
+ </summary>
+</member><member name="T:AsreJadid.MessageBox.ChevronButton">
+	<summary>
+ Vista-like chevron button.
+ </summary>
+</member><member name="M:AsreJadid.MessageBox.ISound.Play">
+	<summary>
+ Plays the sound.
+ </summary>
+</member><member name="T:AsreJadid.MessageBox.ISound">
+	<summary>
+ Represents a sound.
+ </summary>
+</member><member name="M:AsreJadid.MessageBox.VDialogSound.Play">
+	<summary>
+ Plays the system sound.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialogSound.Default">
+	<summary>
+ Gets the sound associated with the Default program event in the current Windows sound scheme.
+ </summary>
+	<returns>An ISound.</returns>
+</member><member name="P:AsreJadid.MessageBox.VDialogSound.Information">
+	<summary>
+ Gets the sound associated with the Asterisk program event in the current Windows sound scheme.
+ </summary>
+	<returns>An ISound.</returns>
+</member><member name="P:AsreJadid.MessageBox.VDialogSound.Question">
+	<summary>
+ Gets the sound associated with the Question program event in the current Windows sound scheme.
+ </summary>
+	<returns>An ISound.</returns>
+</member><member name="P:AsreJadid.MessageBox.VDialogSound.Warning">
+	<summary>
+ Gets the sound associated with the Exclamation program event in the current Windows sound scheme.
+ </summary>
+	<returns>An ISound.</returns>
+</member><member name="P:AsreJadid.MessageBox.VDialogSound.Error">
+	<summary>
+ Gets the sound associated with the Hand program event in the current Windows sound scheme.
+ </summary>
+	<returns>An ISound.</returns>
+</member><member name="P:AsreJadid.MessageBox.VDialogSound.Security">
+	<summary>
+ Gets the sound associated with the WindowsUAC program event in the current Windows sound scheme.
+ </summary>
+	<returns>An ISound.</returns>
+	<remarks>On pre-Vista systems it gets the sound associated with the Hand program event in the current Windows sound scheme.</remarks>
+</member><member name="T:AsreJadid.MessageBox.VDialogSound">
+	<summary>
+ Represents a system sound.
+ </summary>
+</member><member name="T:AsreJadid.MessageBox.Native">
+	<summary>
+ Win32 API needed for LockSystem mode.
+ </summary>
+	<remarks></remarks>
+</member><member name="T:AsreJadid.MessageBox.Button">
+	<summary>
+ Button which preferred width is always divisible by 25.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialogButton.UseCustomText">
+	<summary>
+ Determines whether the button should contain a custom text.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialogButton.Text">
+	<summary>
+ The custom text shown on the button.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialogButton.VDialogResult">
+	<summary>
+ Determines the value returned to the parent form when the button is clicked.
+ </summary>
+</member><member name="P:AsreJadid.MessageBox.VDialogButton.ShowElevationIcon">
+	<summary>
+ Determines whether to show the elevation icon (shield).
+ </summary>
+</member><member name="E:AsreJadid.MessageBox.VDialogButton.Click">
+	<summary>
+ Occurs when the button is clicked, but before the VDialog form is closed.
+ </summary>
+</member><member name="M:AsreJadid.MessageBox.VDialogButton.#ctor(AsreJadid.MessageBox.VDialogResult)">
+	<summary>
+ Initializes the new instance of the VDialogButton.
+ </summary>
+	<param name="vDialogResult">Determines the value returned to the parent form when the button is clicked.</param>
+</member><member name="M:AsreJadid.MessageBox.VDialogButton.#ctor(AsreJadid.MessageBox.VDialogResult,System.Boolean)">
+	<summary>
+ Initializes the new instance of the VDialogButton.
+ </summary>
+	<param name="vDialogResult">Determines the value returned to the parent form when the button is clicked.</param>
+	<param name="showElevationIcon">Determines whether to show the elevation icon (shield).</param>
+</member><member name="M:AsreJadid.MessageBox.VDialogButton.#ctor(System.String,System.EventHandler)">
+	<summary>
+ Initializes the new instance of the VDialogButton.
+ </summary>
+	<param name="text">The custom text shown on the button.</param>
+	<param name="click">Occurs when the button is clicked, but before the VDialog form is closed.</param>
+</member><member name="M:AsreJadid.MessageBox.VDialogButton.#ctor(System.String,System.EventHandler,System.Boolean)">
+	<summary>
+ Initializes the new instance of the VDialogButton.
+ </summary>
+	<param name="text">The custom text shown on the button.</param>
+	<param name="click">Occurs when the button is clicked, but before the VDialog form is closed.</param>
+	<param name="showElevationIcon">Determines whether to show the elevation icon (shield).</param>
+</member><member name="M:AsreJadid.MessageBox.VDialogButton.#ctor(AsreJadid.MessageBox.VDialogResult,System.String)">
+	<summary>
+ Initializes the new instance of the VDialogButton.
+ </summary>
+	<param name="vDialogResult">Determines the value returned to the parent form when the button is clicked.</param>
+	<param name="text">The custom text shown on the button.</param>
+</member><member name="M:AsreJadid.MessageBox.VDialogButton.#ctor(AsreJadid.MessageBox.VDialogResult,System.String,System.Boolean)">
+	<summary>
+ Initializes the new instance of the VDialogButton.
+ </summary>
+	<param name="vDialogResult">Determines the value returned to the parent form when the button is clicked.</param>
+	<param name="text">The custom text shown on the button.</param>
+	<param name="showElevationIcon">Determines whether to show the elevation icon (shield).</param>
+</member><member name="T:AsreJadid.MessageBox.VDialogButton">
+	<summary>
+ Represents a button on VDialog form.
+ </summary>
+	<remarks></remarks>
+</member><member name="T:AsreJadid.MessageBox.BackgroundForm">
+	<summary>
+ Form used in LockSystem mode. Contains an image of grayed desktop.
+ </summary>
+</member>
+</members>
+</doc>

@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Njit" Class="ArchiveCommonDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\ZAO;Initial Catalog=Njit;Integrated Security=True" SettingsObjectName="NjitSoftware.Properties.Settings" SettingsPropertyName="ArchiveCommonConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AccessPermissionTree" Member="AccessPermissionTrees">
+    <Type Name="AccessPermissionTree">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Item" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="[Group]" Member="Group" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Visible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Flag" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserRoleReport" Member="UserRoleReports">
+    <Type Name="UserRoleReport">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Locked" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Archive" Member="Archives">
+    <Type Name="Archive">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DatabasePath" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="[Default]" Member="Default" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ArchiveGroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Archive_ArchiveTree" Member="ArchiveTrees" ThisKey="ID" OtherKey="ArchiveID" Type="ArchiveTree" />
+      <Association Name="Archive_UserLog" Member="UserLogs" ThisKey="ID" OtherKey="ArchiveID" Type="UserLog" />
+      <Association Name="Archive_DocumentsFailure" Member="DocumentsFailures" ThisKey="ID" OtherKey="ArchiveID" Type="DocumentsFailure" />
+      <Association Name="Archive_PermissionSecurity" Member="PermissionSecurities" ThisKey="ID" OtherKey="PK_Archive" Type="PermissionSecurity" />
+      <Association Name="Archive_PermissionTitle" Member="PermissionTitles" ThisKey="ID" OtherKey="PK_Archive" Type="PermissionTitle" />
+      <Association Name="Archive_PermissionDossier" Member="PermissionDossiers" ThisKey="ID" OtherKey="PK_Archive" Type="PermissionDossier" />
+      <Association Name="ArchiveGroup_Archive" Member="ArchiveGroup" ThisKey="ArchiveGroupID" OtherKey="ID" Type="ArchiveGroup" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ArchiveGroup" Member="ArchiveGroups">
+    <Type Name="ArchiveGroup">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ArchiveGroup_Archive" Member="Archives" ThisKey="ID" OtherKey="ArchiveGroupID" Type="Archive" />
+      <Association Name="ArchiveGroup_ArchiveGroup" Member="ArchiveGroups" ThisKey="ID" OtherKey="ParentID" Type="ArchiveGroup" />
+      <Association Name="ArchiveGroup_ArchiveGroupField" Member="ArchiveGroupFields" ThisKey="ID" OtherKey="ArchiveGroupID" Type="ArchiveGroupField" />
+      <Association Name="ArchiveGroup_ArchiveGroupTab" Member="ArchiveGroupTabs" ThisKey="ID" OtherKey="ArchiveGroupID" Type="ArchiveGroupTab" />
+      <Association Name="ArchiveGroup_ArchiveTree" Member="ArchiveTrees" ThisKey="ID" OtherKey="ArchiveGroupID" Type="ArchiveTree" />
+      <Association Name="ArchiveGroup_ArchiveGroup" Member="ArchiveGroup1" ThisKey="ParentID" OtherKey="ID" Type="ArchiveGroup" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ArchiveGroupField" Member="ArchiveGroupFields">
+    <Type Name="ArchiveGroupField">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ArchiveGroupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArchiveGroupTabID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Label" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FieldName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FieldTypeCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StatusCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BoxTypeCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AutoComplete" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MinLength" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaxLength" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MinValue" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MaxValue" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DefaultValue" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="[Index]" Member="Index" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ArchiveGroupField_ArchiveGroupSubGroupField" Member="ArchiveGroupSubGroupFields" ThisKey="ID" OtherKey="ArchiveGroupFieldID" Type="ArchiveGroupSubGroupField" />
+      <Association Name="ArchiveGroupField_CounterFieldSetting" Member="CounterFieldSettings" ThisKey="ID" OtherKey="ArchiveGroupFieldID" Type="CounterFieldSetting" />
+      <Association Name="ArchiveGroup_ArchiveGroupField" Member="ArchiveGroup" ThisKey="ArchiveGroupID" OtherKey="ID" Type="ArchiveGroup" IsForeignKey="true" />
+      <Association Name="ArchiveGroupTab_ArchiveGroupField" Member="ArchiveGroupTab" ThisKey="ArchiveGroupTabID" OtherKey="ID" Type="ArchiveGroupTab" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="BoxType_ArchiveGroupField" Member="BoxType" ThisKey="BoxTypeCode" OtherKey="Code" Type="BoxType" IsForeignKey="true" />
+      <Association Name="FieldStatus_ArchiveGroupField" Member="FieldStatus" ThisKey="StatusCode" OtherKey="Code" Type="FieldStatus" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="FieldType_ArchiveGroupField" Member="FieldType" ThisKey="FieldTypeCode" OtherKey="Code" Type="FieldType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ArchiveGroupSubGroupField" Member="ArchiveGroupSubGroupFields">
+    <Type Name="ArchiveGroupSubGroupField">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ArchiveGroupFieldID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Label" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FieldName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FieldTypeCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StatusCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BoxTypeCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AutoComplete" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MinLength" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaxLength" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MinValue" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MaxValue" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DefaultValue" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="[Index]" Member="Index" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ArchiveGroupField_ArchiveGroupSubGroupField" Member="ArchiveGroupField" ThisKey="ArchiveGroupFieldID" OtherKey="ID" Type="ArchiveGroupField" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="BoxType_ArchiveGroupSubGroupField" Member="BoxType" ThisKey="BoxTypeCode" OtherKey="Code" Type="BoxType" IsForeignKey="true" />
+      <Association Name="FieldStatus_ArchiveGroupSubGroupField" Member="FieldStatus" ThisKey="StatusCode" OtherKey="Code" Type="FieldStatus" IsForeignKey="true" />
+      <Association Name="FieldType_ArchiveGroupSubGroupField" Member="FieldType" ThisKey="FieldTypeCode" OtherKey="Code" Type="FieldType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ArchiveGroupTab" Member="ArchiveGroupTabs">
+    <Type Name="ArchiveGroupTab">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ArchiveGroupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TypeCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Index]" Member="Index" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="ArchiveGroupTab_ArchiveGroupField" Member="ArchiveGroupFields" ThisKey="ID" OtherKey="ArchiveGroupTabID" Type="ArchiveGroupField" />
+      <Association Name="ArchiveGroup_ArchiveGroupTab" Member="ArchiveGroup" ThisKey="ArchiveGroupID" OtherKey="ID" Type="ArchiveGroup" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="ArchiveGroupTabType_ArchiveGroupTab" Member="ArchiveGroupTabType" ThisKey="TypeCode" OtherKey="Code" Type="ArchiveGroupTabType" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ArchiveGroupTabType" Member="ArchiveGroupTabTypes">
+    <Type Name="ArchiveGroupTabType">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="ArchiveGroupTabType_ArchiveGroupTab" Member="ArchiveGroupTabs" ThisKey="Code" OtherKey="TypeCode" Type="ArchiveGroupTab" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ArchiveTree" Member="ArchiveTrees">
+    <Type Name="ArchiveTree">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ArchiveGroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArchiveID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Filter" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="GroupBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[Index]" Member="Index" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ArchiveTree_ArchiveTree" Member="ArchiveTrees" ThisKey="ID" OtherKey="ParentID" Type="ArchiveTree" />
+      <Association Name="ArchiveGroup_ArchiveTree" Member="ArchiveGroup" ThisKey="ArchiveGroupID" OtherKey="ID" Type="ArchiveGroup" IsForeignKey="true" />
+      <Association Name="Archive_ArchiveTree" Member="Archive" ThisKey="ArchiveID" OtherKey="ID" Type="Archive" IsForeignKey="true" />
+      <Association Name="ArchiveTree_ArchiveTree" Member="ArchiveTree1" ThisKey="ParentID" OtherKey="ID" Type="ArchiveTree" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BoxOfFieldType" Member="BoxOfFieldTypes">
+    <Type Name="BoxOfFieldType">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FieldTypeCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BoxTypeCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="BoxType_BoxOfFieldType" Member="BoxType" ThisKey="BoxTypeCode" OtherKey="Code" Type="BoxType" IsForeignKey="true" />
+      <Association Name="FieldType_BoxOfFieldType" Member="FieldType" ThisKey="FieldTypeCode" OtherKey="Code" Type="FieldType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BoxType" Member="BoxTypes">
+    <Type Name="BoxType">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="BoxType_ArchiveGroupField" Member="ArchiveGroupFields" ThisKey="Code" OtherKey="BoxTypeCode" Type="ArchiveGroupField" />
+      <Association Name="BoxType_ArchiveGroupSubGroupField" Member="ArchiveGroupSubGroupFields" ThisKey="Code" OtherKey="BoxTypeCode" Type="ArchiveGroupSubGroupField" />
+      <Association Name="BoxType_BoxOfFieldType" Member="BoxOfFieldTypes" ThisKey="Code" OtherKey="BoxTypeCode" Type="BoxOfFieldType" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CounterFieldSetting" Member="CounterFieldSettings">
+    <Type Name="CounterFieldSetting">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ArchiveGroupFieldID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FixedValueType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FixedValue" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Separator" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="ArchiveGroupField_CounterFieldSetting" Member="ArchiveGroupField" ThisKey="ArchiveGroupFieldID" OtherKey="ID" Type="ArchiveGroupField" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DatabaseVersion" Member="DatabaseVersions">
+    <Type Name="DatabaseVersion">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Version" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ApplicationID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FieldStatus" Member="FieldStatus">
+    <Type Name="FieldStatus">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="FieldStatus_ArchiveGroupField" Member="ArchiveGroupFields" ThisKey="Code" OtherKey="StatusCode" Type="ArchiveGroupField" />
+      <Association Name="FieldStatus_ArchiveGroupSubGroupField" Member="ArchiveGroupSubGroupFields" ThisKey="Code" OtherKey="StatusCode" Type="ArchiveGroupSubGroupField" />
+      <Association Name="FieldStatus_StatusOfFieldType" Member="StatusOfFieldTypes" ThisKey="Code" OtherKey="StatusCode" Type="StatusOfFieldType" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FieldType" Member="FieldTypes">
+    <Type Name="FieldType">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Index]" Member="Index" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="FieldType_ArchiveGroupField" Member="ArchiveGroupFields" ThisKey="Code" OtherKey="FieldTypeCode" Type="ArchiveGroupField" />
+      <Association Name="FieldType_ArchiveGroupSubGroupField" Member="ArchiveGroupSubGroupFields" ThisKey="Code" OtherKey="FieldTypeCode" Type="ArchiveGroupSubGroupField" />
+      <Association Name="FieldType_BoxOfFieldType" Member="BoxOfFieldTypes" ThisKey="Code" OtherKey="FieldTypeCode" Type="BoxOfFieldType" />
+      <Association Name="FieldType_StatusOfFieldType" Member="StatusOfFieldTypes" ThisKey="Code" OtherKey="FieldTypeCode" Type="StatusOfFieldType" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FormState" Member="FormStates">
+    <Type Name="FormState">
+      <Column Name="MachineName" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FormName" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="WindowState" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Width" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Height" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="X" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Y" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProgramSetting" Member="ProgramSettings">
+    <Type Name="ProgramSetting">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ShowBackupFormOnExit" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ExpiryDate" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LastRunDate" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StatusOfFieldType" Member="StatusOfFieldTypes">
+    <Type Name="StatusOfFieldType">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FieldTypeCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StatusCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="FieldStatus_StatusOfFieldType" Member="FieldStatus" ThisKey="StatusCode" OtherKey="Code" Type="FieldStatus" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="FieldType_StatusOfFieldType" Member="FieldType" ThisKey="FieldTypeCode" OtherKey="Code" Type="FieldType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TaskSchedule" Member="TaskSchedules">
+    <Type Name="TaskSchedule">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TaskCode" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="AdditionalInfo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="RepeatTypeCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ScheduleTypeCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BackupPath" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="BackupFileName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BackupNameType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExecuteFilePath" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="ExecuteParameter" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MessageTitle" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MessageBody" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="StartTime" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="EndTime" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="ExecuteTime" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="WeekDays" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Months" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="MonthDay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Flag" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="NikName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="LastLogin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RoleCode" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="StateCode" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Visible" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="isLogin" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="isGuest" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="Expire" Type="System.DateTime" CanBeNull="true" />
+      <Column Member="IPAddress" Type="System.String" CanBeNull="true" />
+      <Association Name="User_UserAccessPermission" Member="UserAccessPermissions" ThisKey="Code" OtherKey="UserCode" Type="UserAccessPermission" />
+      <Association Name="User_UserLog" Member="UserLogs" ThisKey="Code" OtherKey="UserCode" Type="UserLog" />
+      <Association Name="User_UserSetting" Member="UserSetting" ThisKey="Code" OtherKey="UserCode" Type="UserSetting" Cardinality="One" />
+      <Association Name="User_DocumentsFailure" Member="DocumentsFailures" ThisKey="Code" OtherKey="UserSender" Type="DocumentsFailure" />
+      <Association Name="User_DocumentsFailure1" Member="DocumentsFailures1" ThisKey="Code" OtherKey="Userchecker" Type="DocumentsFailure" />
+      <Association Name="User_PermissionSecurity" Member="PermissionSecurities" ThisKey="Code" OtherKey="PK_User" Type="PermissionSecurity" />
+      <Association Name="User_PermissionTitle" Member="PermissionTitles" ThisKey="Code" OtherKey="PK_User" Type="PermissionTitle" />
+      <Association Name="User_PermissionDossier" Member="PermissionDossiers" ThisKey="Code" OtherKey="PK_User" Type="PermissionDossier" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserAccessPermission" Member="UserAccessPermissions">
+    <Type Name="UserAccessPermission">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="UserCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Allow" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="User_UserAccessPermission" Member="User" ThisKey="UserCode" OtherKey="Code" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserLog" Member="UserLogs">
+    <Type Name="UserLog">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OperationPlaceCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OperationCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Date" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Time" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ArchiveID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Member="IPAddress" Type="System.String" CanBeNull="true" />
+      <Association Name="Archive_UserLog" Member="Archive" ThisKey="ArchiveID" OtherKey="ID" Type="Archive" IsForeignKey="true" />
+      <Association Name="User_UserLog" Member="User" ThisKey="UserCode" OtherKey="Code" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserRole" Member="UserRoles">
+    <Type Name="UserRole">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Locked" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="UserRole_UserRoleAccessPermission" Member="UserRoleAccessPermissions" ThisKey="ID" OtherKey="RoleID" Type="UserRoleAccessPermission" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserRoleAccessPermission" Member="UserRoleAccessPermissions">
+    <Type Name="UserRoleAccessPermission">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="RoleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Allow" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="UserRole_UserRoleAccessPermission" Member="UserRole" ThisKey="RoleID" OtherKey="ID" Type="UserRole" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserSetting" Member="UserSettings">
+    <Type Name="UserSetting">
+      <Column Name="UserCode" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ArchiveDocumentsZoom" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="User_UserSetting" Member="User" ThisKey="UserCode" OtherKey="Code" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="" Member="DocumentsFailures">
+    <Type Name="DocumentsFailure">
+      <Column Name="ID" Type="System.Int32" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ArchiveID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PerssonelNumber" Type="System.String" CanBeNull="false" />
+      <Column Name="documentID" Type="System.Int32" CanBeNull="false" />
+      <Column Name="Title" Type="System.Int32" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" CanBeNull="true" />
+      <Column Name="UserSender" Type="System.Int32" CanBeNull="false" />
+      <Column Name="Userchecker" Type="System.Int32" CanBeNull="true" />
+      <Column Name="isRead" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="DateSender" Type="System.DateTime" CanBeNull="false" />
+      <Column Name="DateChecker" Type="System.DateTime" CanBeNull="true" />
+      <Column Name="DocumnetNumber" Type="System.String" CanBeNull="false" />
+      <Association Name="User_DocumentsFailure" Member="User" ThisKey="UserSender" OtherKey="Code" Type="User" IsForeignKey="true" />
+      <Association Name="User_DocumentsFailure1" Member="User1" ThisKey="Userchecker" OtherKey="Code" Type="User" IsForeignKey="true" />
+      <Association Name="Archive_DocumentsFailure" Member="Archive" ThisKey="ArchiveID" OtherKey="ID" Type="Archive" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="" Member="PermissionSecurities">
+    <Type Name="PermissionSecurity">
+      <Column Name="ID" AutoSync="OnInsert" Type="System.Int32" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PK_Archive" Type="System.Int32" CanBeNull="false" />
+      <Column Name="PK_User" Type="System.Int32" CanBeNull="false" />
+      <Column Name="PK_SecurityORField18" Type="System.Int32" CanBeNull="false" />
+      <Association Name="Archive_PermissionSecurity" Member="Archive" ThisKey="PK_Archive" OtherKey="ID" Type="Archive" IsForeignKey="true" />
+      <Association Name="User_PermissionSecurity" Member="User" ThisKey="PK_User" OtherKey="Code" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="" Member="PermissionTitles">
+    <Type Name="PermissionTitle">
+      <Column Name="ID" AutoSync="OnInsert" Type="System.Int32" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PK_User" Type="System.Int32" CanBeNull="false" />
+      <Column Name="PK_Archive" Type="System.Int32" CanBeNull="false" />
+      <Column Name="PK_TitleORField11" Type="System.Int32" CanBeNull="false" />
+      <Association Name="User_PermissionTitle" Member="User" ThisKey="PK_User" OtherKey="Code" Type="User" IsForeignKey="true" />
+      <Association Name="Archive_PermissionTitle" Member="Archive" ThisKey="PK_Archive" OtherKey="ID" Type="Archive" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="" Member="PermissionDossiers">
+    <Type Name="PermissionDossier">
+      <Column Name="ID" Type="System.Int32" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PK_User" Type="System.Int32" CanBeNull="false" />
+      <Column Name="PK_Archive" Type="System.Int32" CanBeNull="false" />
+      <Column Name="DossierType" Type="System.Int32" CanBeNull="false" />
+      <Association Name="User_PermissionDossier" Member="User" ThisKey="PK_User" OtherKey="Code" Type="User" IsForeignKey="true" />
+      <Association Name="Archive_PermissionDossier" Member="Archive" ThisKey="PK_Archive" OtherKey="ID" Type="Archive" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,12 @@
+E:\AsreJadid\Projects\AsreJadid\AsreJadid\obj\Release\AsreJadid.Common.csprojResolveAssemblyReference.cache
+E:\AsreJadid\Projects\AsreJadid\AsreJadid\obj\Release\AsreJadid.Common.dll
+E:\AsreJadid\Projects\AsreJadid\AsreJadid\obj\Release\AsreJadid.Common.pdb
+E:\AsreJadid\Projects\AsreJadid\Out\AsreJadid.Common.dll
+E:\AsreJadid\Projects\AsreJadid\Out\AsreJadid.Common.pdb
+E:\AsreJadid\Projects\AsreJadid\AsreJadid.Common\obj\Release\AsreJadid.Common.csprojResolveAssemblyReference.cache
+E:\AsreJadid\Projects\AsreJadid\AsreJadid.Common\obj\Release\AsreJadid.Common.dll
+E:\AsreJadid\Projects\AsreJadid\AsreJadid.Common\obj\Release\AsreJadid.Common.pdb
+E:\AsreJadid\TeamServerProjects\AsreJadid\Out\AsreJadid.Common.dll
+E:\AsreJadid\TeamServerProjects\AsreJadid\Out\AsreJadid.Common.pdb
+E:\AsreJadid\TeamServerProjects\AsreJadid\AsreJadid.Common\obj\Release\AsreJadid.Common.dll
+E:\AsreJadid\TeamServerProjects\AsreJadid\AsreJadid.Common\obj\Release\AsreJadid.Common.pdb

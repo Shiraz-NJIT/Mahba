@@ -1,0 +1,1314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7FDE6F18-9CA3-46B9-9D78-A561990B5D09}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NjitSoftware</RootNamespace>
+    <AssemblyName>Mahba</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>E:\Work\mahba\Publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Background</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>\\172.22.160.40\MahbaShare\</InstallUrl>
+    <UpdateUrl>\\172.22.160.40\MahbaShare\</UpdateUrl>
+    <ProductName>Mahba</ProductName>
+    <PublisherName>Mohammad</PublisherName>
+    <SuiteName>Rahmani</SuiteName>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>3B24245BF2F369BA635C9447E8A11862D7763225</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Mahba_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>Custom</TargetZone>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.C1Pdf.2, Version=2.0.20152.67, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.C1Report.4, Version=4.0.20152.67, Culture=neutral, PublicKeyToken=594a0605db190bb9" />
+    <Reference Include="C1.C1Zip.4, Version=4.0.20152.67, Culture=neutral, PublicKeyToken=79882d576c6336da" />
+    <Reference Include="C1.Data.2, Version=2.0.20141.273, Culture=neutral, PublicKeyToken=900b028620cd3a1b, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.4, Version=4.0.20152.67, Culture=neutral, PublicKeyToken=944ae1ea0e47ca04" />
+    <Reference Include="C1.Win.BarCode.4, Version=4.0.20152.67, Culture=neutral, PublicKeyToken=79882d576c6336da" />
+    <Reference Include="C1.Win.C1Command.2, Version=2.0.20152.67, Culture=neutral, PublicKeyToken=e808566f358766d8" />
+    <Reference Include="C1.Win.C1Document.4, Version=4.0.20152.67, Culture=neutral, PublicKeyToken=944ae1ea0e47ca04" />
+    <Reference Include="C1.Win.C1DX.4, Version=4.0.20152.67, Culture=neutral, PublicKeyToken=944ae1ea0e47ca04" />
+    <Reference Include="C1.Win.C1Input.2, Version=2.0.20152.67, Culture=neutral, PublicKeyToken=7e7ff60f0c214f9a, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1InputPanel.2, Version=2.0.20152.67, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1List.2, Version=2.0.20152.67, Culture=neutral, PublicKeyToken=6b24f8f981dbd7bc, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Report.4, Version=4.0.20152.67, Culture=neutral, PublicKeyToken=41780e2fc605e636" />
+    <Reference Include="C1.Win.C1Ribbon.4, Version=4.0.20132.488, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1RibbonPreview.4, Version=4.0.20152.67, Culture=neutral, PublicKeyToken=41780e2fc605e636, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1SplitContainer.4, Version=4.0.20152.67, Culture=neutral, PublicKeyToken=79882d576c6336da" />
+    <Reference Include="C1.Win.ImportServices.4, Version=4.0.20152.67, Culture=neutral, PublicKeyToken=944ae1ea0e47ca04" />
+    <Reference Include="FastReport">
+      <HintPath>..\..\..\..\Components\FastReport\FRNet.1.8.38\FastReport .Net4 v1.8.38\Crack\FastReport.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Bars">
+      <HintPath>..\..\..\..\Components\FastReport\FRNet.1.8.38\FastReport .Net4 v1.8.38\Crack\FastReport.Bars.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Editor">
+      <HintPath>..\..\..\..\Components\FastReport\FRNet.1.8.38\FastReport .Net4 v1.8.38\Crack\FastReport.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Install">
+      <HintPath>..\..\..\..\Components\FastReport\FRNet.1.8.38\FastReport .Net4 v1.8.38\Crack\FastReport.Install.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.VSDesign">
+      <HintPath>..\..\..\..\Components\FastReport\FRNet.1.8.38\FastReport .Net4 v1.8.38\Crack\FastReport.VSDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Web">
+      <HintPath>..\..\..\..\Components\FastReport\FRNet.1.8.38\FastReport .Net4 v1.8.38\Crack\FastReport.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.WIA, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="KaupischITC.ScanWIA">
+      <HintPath>..\..\Njit\KaupischITC.ScanWIA\bin\Release\KaupischITC.ScanWIA.dll</HintPath>
+    </Reference>
+    <Reference Include="KP-ImageViewerV2, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\KP-ImageViewerV2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\..\Components\Json.Net\Ver 5.0.6.16206\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Njit.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Njit.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Njit.ImageListView, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Njit.ImageListView.dll</HintPath>
+    </Reference>
+    <Reference Include="Njit.ImageView">
+      <HintPath>..\..\Njit\Njit.ImageView\Njit.ImageView\obj\Release\Njit.ImageView.dll</HintPath>
+    </Reference>
+    <Reference Include="Njit.MessageBox, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Njit.MessageBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Njit.Pdf, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Njit.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Njit.Program, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Njit.Program.dll</HintPath>
+    </Reference>
+    <Reference Include="Njit.Program.C1, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Njit.Program.C1.dll</HintPath>
+    </Reference>
+    <Reference Include="Njit.Program.FastReport, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Njit.Program.FastReport.dll</HintPath>
+    </Reference>
+    <Reference Include="Njit.Program.Telerik, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Njit.Program.Telerik.dll</HintPath>
+    </Reference>
+    <Reference Include="Njit.Sql, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Njit.Sql.dll</HintPath>
+    </Reference>
+    <Reference Include="Njit.TaskScheduler, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Njit.TaskScheduler.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls">
+      <HintPath>..\..\..\..\Components\Telerik\RadControls for WinForms Q1 2012\Bin\Telerik.WinControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.GridView">
+      <HintPath>..\..\..\..\Components\Telerik\RadControls for WinForms Q1 2012\Bin\Telerik.WinControls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2010Blue">
+      <HintPath>..\..\..\..\Components\Telerik\RadControls for WinForms Q1 2012\Bin\Telerik.WinControls.Themes.Office2010Blue.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2010Silver">
+      <HintPath>..\..\..\..\Components\Telerik\RadControls for WinForms Q1 2012\Bin\Telerik.WinControls.Themes.Office2010Silver.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI">
+      <HintPath>..\..\..\..\Components\Telerik\RadControls for WinForms Q1 2012\Bin\Telerik.WinControls.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI.Design">
+      <HintPath>..\..\..\..\Components\Telerik\RadControls for WinForms Q1 2012\Bin\Telerik.WinControls.UI.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="TelerikCommon">
+      <HintPath>..\..\..\..\Components\Telerik\RadControls for WinForms Q1 2012\Bin\TelerikCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="TelerikData">
+      <HintPath>..\..\..\..\Components\Telerik\RadControls for WinForms Q1 2012\Bin\TelerikData.dll</HintPath>
+    </Reference>
+    <Reference Include="Vintasoft.Barcode">
+      <HintPath>..\..\..\..\Components\Barcode\Vintasoft Barcode.NET Library\Vintasoft.Barcode.for.NET.v5.1.Cracked.AHCU\Vintasoft.Barcode.dll</HintPath>
+    </Reference>
+    <Reference Include="VintaSoft.Twain, Version=4.0.0.7, Culture=neutral, PublicKeyToken=153caf29a10d2e31, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\VintaSoft.Twain.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\Archive\CompressionTypeController.cs" />
+    <Compile Include="Controller\Archive\ImageFormatController.cs" />
+    <Compile Include="Controller\Archive\LegalPersonController.cs" />
+    <Compile Include="Controller\Archive\RightfulPersonController.cs" />
+    <Compile Include="Controller\Common\AccessPermissionTree.cs" />
+    <Compile Include="CounterFieldSetting.cs" />
+    <Compile Include="Dossier1.cs" />
+    <Compile Include="Enums\BoxTypes.cs" />
+    <Compile Include="Controller\ArchiveDocument\ArchiveDocumentController.cs" />
+    <Compile Include="Controller\Common\ArchiveController.cs" />
+    <Compile Include="Controller\Common\ArchiveGroupFieldController.cs" />
+    <Compile Include="Controller\Common\ArchiveGroupSubGroupFieldController.cs" />
+    <Compile Include="Controller\Common\ArchiveGroupTabController.cs" />
+    <Compile Include="Controller\Common\BoxTypeController.cs" />
+    <Compile Include="Controller\Common\FieldStatusController.cs" />
+    <Compile Include="Controller\Common\FieldTypeController.cs" />
+    <Compile Include="Enums\DisplayFieldCodes.cs" />
+    <Compile Include="Enums\FieldTypes.cs" />
+    <Compile Include="Enums\FixedValueTypes.cs" />
+    <Compile Include="Model\ArchiveDocument\DocumentDataClasses.cs">
+      <DependentUpon>DocumentDataClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Common\ArchiveCommonDataClasses.cs">
+      <DependentUpon>ArchiveCommonDataClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Common\ArchiveCommonDataClasses.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArchiveCommonDataClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Common\ArchiveCommonDataClassesDataContext.cs" />
+    <Compile Include="Model\ArchiveDocument\DocumentDataClasses.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentDataClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ArchiveDocument\DocumentDataClassesDataContext.cs" />
+    <Compile Include="Controller\Archive\AddressController.cs" />
+    <Compile Include="Controller\Archive\ArchiveFieldController.cs" />
+    <Compile Include="Controller\Archive\ArchiveSubGroupFieldController.cs" />
+    <Compile Include="Controller\Archive\ArchiveTabController.cs" />
+    <Compile Include="Controller\Archive\ContactController.cs" />
+    <Compile Include="Controller\Archive\DisplayFieldController.cs" />
+    <Compile Include="Controller\Archive\DocumentController.cs" />
+    <Compile Include="Controller\Archive\DossierCacheController.cs" />
+    <Compile Include="Controller\Archive\DossierController.cs" />
+    <Compile Include="Controller\Archive\InfoController.cs" />
+    <Compile Include="Controller\Archive\LendingController.cs" />
+    <Compile Include="Controller\Archive\PersonController.cs" />
+    <Compile Include="Controller\Archive\ReportController.cs" />
+    <Compile Include="Model\Archive\AddressView.cs" />
+    <Compile Include="Model\Archive\ArchiveDataClasses.cs">
+      <DependentUpon>ArchiveDataClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Archive\ArchiveDataClasses.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArchiveDataClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\Common\ArchiveGroupController.cs" />
+    <Compile Include="Model\Archive\ArchiveDataClassesDataContext.cs" />
+    <Compile Include="Model\Archive\ArchiveField.cs" />
+    <Compile Include="Model\Archive\ArchiveSubGroupField.cs" />
+    <Compile Include="Model\Archive\ArchiveTab.cs" />
+    <Compile Include="Model\Archive\ContactView.cs" />
+    <Compile Include="Model\Archive\Report.cs" />
+    <Compile Include="Enums\StatusOfFields.cs" />
+    <Compile Include="Enums\TabTypes.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ScannerSetting.cs" />
+    <Compile Include="ScannerSettingManager.cs" />
+    <Compile Include="Setting\Sql.cs" />
+    <Compile Include="View\ArchiveDocumentShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ArchiveDocumentShow.Designer.cs">
+      <DependentUpon>ArchiveDocumentShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ArchiveManageForms\ArchiveGroupTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ArchiveManageForms\ArchiveGroupTab.Designer.cs">
+      <DependentUpon>ArchiveGroupTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ArchiveManageForms\ArchiveTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ArchiveManageForms\ArchiveTab.Designer.cs">
+      <DependentUpon>ArchiveTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ArchiverDocumentManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ArchiverDocumentManagement.Designer.cs">
+      <DependentUpon>ArchiverDocumentManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ArchivesDiskSpaceManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ArchivesDiskSpaceManage.Designer.cs">
+      <DependentUpon>ArchivesDiskSpaceManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\BackupDocuments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BackupDocuments.Designer.cs">
+      <DependentUpon>BackupDocuments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\BaseForms\DosssierAddEdit2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BaseForms\DosssierAddEdit2.Designer.cs">
+      <DependentUpon>DosssierAddEdit2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\BaseForms\TabManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BaseForms\TabManage.Designer.cs">
+      <DependentUpon>TabManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ControllerSelect.cs" />
+    <Compile Include="View\Controls\ArchiveDiskSpaceView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Controls\ArchiveDiskSpaceView.Designer.cs">
+      <DependentUpon>ArchiveDiskSpaceView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\ArchiveTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Controls\ArchiveTreeView.designer.cs">
+      <DependentUpon>ArchiveTreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\AutoCompleteTextBoxSample.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Controls\AutoCompleteTextBoxSample.Designer.cs">
+      <DependentUpon>AutoCompleteTextBoxSample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\AutoCompleteTextBoxSample2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Controls\AutoCompleteTextBoxSample2.Designer.cs">
+      <DependentUpon>AutoCompleteTextBoxSample2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\AutoCompleteTextBoxSample3.cs" />
+    <Compile Include="View\Controls\AutoCompleteTextBoxSample3.Designer.cs">
+      <DependentUpon>AutoCompleteTextBoxSample3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\DocumentView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Controls\DocumentView.Designer.cs">
+      <DependentUpon>DocumentView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\DossierInfo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Controls\DossierInfo.Designer.cs">
+      <DependentUpon>DossierInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\DossierSearchBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Controls\DossierSearchBox.Designer.cs">
+      <DependentUpon>DossierSearchBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\DossierSearchBoxPopup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Controls\DossierSearchBoxPopup.Designer.cs">
+      <DependentUpon>DossierSearchBoxPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\ImageNavigation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Controls\ImageNavigation.Designer.cs">
+      <DependentUpon>ImageNavigation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\PersonSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Controls\PersonSearch.designer.cs">
+      <DependentUpon>PersonSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\FieldInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Controls\FieldInfo.Designer.cs">
+      <DependentUpon>FieldInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\RadioButtonList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Controls\RadioButtonList.Designer.cs">
+      <DependentUpon>RadioButtonList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\SelectArchive.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Controls\SelectArchive.Designer.cs">
+      <DependentUpon>SelectArchive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\ArchiveDataAccess.cs" />
+    <Compile Include="DataAccess\CommonDataAccess.cs" />
+    <Compile Include="Model\Common\ArchiveTree.cs" />
+    <Compile Include="ImageListViewRenderers\MahbaRenderer.cs" />
+    <Compile Include="View\ArchiveManageForms\ArchiveAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ArchiveManageForms\ArchiveAdd.Designer.cs">
+      <DependentUpon>ArchiveAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DossierFormHelper.cs" />
+    <Compile Include="Field.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="ProgramEvents.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchField.cs" />
+    <Compile Include="SearchMethod.cs" />
+    <Compile Include="SettingInitializer.cs" />
+    <Compile Include="Setting\Archive.cs" />
+    <Compile Include="Setting\Program.cs" />
+    <Compile Include="Setting\TaskScheduler.cs" />
+    <Compile Include="Setting\User.cs" />
+    <Compile Include="SqlHelper.cs" />
+    <Compile Include="View\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\About.designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ArchiveManageForms\ArchiveFieldManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ArchiveManageForms\ArchiveFieldManage.Designer.cs">
+      <DependentUpon>ArchiveFieldManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ArchiveManageForms\ArchiveFieldManageForSubGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ArchiveManageForms\ArchiveFieldManageForSubGroup.Designer.cs">
+      <DependentUpon>ArchiveFieldManageForSubGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ArchiveManageForms\ArchiveGroupFieldManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ArchiveManageForms\ArchiveGroupFieldManage.Designer.cs">
+      <DependentUpon>ArchiveGroupFieldManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ArchiveManageForms\ArchiveGroupFieldManageForSubGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ArchiveManageForms\ArchiveGroupFieldManageForSubGroup.Designer.cs">
+      <DependentUpon>ArchiveGroupFieldManageForSubGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ArchiveManageForms\ArchiveGroupTabAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ArchiveManageForms\ArchiveGroupTabAddEdit.Designer.cs">
+      <DependentUpon>ArchiveGroupTabAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ArchiveManageForms\ArchiveTabAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ArchiveManageForms\ArchiveTabAddEdit.Designer.cs">
+      <DependentUpon>ArchiveTabAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Backup.Designer.cs">
+      <DependentUpon>Backup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\BaseForms\TabAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BaseForms\AlertBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BaseForms\AlertBase.designer.cs">
+      <DependentUpon>AlertBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\BaseForms\DosssierAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BaseForms\DosssierAddEdit.Designer.cs">
+      <DependentUpon>DosssierAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\BaseForms\FieldManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BaseForms\FieldManage.Designer.cs">
+      <DependentUpon>FieldManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\BaseForms\FieldEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BaseForms\FieldEdit.Designer.cs">
+      <DependentUpon>FieldEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\BaseForms\TabAddEdit.Designer.cs">
+      <DependentUpon>TabAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DocumentFailure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DocumentFailure.Designer.cs">
+      <DependentUpon>DocumentFailure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DossierChangeDataField.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DossierChangeDataField.Designer.cs">
+      <DependentUpon>DossierChangeDataField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DossierDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DossierDelete.Designer.cs">
+      <DependentUpon>DossierDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DossierMove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DossierMove.Designer.cs">
+      <DependentUpon>DossierMove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DossierNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DossierNew.Designer.cs">
+      <DependentUpon>DossierNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DossierReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DossierReport.Designer.cs">
+      <DependentUpon>DossierReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DossierReportView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DossierReportView.Designer.cs">
+      <DependentUpon>DossierReportView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DossierEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DossierEdit.Designer.cs">
+      <DependentUpon>DossierEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DossiersAndDocumentsInfos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DossiersAndDocumentsInfos.Designer.cs">
+      <DependentUpon>DossiersAndDocumentsInfos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DossierSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DossierSearch.Designer.cs">
+      <DependentUpon>DossierSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GetCounterFieldProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GetCounterFieldProperties.Designer.cs">
+      <DependentUpon>GetCounterFieldProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImageView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ImageView.Designer.cs">
+      <DependentUpon>ImageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImportStudentFromExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ImportStudentFromExcel.Designer.cs">
+      <DependentUpon>ImportStudentFromExcel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\LendingManageForms\LendingAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LendingManageForms\LendingAddEdit.Designer.cs">
+      <DependentUpon>LendingAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\LendingManageForms\LendingList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LendingManageForms\LendingList.Designer.cs">
+      <DependentUpon>LendingList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\LendingManageForms\LendingReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LendingManageForms\LendingReturn.Designer.cs">
+      <DependentUpon>LendingReturn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\LendingManageForms\PersonAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LendingManageForms\PersonAddEdit.Designer.cs">
+      <DependentUpon>PersonAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\LendingManageForms\SelectDisplayFields.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LendingManageForms\SelectDisplayFields.Designer.cs">
+      <DependentUpon>SelectDisplayFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\NetworkStatus.cs" />
+    <Compile Include="View\NetworkStatusChangedArgs.cs" />
+    <Compile Include="View\PersonManageForms\LegalPersonAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PersonManageForms\LegalPersonAddEdit.Designer.cs">
+      <DependentUpon>LegalPersonAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PersonManageForms\RightfulPersonAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PersonManageForms\RightfulPersonAddEdit.Designer.cs">
+      <DependentUpon>RightfulPersonAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PersonManageForms\LegalPersonList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PersonManageForms\LegalPersonList.Designer.cs">
+      <DependentUpon>LegalPersonList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PersonManageForms\RightfulPersonList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PersonManageForms\RightfulPersonList.Designer.cs">
+      <DependentUpon>RightfulPersonList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PersonnelNumberEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PersonnelNumberEdit.Designer.cs">
+      <DependentUpon>PersonnelNumberEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProgramSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProgramSettings.Designer.cs">
+      <DependentUpon>ProgramSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RestoreBackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\RestoreBackup.Designer.cs">
+      <DependentUpon>RestoreBackup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImportFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ImportFiles.Designer.cs">
+      <DependentUpon>ImportFiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ScannerSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ScannerSetting.Designer.cs">
+      <DependentUpon>ScannerSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SelectArchive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SelectArchive.Designer.cs">
+      <DependentUpon>SelectArchive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SplashScreen.designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserManageForms\AddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UserManageForms\AddUser.Designer.cs">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserManageForms\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UserManageForms\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserManageForms\ChangePasswordWithAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UserManageForms\ChangePasswordWithAdmin.Designer.cs">
+      <DependentUpon>ChangePasswordWithAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserManageForms\DossierAndDocumentLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UserManageForms\DossierAndDocumentLog.Designer.cs">
+      <DependentUpon>DossierAndDocumentLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserManageForms\SetDossierPermission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UserManageForms\SetDossierPermission.Designer.cs">
+      <DependentUpon>SetDossierPermission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserManageForms\SetPermission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UserManageForms\SetPermission.designer.cs">
+      <DependentUpon>SetPermission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserManageForms\SetPermissionSecurity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UserManageForms\SetPermissionSecurity.Designer.cs">
+      <DependentUpon>SetPermissionSecurity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserManageForms\SetPermissionTitle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UserManageForms\SetPermissionTitle.Designer.cs">
+      <DependentUpon>SetPermissionTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserManageForms\UserList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UserManageForms\UserList.Designer.cs">
+      <DependentUpon>UserList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserManageForms\UserLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UserManageForms\UserLog.Designer.cs">
+      <DependentUpon>UserLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserManageForms\UserRoleAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UserManageForms\UserRoleAddEdit.designer.cs">
+      <DependentUpon>UserRoleAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserLogView.cs" />
+    <Compile Include="View\UserManageForms\UserRoleList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UserManageForms\UserRoleList.Designer.cs">
+      <DependentUpon>UserRoleList.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="C1LocalizedResources\C1.Win.C1Ribbon.4.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ArchiveDocumentShow.resx">
+      <DependentUpon>ArchiveDocumentShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ArchiveManageForms\ArchiveAdd.resx">
+      <DependentUpon>ArchiveAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ArchiveManageForms\ArchiveGroupTab.resx">
+      <DependentUpon>ArchiveGroupTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ArchiveManageForms\ArchiveTab.resx">
+      <DependentUpon>ArchiveTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ArchiverDocumentManagement.resx">
+      <DependentUpon>ArchiverDocumentManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ArchivesDiskSpaceManage.resx">
+      <DependentUpon>ArchivesDiskSpaceManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BackupDocuments.resx">
+      <DependentUpon>BackupDocuments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BaseForms\DosssierAddEdit2.resx">
+      <DependentUpon>DosssierAddEdit2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BaseForms\TabManage.resx">
+      <DependentUpon>TabManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Controls\ArchiveDiskSpaceView.resx">
+      <DependentUpon>ArchiveDiskSpaceView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Controls\ArchiveTreeView.resx">
+      <DependentUpon>ArchiveTreeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Controls\DocumentView.resx">
+      <DependentUpon>DocumentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Controls\DossierSearchBox.resx">
+      <DependentUpon>DossierSearchBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Controls\DossierSearchBoxPopup.resx">
+      <DependentUpon>DossierSearchBoxPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Controls\ImageNavigation.resx">
+      <DependentUpon>ImageNavigation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Controls\PersonSearch.resx">
+      <DependentUpon>PersonSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Controls\FieldInfo.resx">
+      <DependentUpon>FieldInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Controls\RadioButtonList.resx">
+      <DependentUpon>RadioButtonList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Controls\SelectArchive.resx">
+      <DependentUpon>SelectArchive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ArchiveManageForms\ArchiveFieldManage.resx">
+      <DependentUpon>ArchiveFieldManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ArchiveManageForms\ArchiveFieldManageForSubGroup.resx">
+      <DependentUpon>ArchiveFieldManageForSubGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ArchiveManageForms\ArchiveGroupFieldManage.resx">
+      <DependentUpon>ArchiveGroupFieldManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ArchiveManageForms\ArchiveGroupFieldManageForSubGroup.resx">
+      <DependentUpon>ArchiveGroupFieldManageForSubGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ArchiveManageForms\ArchiveGroupTabAddEdit.resx">
+      <DependentUpon>ArchiveGroupTabAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ArchiveManageForms\ArchiveTabAddEdit.resx">
+      <DependentUpon>ArchiveTabAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Backup.resx">
+      <DependentUpon>Backup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BaseForms\TabAddEdit.resx">
+      <DependentUpon>TabAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BaseForms\AlertBase.resx">
+      <DependentUpon>AlertBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BaseForms\DosssierAddEdit.resx">
+      <DependentUpon>DosssierAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BaseForms\FieldEdit.resx">
+      <DependentUpon>FieldEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BaseForms\FieldManage.resx">
+      <DependentUpon>FieldManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DocumentFailure.resx">
+      <DependentUpon>DocumentFailure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DossierChangeDataField.resx">
+      <DependentUpon>DossierChangeDataField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DossierDelete.resx">
+      <DependentUpon>DossierDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DossierMove.resx">
+      <DependentUpon>DossierMove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DossierNew.resx">
+      <DependentUpon>DossierNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DossierReport.resx">
+      <DependentUpon>DossierReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DossierReportView.resx">
+      <DependentUpon>DossierReportView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DossierEdit.resx">
+      <DependentUpon>DossierEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DossiersAndDocumentsInfos.resx">
+      <DependentUpon>DossiersAndDocumentsInfos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DossierSearch.resx">
+      <DependentUpon>DossierSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GetCounterFieldProperties.resx">
+      <DependentUpon>GetCounterFieldProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ImageView.resx">
+      <DependentUpon>ImageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ImportStudentFromExcel.resx">
+      <DependentUpon>ImportStudentFromExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LendingManageForms\LendingAddEdit.resx">
+      <DependentUpon>LendingAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LendingManageForms\LendingList.resx">
+      <DependentUpon>LendingList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LendingManageForms\LendingReturn.resx">
+      <DependentUpon>LendingReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LendingManageForms\PersonAddEdit.resx">
+      <DependentUpon>PersonAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LendingManageForms\SelectDisplayFields.resx">
+      <DependentUpon>SelectDisplayFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PersonManageForms\LegalPersonAddEdit.resx">
+      <DependentUpon>LegalPersonAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PersonManageForms\RightfulPersonAddEdit.resx">
+      <DependentUpon>RightfulPersonAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PersonManageForms\LegalPersonList.resx">
+      <DependentUpon>LegalPersonList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PersonManageForms\RightfulPersonList.resx">
+      <DependentUpon>RightfulPersonList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PersonnelNumberEdit.resx">
+      <DependentUpon>PersonnelNumberEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProgramSettings.resx">
+      <DependentUpon>ProgramSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RestoreBackup.resx">
+      <DependentUpon>RestoreBackup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ImportFiles.resx">
+      <DependentUpon>ImportFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ScannerSetting.resx">
+      <DependentUpon>ScannerSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SelectArchive.resx">
+      <DependentUpon>SelectArchive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserManageForms\AddUser.resx">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserManageForms\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserManageForms\ChangePasswordWithAdmin.resx">
+      <DependentUpon>ChangePasswordWithAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserManageForms\DossierAndDocumentLog.resx">
+      <DependentUpon>DossierAndDocumentLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserManageForms\SetDossierPermission.resx">
+      <DependentUpon>SetDossierPermission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserManageForms\SetPermission.resx">
+      <DependentUpon>SetPermission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserManageForms\SetPermissionSecurity.resx">
+      <DependentUpon>SetPermissionSecurity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserManageForms\SetPermissionTitle.resx">
+      <DependentUpon>SetPermissionTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserManageForms\UserList.resx">
+      <DependentUpon>UserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserManageForms\UserLog.resx">
+      <DependentUpon>UserLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserManageForms\UserRoleAddEdit.resx">
+      <DependentUpon>UserRoleAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserManageForms\UserRoleList.resx">
+      <DependentUpon>UserRoleList.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="MahbaClassDiagram.cd" />
+    <None Include="Mahba_TemporaryKey.pfx" />
+    <None Include="Model\Common\ArchiveCommonDataClasses.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>ArchiveCommonDataClasses.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Model\Common\ArchiveCommonDataClasses.dbml.layout">
+      <DependentUpon>ArchiveCommonDataClasses.dbml</DependentUpon>
+    </None>
+    <None Include="Model\ArchiveDocument\DocumentDataClasses.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DocumentDataClasses.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Model\ArchiveDocument\DocumentDataClasses.dbml.layout">
+      <DependentUpon>DocumentDataClasses.dbml</DependentUpon>
+    </None>
+    <None Include="Model\Archive\ArchiveDataClasses.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>ArchiveDataClasses.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Model\Archive\ArchiveDataClasses.dbml.layout">
+      <DependentUpon>ArchiveDataClasses.dbml</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\AsreJadidSoftware.Model.Archive.CompressionType.datasource" />
+    <None Include="Properties\DataSources\AsreJadidSoftware.Model.Archive.ImageFormat.datasource" />
+    <None Include="Properties\DataSources\NjitSoftware.Model.Archive.LegalPerson.datasource" />
+    <None Include="Properties\DataSources\NjitSoftware.Model.Archive.LegalPersonView.datasource" />
+    <None Include="Properties\DataSources\NjitSoftware.Model.Archive.RightfulPerson.datasource" />
+    <None Include="Properties\DataSources\NjitSoftware.Model.Archive.RightfulPersonView.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Reports - Backup\Document.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports - Backup\DossiersBarcode.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports - Backup\Report.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlertIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Njit.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Backup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\changePassword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Archive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rename.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\penDark16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recycleBinDark16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addDark16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LeftArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RightArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ArchiveGroup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShowDossier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewDossier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Person.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DossierManage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DossierNew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Document.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewDoc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Security.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ArchiveChange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UserGroup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UserReport.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\about.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DossierSearch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Convert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PageAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DocumentSearch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scanner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddFiles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Paperclip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.ico" />
+    <Content Include="bin\Release\KaupischITC.ScanWIA.dll" />
+    <None Include="Resources\Spinner.gif" />
+    <None Include="Resources\brightnessDown.png" />
+    <None Include="Resources\brightnessup.png" />
+    <None Include="Resources\contrastUP.png" />
+    <None Include="Resources\contrastDown.png" />
+    <None Include="Resources\RotateRight1.png" />
+    <None Include="Resources\RotateLeft1.png" />
+    <None Include="Resources\PersonCompany.png" />
+    <None Include="Resources\Person1.png" />
+    <None Include="Resources\contrast.png" />
+    <None Include="Resources\brightness.png" />
+    <None Include="Resources\Splash.jpg" />
+    <None Include="Resources\Logo.jpg" />
+    <None Include="Resources\Chart.png" />
+    <None Include="Resources\Table.png" />
+    <None Include="Resources\Restore.png" />
+    <None Include="Resources\documentOutAdd.png" />
+    <None Include="Resources\DocumentEmpty.png" />
+    <None Include="Resources\DocumentEmpty.ico" />
+    <None Include="Resources\previous22.png" />
+    <None Include="Resources\next22.png" />
+    <None Include="Resources\CheckList.png" />
+    <None Include="Resources\documentOut.png" />
+    <None Include="Resources\reportBook.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

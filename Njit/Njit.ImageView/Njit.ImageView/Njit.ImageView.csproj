@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A71E757E-1948-4C11-AB44-38E99B240027}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Njit.ImageView</RootNamespace>
+    <AssemblyName>Njit.ImageView</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.Win.C1FlexGrid.2, Version=2.0.20152.67, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GifImage.cs" />
+    <Compile Include="KP_DrawEngine.cs" />
+    <Compile Include="KP_DrawObject.cs" />
+    <Compile Include="MHR_ImageView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MHR_ImageView.Designer.cs">
+      <DependentUpon>MHR_ImageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MultiPageImage.cs" />
+    <Compile Include="PanelDoubleBuffered.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MHR_ImageView.resx">
+      <DependentUpon>MHR_ImageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\1.cur" />
+    <Content Include="Resources\2.cur" />
+    <Content Include="Resources\btnBack.png" />
+    <None Include="Resources\warning1.png" />
+    <None Include="Resources\btnBack1.png" />
+    <Content Include="Resources\btnDrag.png" />
+    <Content Include="Resources\btnDrag1.png" />
+    <None Include="Resources\btnDrag2.png" />
+    <None Include="Resources\btnDrag11.png" />
+    <Content Include="Resources\btnFitToScreen.png" />
+    <None Include="Resources\btnFitToScreen1.png" />
+    <Content Include="Resources\btnNext.png" />
+    <None Include="Resources\btnNext1.png" />
+    <Content Include="Resources\btnOpen.png" />
+    <None Include="Resources\btnOpen1.png" />
+    <Content Include="Resources\btnPreview.png" />
+    <None Include="Resources\btnPreview1.png" />
+    <Content Include="Resources\btnRotate270.png" />
+    <None Include="Resources\btnRotate2701.png" />
+    <Content Include="Resources\btnRotate90.png" />
+    <None Include="Resources\btnRotate901.png" />
+    <Content Include="Resources\btnSelect.png" />
+    <None Include="Resources\btnSelect1.png" />
+    <Content Include="Resources\btnZoomIn.png" />
+    <None Include="Resources\btnZoomIn1.png" />
+    <Content Include="Resources\btnZoomOut.png" />
+    <None Include="Resources\btnZoomOut1.png" />
+    <Content Include="Resources\Darg.cur" />
+    <Content Include="Resources\Grab.cur" />
+    <Content Include="Resources\printer.png" />
+    <None Include="Resources\printer1.png" />
+    <Content Include="Resources\warning.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

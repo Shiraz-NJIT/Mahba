@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7DCFA06C-37F5-48E6-800F-684E505C04E7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Njit.Common</RootNamespace>
+    <AssemblyName>Njit.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Out\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Out\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CheckLockException.cs" />
+    <Compile Include="CryptoService\AESCryptoService.cs" />
+    <Compile Include="FolderPath.cs" />
+    <Compile Include="FontHelper.cs" />
+    <Compile Include="Helpers\ColorHelper.cs" />
+    <Compile Include="CryptoService\DESCryptoService.cs" />
+    <Compile Include="CryptoService\MD5CryptoService.cs" />
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="Helpers\GraphicsHelper.cs" />
+    <Compile Include="Helpers\ImageHelper.cs" />
+    <Compile Include="ICustomizedControl.cs" />
+    <Compile Include="MessageEventArgs.cs" />
+    <Compile Include="PublicMethods.cs" />
+    <Compile Include="RegisteredFileType.cs" />
+    <Compile Include="SendKeys.cs" />
+    <Compile Include="Shortcut.cs" />
+    <Compile Include="SingleInstance.cs" />
+    <Compile Include="StandardNumericFormatStrings.cs" />
+    <Compile Include="SystemUtility.cs" />
+    <Compile Include="IAccessPermission.cs" />
+    <Compile Include="INIFile.cs" />
+    <Compile Include="INISettingsProvider.cs" />
+    <Compile Include="ItemSelectedEventArgs.cs" />
+    <Compile Include="PersianCalendar.cs" />
+    <Compile Include="Popup\GripBounds.cs" />
+    <Compile Include="Popup\NativeMethods.cs" />
+    <Compile Include="Popup\Popup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Popup\Popup.designer.cs">
+      <DependentUpon>Popup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupAnimations.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Helpers\NumbersHelper.cs" />
+    <Compile Include="ValidateException.cs" />
+    <Compile Include="VersionComparer.cs" />
+    <Compile Include="Win32.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

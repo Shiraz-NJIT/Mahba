@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="12/17/2013 14:44:52" ReportInfo.Modified="12/17/2013 14:46:34" ReportInfo.CreatorVersion="1.8.38.0">
+  <Dictionary>
+    <TableDataSource Name="MyDataSource" ReferenceName="MyDataSource" DataType="System.Int32" Enabled="true">
+      <Column Name="Barcode" DataType="System.String"/>
+      <Column Name="Title" DataType="System.String"/>
+    </TableDataSource>
+    <Parameter Name="CompanyName" DataType="System.String"/>
+    <Parameter Name="ReportPrintDate" DataType="System.String"/>
+    <Parameter Name="ReportPrintTime" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" RawPaperSize="9" Columns.Count="3" Columns.Width="63.3" Columns.Positions="0,63.3,126.7">
+    <DataBand Name="Data1" Width="239.27" Height="94.5" DataSource="MyDataSource">
+      <BarcodeObject Name="Barcode1" Left="18.9" Width="177.5" Height="94.5" DataColumn="MyDataSource.Barcode"/>
+    </DataBand>
+  </ReportPage>
+</Report>

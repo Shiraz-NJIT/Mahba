@@ -1,0 +1,11 @@
+E:\AsreJadid\Projects\AsreJadid\Out\AsreJadid.MessageBox.dll
+E:\AsreJadid\Projects\AsreJadid\Out\AsreJadid.MessageBox.pdb
+E:\AsreJadid\Projects\AsreJadid\Out\AsreJadid.MessageBox.xml
+E:\AsreJadid\Projects\AsreJadid\AsreJadid.MessageBox\obj\Debug\AsreJadid.MessageBox.ChevronButton.resources
+E:\AsreJadid\Projects\AsreJadid\AsreJadid.MessageBox\obj\Debug\AsreJadid.MessageBox.CommandLink.resources
+E:\AsreJadid\Projects\AsreJadid\AsreJadid.MessageBox\obj\Debug\AsreJadid.MessageBox.Resources.resources
+E:\AsreJadid\Projects\AsreJadid\AsreJadid.MessageBox\obj\Debug\AsreJadid.MessageBox.VDialogForm.resources
+E:\AsreJadid\Projects\AsreJadid\AsreJadid.MessageBox\obj\Debug\AsreJadid.MessageBox.vbproj.GenerateResource.Cache
+E:\AsreJadid\Projects\AsreJadid\AsreJadid.MessageBox\obj\Debug\AsreJadid.MessageBox.dll
+E:\AsreJadid\Projects\AsreJadid\AsreJadid.MessageBox\obj\Debug\AsreJadid.MessageBox.xml
+E:\AsreJadid\Projects\AsreJadid\AsreJadid.MessageBox\obj\Debug\AsreJadid.MessageBox.pdb

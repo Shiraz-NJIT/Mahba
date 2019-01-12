@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{419BEE41-0065-4403-BBF2-3E06FC6B96CD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Njit.TaskScheduler</RootNamespace>
+    <AssemblyName>Njit.TaskScheduler</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Out\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Out\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Win32.TaskScheduler">
+      <HintPath>obj\Debug\Microsoft.Win32.TaskScheduler.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddEditSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditSchedule.Designer.cs">
+      <DependentUpon>AddEditSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditSchedules.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditSchedules.Designer.cs">
+      <DependentUpon>EditSchedules.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleRepeatTypes\Daily.cs" />
+    <Compile Include="ScheduleRepeatTypes\Monthly.cs" />
+    <Compile Include="ScheduleRepeatTypes\NoRepeat.cs" />
+    <Compile Include="ScheduleRepeatTypes\Weekly.cs" />
+    <Compile Include="ScheduleTypes\BackupDatabase.cs" />
+    <Compile Include="ScheduleTypes\ExecuteProgram.cs" />
+    <Compile Include="ScheduleTypes\ShowMessage.cs" />
+    <Compile Include="SelectMonth.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SelectMonth.Designer.cs">
+      <DependentUpon>SelectMonth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScheduleRepeat.cs" />
+    <Compile Include="Schedule.cs" />
+    <Compile Include="ScheduleType.cs" />
+    <Compile Include="SelectWeekday.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SelectWeekday.Designer.cs">
+      <DependentUpon>SelectWeekday.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\AsreJadid.TaskScheduler.ScheduleRepeatTypes.Daily.datasource" />
+    <None Include="Properties\DataSources\AsreJadid.TaskScheduler.ScheduleRepeatTypes.Monthly.datasource" />
+    <None Include="Properties\DataSources\AsreJadid.TaskScheduler.ScheduleRepeatTypes.NoRepeat.datasource" />
+    <None Include="Properties\DataSources\AsreJadid.TaskScheduler.ScheduleRepeatTypes.Weekly.datasource" />
+    <None Include="Properties\DataSources\AsreJadid.TaskScheduler.ScheduleTypes.BackupDatabase+SetNameTypes.datasource" />
+    <None Include="Properties\DataSources\AsreJadid.TaskScheduler.ScheduleTypes.BackupDatabase.datasource" />
+    <None Include="Properties\DataSources\AsreJadid.TaskScheduler.ScheduleTypes.ExecuteProgram.datasource" />
+    <None Include="Properties\DataSources\AsreJadid.TaskScheduler.ScheduleTypes.ShowMessage.datasource" />
+    <None Include="Properties\DataSources\RepeatType.datasource" />
+    <None Include="Properties\DataSources\Schedule.datasource" />
+    <None Include="Properties\DataSources\ScheduleType.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AddEditSchedule.resx">
+      <DependentUpon>AddEditSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditSchedules.resx">
+      <DependentUpon>EditSchedules.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectMonth.resx">
+      <DependentUpon>SelectMonth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectWeekday.resx">
+      <DependentUpon>SelectWeekday.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Njit.Common\Njit.Common.csproj">
+      <Project>{7dcfa06c-37f5-48e6-800f-684e505c04e7}</Project>
+      <Name>Njit.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Njit.MessageBox\Njit.MessageBox.vbproj">
+      <Project>{65b236ed-8af9-42ab-b7bf-42c22bd387c7}</Project>
+      <Name>Njit.MessageBox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Njit.Program\Njit.Program.csproj">
+      <Project>{f2dc4d00-20f7-40ee-a9e5-6188ff25def5}</Project>
+      <Name>Njit.Program</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,5 @@
+E:\AsreJadid\Projects\AsreJadid\Out\AsreJadid.dll
+E:\AsreJadid\Projects\AsreJadid\Out\AsreJadid.pdb
+E:\AsreJadid\Projects\AsreJadid\AsreJadid\obj\Release\AsreJadid.csprojResolveAssemblyReference.cache
+E:\AsreJadid\Projects\AsreJadid\AsreJadid\obj\Release\AsreJadid.dll
+E:\AsreJadid\Projects\AsreJadid\AsreJadid\obj\Release\AsreJadid.pdb

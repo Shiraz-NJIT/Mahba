@@ -1,0 +1,16 @@
+E:\Work\mahba\برنامه های اضافی\ویرایش تصاویر\ImageView\bin\Release\KP-ImageViewerV2.dll
+E:\Work\mahba\برنامه های اضافی\ویرایش تصاویر\ImageView\bin\Release\KP-ImageViewerV2.pdb
+E:\Work\mahba\برنامه های اضافی\ویرایش تصاویر\ImageView\obj\Release\KaiwaProjects.KpImageViewer.resources
+E:\Work\mahba\برنامه های اضافی\ویرایش تصاویر\ImageView\obj\Release\KaiwaProjects.Properties.Resources.resources
+E:\Work\mahba\برنامه های اضافی\ویرایش تصاویر\ImageView\obj\Release\KP-ImageViewerV2.csproj.GenerateResource.Cache
+E:\Work\mahba\برنامه های اضافی\ویرایش تصاویر\ImageView\obj\Release\KP-ImageViewerV2.dll
+E:\Work\mahba\برنامه های اضافی\ویرایش تصاویر\ImageView\obj\Release\KP-ImageViewerV2.pdb
+E:\Work\mahba\برنامه های اضافی\ویرایش تصاویر\ImageView\obj\Release\KP-ImageViewerV2.csprojResolveAssemblyReference.cache
+E:\Work\mahba\Pezeshki\Mahba\Njit\ImageView\obj\Release\KaiwaProjects.KpImageViewer.resources
+E:\Work\mahba\Pezeshki\Mahba\Njit\ImageView\obj\Release\KaiwaProjects.Properties.Resources.resources
+E:\Work\mahba\Pezeshki\Mahba\Njit\ImageView\obj\Release\KP-ImageViewerV2.csproj.GenerateResource.Cache
+E:\Work\mahba\Pezeshki\Mahba\Njit\ImageView\obj\Release\KP-ImageViewerV2.dll
+E:\Work\mahba\Pezeshki\Mahba\Njit\ImageView\bin\Release\KP-ImageViewerV2.dll
+E:\Work\mahba\Pezeshki\Mahba\Njit\ImageView\bin\Release\KP-ImageViewerV2.pdb
+E:\Work\mahba\Pezeshki\Mahba\Njit\ImageView\obj\Release\KP-ImageViewerV2.pdb
+E:\Work\mahba\Pezeshki\Mahba\Njit\ImageView\obj\Release\KP-ImageViewerV2.csprojResolveAssemblyReference.cache

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="NjitSoftware.Setting.Archive">
+    <Position X="0.5" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>gAAoABAAkAAAAAAAMAEBAAAAAIAACAIAAAAAAAIACEA=</HashCode>
+      <FileName>Setting\Archive.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NjitSoftware.Setting.Program">
+    <Position X="4" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>ACAAABAASQAAAABASgAEgECJEIAAAAKAAQgAAABABAI=</HashCode>
+      <FileName>Setting\Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NjitSoftware.Setting.Sql">
+    <Position X="1.25" Y="8.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAAACAAJAAAAAACAAIAAACIAAAAAAQAAAAA=</HashCode>
+      <FileName>Setting\Sql.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NjitSoftware.Setting.TaskScheduler">
+    <Position X="0.5" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAIAASEQAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Setting\TaskScheduler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NjitSoftware.Setting.User">
+    <Position X="4" Y="7" Width="3" />
+    <NestedTypes>
+      <Enum Name="NjitSoftware.Setting.User.UserRoles" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Setting\User.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="NjitSoftware.Setting.User.UserOparatesNames" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Setting\User.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="NjitSoftware.Setting.User.UserOparatesPlaceNames" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Setting\User.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="NjitSoftware.Setting.User.AccessPermissionUnits" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Setting\User.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAgEAAAQA0AIAAEAAEAgIKBIBBAgYgEABUAgAQAII=</HashCode>
+      <FileName>Setting\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

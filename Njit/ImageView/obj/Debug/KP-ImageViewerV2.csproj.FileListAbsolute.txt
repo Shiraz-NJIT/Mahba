@@ -1,0 +1,23 @@
+E:\Work\mahba\برنامه های اضافی\ویرایش تصاویر\Source3\bin\Debug\KP-ImageViewerV2.dll
+E:\Work\mahba\برنامه های اضافی\ویرایش تصاویر\Source3\bin\Debug\KP-ImageViewerV2.pdb
+E:\Work\mahba\برنامه های اضافی\ویرایش تصاویر\Source3\obj\Debug\KaiwaProjects.KpImageViewer.resources
+E:\Work\mahba\برنامه های اضافی\ویرایش تصاویر\Source3\obj\Debug\KaiwaProjects.Properties.Resources.resources
+E:\Work\mahba\برنامه های اضافی\ویرایش تصاویر\Source3\obj\Debug\KP-ImageViewerV2.csproj.GenerateResource.Cache
+E:\Work\mahba\برنامه های اضافی\ویرایش تصاویر\Source3\obj\Debug\KP-ImageViewerV2.dll
+E:\Work\mahba\برنامه های اضافی\ویرایش تصاویر\Source3\obj\Debug\KP-ImageViewerV2.pdb
+E:\Work\mahba\برنامه های اضافی\ویرایش تصاویر\ImageView\bin\Debug\KP-ImageViewerV2.dll
+E:\Work\mahba\برنامه های اضافی\ویرایش تصاویر\ImageView\bin\Debug\KP-ImageViewerV2.pdb
+E:\Work\mahba\برنامه های اضافی\ویرایش تصاویر\ImageView\obj\Debug\KaiwaProjects.KpImageViewer.resources
+E:\Work\mahba\برنامه های اضافی\ویرایش تصاویر\ImageView\obj\Debug\KaiwaProjects.Properties.Resources.resources
+E:\Work\mahba\برنامه های اضافی\ویرایش تصاویر\ImageView\obj\Debug\KP-ImageViewerV2.csproj.GenerateResource.Cache
+E:\Work\mahba\برنامه های اضافی\ویرایش تصاویر\ImageView\obj\Debug\KP-ImageViewerV2.dll
+E:\Work\mahba\برنامه های اضافی\ویرایش تصاویر\ImageView\obj\Debug\KP-ImageViewerV2.pdb
+E:\Work\mahba\برنامه های اضافی\ویرایش تصاویر\ImageView\obj\Debug\KP-ImageViewerV2.csprojResolveAssemblyReference.cache
+E:\Work\mahba\Pezeshki\Mahba\Njit\ImageView\bin\Debug\KP-ImageViewerV2.dll
+E:\Work\mahba\Pezeshki\Mahba\Njit\ImageView\bin\Debug\KP-ImageViewerV2.pdb
+E:\Work\mahba\Pezeshki\Mahba\Njit\ImageView\obj\Debug\KP-ImageViewerV2.csprojResolveAssemblyReference.cache
+E:\Work\mahba\Pezeshki\Mahba\Njit\ImageView\obj\Debug\KaiwaProjects.KpImageViewer.resources
+E:\Work\mahba\Pezeshki\Mahba\Njit\ImageView\obj\Debug\KaiwaProjects.Properties.Resources.resources
+E:\Work\mahba\Pezeshki\Mahba\Njit\ImageView\obj\Debug\KP-ImageViewerV2.csproj.GenerateResource.Cache
+E:\Work\mahba\Pezeshki\Mahba\Njit\ImageView\obj\Debug\KP-ImageViewerV2.dll
+E:\Work\mahba\Pezeshki\Mahba\Njit\ImageView\obj\Debug\KP-ImageViewerV2.pdb

@@ -1,0 +1,23 @@
+E:\Work\mahba\برنامه های اضافی\Njit.ImageView\Njit.ImageView\bin\Debug\Njit.ImageView.pdb
+E:\Work\mahba\برنامه های اضافی\Njit.ImageView\Njit.ImageView\obj\Debug\Njit.ImageView.csprojResolveAssemblyReference.cache
+E:\Work\mahba\برنامه های اضافی\Njit.ImageView\Njit.ImageView\obj\Debug\Njit.ImageView.MHR_ImageView.resources
+E:\Work\mahba\برنامه های اضافی\Njit.ImageView\Njit.ImageView\obj\Debug\Njit.ImageView.Properties.Resources.resources
+E:\Work\mahba\برنامه های اضافی\Njit.ImageView\Njit.ImageView\obj\Debug\Njit.ImageView.csproj.GenerateResource.Cache
+E:\Work\mahba\برنامه های اضافی\Njit.ImageView\Njit.ImageView\obj\Debug\Njit.ImageView.pdb
+E:\Work\mahba\برنامه های اضافی\Njit.ImageView\Njit.ImageView\bin\Debug\Njit.ImageView.dll.config
+E:\Work\mahba\برنامه های اضافی\Njit.ImageView\Njit.ImageView\bin\Debug\Njit.ImageView.dll
+E:\Work\mahba\برنامه های اضافی\Njit.ImageView\Njit.ImageView\obj\Debug\Njit.ImageView.dll
+E:\Work\mahba\Pezeshki\Mahba\Njit\Njit.ImageView\Njit.ImageView\bin\Debug\Njit.ImageView.dll.config
+E:\Work\mahba\Pezeshki\Mahba\Njit\Njit.ImageView\Njit.ImageView\bin\Debug\Njit.ImageView.dll
+E:\Work\mahba\Pezeshki\Mahba\Njit\Njit.ImageView\Njit.ImageView\bin\Debug\Njit.ImageView.pdb
+E:\Work\mahba\Pezeshki\Mahba\Njit\Njit.ImageView\Njit.ImageView\bin\Debug\C1.Win.C1FlexGrid.2.dll
+E:\Work\mahba\Pezeshki\Mahba\Njit\Njit.ImageView\Njit.ImageView\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
+E:\Work\mahba\Pezeshki\Mahba\Njit\Njit.ImageView\Njit.ImageView\bin\Debug\C1.Win.C1FlexGrid.2.xml
+E:\Work\mahba\Pezeshki\Mahba\Njit\Njit.ImageView\Njit.ImageView\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.xml
+E:\Work\mahba\Pezeshki\Mahba\Njit\Njit.ImageView\Njit.ImageView\obj\Debug\Njit.ImageView.csprojResolveAssemblyReference.cache
+E:\Work\mahba\Pezeshki\Mahba\Njit\Njit.ImageView\Njit.ImageView\obj\Debug\Njit.ImageView.MHR_ImageView.resources
+E:\Work\mahba\Pezeshki\Mahba\Njit\Njit.ImageView\Njit.ImageView\obj\Debug\Njit.ImageView.Properties.Resources.resources
+E:\Work\mahba\Pezeshki\Mahba\Njit\Njit.ImageView\Njit.ImageView\obj\Debug\Njit.ImageView.csproj.GenerateResource.Cache
+E:\Work\mahba\Pezeshki\Mahba\Njit\Njit.ImageView\Njit.ImageView\obj\Debug\Njit.ImageView.dll.licenses
+E:\Work\mahba\Pezeshki\Mahba\Njit\Njit.ImageView\Njit.ImageView\obj\Debug\Njit.ImageView.dll
+E:\Work\mahba\Pezeshki\Mahba\Njit\Njit.ImageView\Njit.ImageView\obj\Debug\Njit.ImageView.pdb

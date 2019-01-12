@@ -1,0 +1,15 @@
+E:\VS Projects\AsreJadid\Out\AsreJadid.Sql.dll
+E:\VS Projects\AsreJadid\Out\AsreJadid.Sql.pdb
+E:\VS Projects\AsreJadid\AsreJadid.Sql\obj\Release\AsreJadid.Sql.Forms.LoginToSql.resources
+E:\VS Projects\AsreJadid\AsreJadid.Sql\obj\Release\AsreJadid.Sql.Forms.SetSqlConnection.resources
+E:\VS Projects\AsreJadid\AsreJadid.Sql\obj\Release\AsreJadid.Sql.csproj.GenerateResource.Cache
+E:\VS Projects\AsreJadid\AsreJadid.Sql\obj\Release\AsreJadid.Sql.dll
+E:\VS Projects\AsreJadid\AsreJadid.Sql\obj\Release\AsreJadid.Sql.pdb
+E:\AsreJadid\Projects\AsreJadid\Out\AsreJadid.Sql.dll
+E:\AsreJadid\Projects\AsreJadid\Out\AsreJadid.Sql.pdb
+E:\AsreJadid\Projects\AsreJadid\AsreJadid.Sql\obj\Release\AsreJadid.Sql.csprojResolveAssemblyReference.cache
+E:\AsreJadid\Projects\AsreJadid\AsreJadid.Sql\obj\Release\AsreJadid.Sql.Forms.LoginToSql.resources
+E:\AsreJadid\Projects\AsreJadid\AsreJadid.Sql\obj\Release\AsreJadid.Sql.Forms.SetSqlConnection.resources
+E:\AsreJadid\Projects\AsreJadid\AsreJadid.Sql\obj\Release\AsreJadid.Sql.csproj.GenerateResource.Cache
+E:\AsreJadid\Projects\AsreJadid\AsreJadid.Sql\obj\Release\AsreJadid.Sql.dll
+E:\AsreJadid\Projects\AsreJadid\AsreJadid.Sql\obj\Release\AsreJadid.Sql.pdb

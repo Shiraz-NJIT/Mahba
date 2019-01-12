@@ -1,0 +1,626 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F2DC4D00-20F7-40EE-A9E5-6188FF25DEF5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Njit.Program</RootNamespace>
+    <AssemblyName>Njit.Program</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Out\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Out\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\AccessPermissionTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\AccessPermissionTreeView.Designer.cs">
+      <DependentUpon>AccessPermissionTreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DiskSpaceProgress.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DiskSpaceProgress.Designer.cs">
+      <DependentUpon>DiskSpaceProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SetBrightness.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SetBrightness.Designer.cs">
+      <DependentUpon>SetBrightness.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ButtonExtended.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ButtonExtended.Designer.cs">
+      <DependentUpon>ButtonExtended.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ColorSlider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ColorSlider.designer.cs">
+      <DependentUpon>ColorSlider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ComboBoxExtended.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ComboBoxExtended.Designer.cs">
+      <DependentUpon>ComboBoxExtended.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataGridViewExtended.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DataGridViewExtended.Designer.cs">
+      <DependentUpon>DataGridViewExtended.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Design\DesignerTransaction.cs" />
+    <Compile Include="Controls\Design\MultiLayerPanelSwitchPages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Design\MultiLayerPanelDesigner.cs" />
+    <Compile Include="Controls\FolderBrowserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FolderBrowserControl.Designer.cs">
+      <DependentUpon>FolderBrowserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ImageBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ImageBox.Designer.cs">
+      <DependentUpon>ImageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ImageViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ImageViewer.Designer.cs">
+      <DependentUpon>ImageViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ListViewExtended.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ListViewExtended.Designer.cs">
+      <DependentUpon>ListViewExtended.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MultiLayerPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\BrowseButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\BrowseButton.Designer.cs">
+      <DependentUpon>BrowseButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PictureBoxExtended.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PictureBoxExtended.Designer.cs">
+      <DependentUpon>PictureBoxExtended.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PictureSelectBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PictureSelectBox.designer.cs">
+      <DependentUpon>PictureSelectBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TimeControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TimeControl.Designer.cs">
+      <DependentUpon>TimeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DateControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DateControl.Designer.cs">
+      <DependentUpon>DateControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TabControlExtended.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TabControlExtended.Designer.cs">
+      <DependentUpon>TabControlExtended.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TextBoxExtended.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TextBoxExtended.Designer.cs">
+      <DependentUpon>TextBoxExtended.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TextBoxSearch.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TextBoxSearch.Designer.cs">
+      <DependentUpon>TextBoxSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TreeViewExtended.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TreeViewExtended.Designer.cs">
+      <DependentUpon>TreeViewExtended.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataGridViewColumn\AsreJadidComboBoxCell.cs" />
+    <Compile Include="DataGridViewColumn\AsreJadidComboBoxColumn.cs" />
+    <Compile Include="DataGridViewColumn\AsreJadidCounterCell.cs" />
+    <Compile Include="DataGridViewColumn\AsreJadidCounterColumn.cs" />
+    <Compile Include="DataGridViewColumn\AsreJadidPersianDateCell.cs" />
+    <Compile Include="DataGridViewColumn\AsreJadidPersianDateColumn.cs" />
+    <Compile Include="DataGridViewColumn\AsreJadidTextBoxCell.cs" />
+    <Compile Include="DataGridViewColumn\AsreJadidTextBoxColumn.cs" />
+    <Compile Include="DataGridViewColumn\AsreJadidTimeCell.cs" />
+    <Compile Include="DataGridViewColumn\AsreJadidTimeColumn.cs" />
+    <Compile Include="Forms\CancelableDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CancelableDialogForm.Designer.cs">
+      <DependentUpon>CancelableDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CopyFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CopyFiles.Designer.cs">
+      <DependentUpon>CopyFiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FolderBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FolderBrowser.Designer.cs">
+      <DependentUpon>FolderBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GetValue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GetValue.Designer.cs">
+      <DependentUpon>GetValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DatabseUpdatesInstaller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DatabseUpdatesInstaller.designer.cs">
+      <DependentUpon>DatabseUpdatesInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SaveAccessPermissionTree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SaveAccessPermissionTree.designer.cs">
+      <DependentUpon>SaveAccessPermissionTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SaveFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SaveFiles.Designer.cs">
+      <DependentUpon>SaveFiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OKCancelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OKCancelForm.Designer.cs">
+      <DependentUpon>OKCancelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AeroPeekForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AeroPeekForm.designer.cs">
+      <DependentUpon>AeroPeekForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BackupDatabaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BackupDatabaseForm.designer.cs">
+      <DependentUpon>BackupDatabaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BaseFormDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseFormDialog.Designer.cs">
+      <DependentUpon>BaseFormDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BaseFormSizable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseFormSizable.Designer.cs">
+      <DependentUpon>BaseFormSizable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangePassword.designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ComboBoxEditItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ComboBoxEditItems.Designer.cs">
+      <DependentUpon>ComboBoxEditItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ComboBoxEditItemsEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ComboBoxEditItemsEdit.Designer.cs">
+      <DependentUpon>ComboBoxEditItemsEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DeleteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeleteForm.Designer.cs">
+      <DependentUpon>DeleteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ErrorList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ErrorList.designer.cs">
+      <DependentUpon>ErrorList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BackupProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BackupProgress.Designer.cs">
+      <DependentUpon>BackupProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListForm.Designer.cs">
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PopupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PopupForm.designer.cs">
+      <DependentUpon>PopupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProgramSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProgramSettings.Designer.cs">
+      <DependentUpon>ProgramSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RestoreBackupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RestoreBackupForm.designer.cs">
+      <DependentUpon>RestoreBackupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserAdd.designer.cs">
+      <DependentUpon>UserAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserList.designer.cs">
+      <DependentUpon>UserList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ISearchControl.cs" />
+    <Compile Include="IInputBox.cs" />
+    <Compile Include="ISettingInitializer.cs" />
+    <Compile Include="Model\MainModel.cs">
+      <DependentUpon>MainModel.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MainModel.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainModel.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Options.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SaveFileDelegate.cs" />
+    <Compile Include="Setting\ConvertTo_PersianOREnglish_Date.cs" />
+    <Compile Include="Setting\ProgramSetting.cs" />
+    <Compile Include="Setting\SqlSetting.cs" />
+    <Compile Include="Setting\UserSetting.cs" />
+    <Compile Include="InputBoxValidationHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\AccessPermissionTreeView.resx">
+      <DependentUpon>AccessPermissionTreeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DiskSpaceProgress.resx">
+      <DependentUpon>DiskSpaceProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SetBrightness.resx">
+      <DependentUpon>SetBrightness.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ColorSlider.resx">
+      <DependentUpon>ColorSlider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ComboBoxExtended.resx">
+      <DependentUpon>ComboBoxExtended.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DataGridViewExtended.resx">
+      <DependentUpon>DataGridViewExtended.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Design\MultiLayerPanelSwitchPages.resx">
+      <DependentUpon>MultiLayerPanelSwitchPages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\BrowseButton.resx">
+      <DependentUpon>BrowseButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FolderBrowserControl.resx">
+      <DependentUpon>FolderBrowserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ImageViewer.resx">
+      <DependentUpon>ImageViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PictureBoxExtended.resx">
+      <DependentUpon>PictureBoxExtended.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PictureSelectBox.resx">
+      <DependentUpon>PictureSelectBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TimeControl.resx">
+      <DependentUpon>TimeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DateControl.resx">
+      <DependentUpon>DateControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TextBoxExtended.resx">
+      <DependentUpon>TextBoxExtended.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TextBoxSearch.resx">
+      <DependentUpon>TextBoxSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CancelableDialogForm.resx">
+      <DependentUpon>CancelableDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CopyFiles.resx">
+      <DependentUpon>CopyFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FolderBrowser.resx">
+      <DependentUpon>FolderBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GetValue.resx">
+      <DependentUpon>GetValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DatabseUpdatesInstaller.resx">
+      <DependentUpon>DatabseUpdatesInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SaveAccessPermissionTree.resx">
+      <DependentUpon>SaveAccessPermissionTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SaveFiles.resx">
+      <DependentUpon>SaveFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OKCancelForm.resx">
+      <DependentUpon>OKCancelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AeroPeekForm.resx">
+      <DependentUpon>AeroPeekForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BackupDatabaseForm.resx">
+      <DependentUpon>BackupDatabaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BaseFormDialog.resx">
+      <DependentUpon>BaseFormDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BaseFormSizable.resx">
+      <DependentUpon>BaseFormSizable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ComboBoxEditItems.resx">
+      <DependentUpon>ComboBoxEditItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ComboBoxEditItemsEdit.resx">
+      <DependentUpon>ComboBoxEditItemsEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeleteForm.resx">
+      <DependentUpon>DeleteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ErrorList.resx">
+      <DependentUpon>ErrorList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BackupProgress.resx">
+      <DependentUpon>BackupProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListForm.resx">
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PopupForm.resx">
+      <DependentUpon>PopupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProgramSettings.resx">
+      <DependentUpon>ProgramSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RestoreBackupForm.resx">
+      <DependentUpon>RestoreBackupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserAdd.resx">
+      <DependentUpon>UserAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserList.resx">
+      <DependentUpon>UserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Model\MainModel.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>MainModel.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Model\MainModel.dbml.layout">
+      <DependentUpon>MainModel.dbml</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\AsreJadid.PersianMessageBoxInfo.datasource" />
+    <None Include="Properties\DataSources\AsreJadid.Program.Controls.ComboBoxExtended+CustomItem.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\Backup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Restore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit_user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shutdown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loginback.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlertIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Njit.Common\Njit.Common.csproj">
+      <Project>{7dcfa06c-37f5-48e6-800f-684e505c04e7}</Project>
+      <Name>Njit.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Njit.MessageBox\Njit.MessageBox.vbproj">
+      <Project>{65b236ed-8af9-42ab-b7bf-42c22bd387c7}</Project>
+      <Name>Njit.MessageBox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Njit.Sql\Njit.Sql.csproj">
+      <Project>{c05312c2-b35a-45a0-a96e-7f66d4321f6d}</Project>
+      <Name>Njit.Sql</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bNext-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bNext-hot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bPrev-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bPrev-hot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RotateRight1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RotateLeft1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\previous16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brightness.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contrast.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="11/05/2013 14:45:57" ReportInfo.Modified="11/05/2013 15:20:41" ReportInfo.CreatorVersion="1.8.38.0">
+  <Dictionary>
+    <TableDataSource Name="Images" ReferenceName="Images" DataType="System.Int32" Enabled="true">
+      <Column Name="img" DataType="System.Byte[]" BindableControl="Picture"/>
+    </TableDataSource>
+    <Parameter Name="CompanyName" DataType="System.String"/>
+    <Parameter Name="ReportPrintDate" DataType="System.String"/>
+    <Parameter Name="ReportPrintTime" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <DataBand Name="Data1" Width="718.2" Height="1047.06" DataSource="Images">
+      <PictureObject Name="Picture1" Width="718" Height="1047" DataColumn="Images.img"/>
+    </DataBand>
+  </ReportPage>
+</Report>
