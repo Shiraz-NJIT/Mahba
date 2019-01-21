@@ -41,7 +41,6 @@
             this.pnlFields = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.radGridViewFields = new Njit.Program.Telerik.Controls.RadGridViewExtended();
             this.txtName = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -116,8 +115,6 @@
             this.pnlFields.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridViewFields)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridViewFields.MasterTemplate)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -293,38 +290,12 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.radGridViewFields);
             this.panel7.Controls.Add(this.txtName);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(603, 304);
             this.panel7.TabIndex = 10;
-            // 
-            // radGridViewFields
-            // 
-            this.radGridViewFields.BackColor = System.Drawing.SystemColors.Control;
-            this.radGridViewFields.Cursor = System.Windows.Forms.Cursors.Default;
-            this.radGridViewFields.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radGridViewFields.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.radGridViewFields.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radGridViewFields.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radGridViewFields.Location = new System.Drawing.Point(0, 22);
-            // 
-            // radGridViewFields
-            // 
-            this.radGridViewFields.MasterTemplate.AllowAddNewRow = false;
-            this.radGridViewFields.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            this.radGridViewFields.MasterTemplate.EnableAlternatingRowColor = true;
-            this.radGridViewFields.MasterTemplate.EnableFiltering = true;
-            this.radGridViewFields.Name = "radGridViewFields";
-            this.radGridViewFields.ReadOnly = true;
-            this.radGridViewFields.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.radGridViewFields.Size = new System.Drawing.Size(603, 282);
-            this.radGridViewFields.TabIndex = 0;
-            this.radGridViewFields.Text = "radGridViewExtended1";
-            this.radGridViewFields.CellClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.radGridViewFields_CellClick);
-            this.radGridViewFields.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.radGridViewFields_CellDoubleClick);
             // 
             // txtName
             // 
@@ -334,7 +305,7 @@
             this.txtName.Font = new System.Drawing.Font("Tahoma", 9F);
             this.txtName.Location = new System.Drawing.Point(0, 0);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(603, 22);
+            this.txtName.Size = new System.Drawing.Size(603, 26);
             this.txtName.TabIndex = 1;
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -365,18 +336,18 @@
             this.FieldstxtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.FieldstxtName.Dock = System.Windows.Forms.DockStyle.Right;
             this.FieldstxtName.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FieldstxtName.Location = new System.Drawing.Point(115, 0);
+            this.FieldstxtName.Location = new System.Drawing.Point(104, 0);
             this.FieldstxtName.Name = "FieldstxtName";
-            this.FieldstxtName.Size = new System.Drawing.Size(444, 28);
+            this.FieldstxtName.Size = new System.Drawing.Size(444, 33);
             this.FieldstxtName.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label1.Location = new System.Drawing.Point(559, 0);
+            this.label1.Location = new System.Drawing.Point(548, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.Size = new System.Drawing.Size(55, 21);
             this.label1.TabIndex = 5;
             this.label1.Text = "عنوان:";
             // 
@@ -620,7 +591,7 @@
             this.lblDocNumber.Name = "lblDocNumber";
             this.lblDocNumber.Size = new System.Drawing.Size(204, 33);
             this.lblDocNumber.TabIndex = 2;
-            this.lblDocNumber.Text = "تعداد اسناد :";
+            this.lblDocNumber.Text = "تعداد اسناد :5";
             // 
             // btnSaveInfo
             // 
@@ -981,7 +952,7 @@
             // 
             // ArchiverDocumentManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1285, 606);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -991,6 +962,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ثبت و مشاهده اسناد بایگانی";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.ArchiverDocumentManagement_Load);
             this.panelCommand.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
             this.pnlListView.ResumeLayout(false);
@@ -1003,8 +975,6 @@
             this.panel11.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridViewFields.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridViewFields)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();

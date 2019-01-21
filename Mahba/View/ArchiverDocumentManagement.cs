@@ -18,8 +18,12 @@ using System.Windows.Forms;
 
 namespace NjitSoftware.View
 {
+    public delegate void SendDataToDocumentField(Dictionary<string, string> Data, string type);
+
     public partial class ArchiverDocumentManagement : Njit.Program.ComponentOne.Forms.ListFormWithoutMainRibbon
     {
+        public SendDataToDocumentField SendDataToFormDocumentField;
+
         private string PersonnelNumber;
         private Model.Archive.Document _CurrentDocument = null;
         [DefaultValue(null)]
@@ -86,6 +90,58 @@ namespace NjitSoftware.View
             public string NN { get; set; }
         }
 
+        #region گرفتن اطلاعات از فرم DocumentField
+
+        public void GetDataFromFormDocumentField(Dictionary<string, string> value,Dictionary<string, string> NewData,string type)
+        {
+            switch (type)
+            {
+                case "Field10":
+                    AutoCompleteTextbox3 textBoxExtended10 = (AutoCompleteTextbox3)pnlInfo.Controls["Field10"];
+                    Njit.Program.Controls.TextBoxExtended textBoxExtended9 = (Njit.Program.Controls.TextBoxExtended)pnlInfo.Controls["Field9"];
+                    textBoxExtended9.Text = value.FirstOrDefault().Key.ToString();
+                    textBoxExtended10.Text = value.FirstOrDefault().Value.ToString();
+
+                    ListMokhatab = NewData;
+
+                    textBoxExtended10.AutoCompleteList = ListMokhatab.Values.ToList();
+                    textBoxExtended10.SelectItem();
+                    textBoxExtended10.SelectionStart = textBoxExtended10.SelectionStart;
+                    textBoxExtended10.SelectionLength = 0;
+                    
+                    break;
+                case "Field12":
+                    AutoCompleteTextbox3 textBoxExtended12 = (AutoCompleteTextbox3)pnlInfo.Controls["Field12"];
+                    Njit.Program.Controls.TextBoxExtended textBoxExtended11 = (Njit.Program.Controls.TextBoxExtended)pnlInfo.Controls["Field11"];
+                    textBoxExtended11.Text = value.FirstOrDefault().Key.ToString();
+                    textBoxExtended12.Text = value.FirstOrDefault().Value.ToString();
+                    ListOnvan = NewData;
+
+                    textBoxExtended12.AutoCompleteList = ListOnvan.Values.ToList();
+                    textBoxExtended12.SelectItem();
+                    textBoxExtended12.SelectionStart = textBoxExtended12.SelectionStart;
+                    textBoxExtended12.SelectionLength = 0;
+                    
+                    break;
+                case "Field14":
+                    AutoCompleteTextbox3 textBoxExtended14 = (AutoCompleteTextbox3)pnlInfo.Controls["Field14"];
+                    Njit.Program.Controls.TextBoxExtended textBoxExtended13 = (Njit.Program.Controls.TextBoxExtended)pnlInfo.Controls["Field13"];
+                    textBoxExtended13.Text = value.FirstOrDefault().Key.ToString();
+                    textBoxExtended14.Text = value.FirstOrDefault().Value.ToString();
+                    ListEghdam = NewData;
+
+                    textBoxExtended14.AutoCompleteList = ListEghdam.Values.ToList();
+                    textBoxExtended14.SelectItem();
+                    textBoxExtended14.SelectionStart = textBoxExtended14.SelectionStart;
+                    textBoxExtended14.SelectionLength = 0;
+                    
+                    break;
+                default:
+                    break;
+            }
+
+        }
+        #endregion
         //دکمه های شورت کات ShortCutKeys
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
@@ -100,7 +156,14 @@ namespace NjitSoftware.View
                 Njit.Program.Controls.TextBoxExtended textBoxExtended9 = (Njit.Program.Controls.TextBoxExtended)pnlInfo.Controls["Field9"];
                 if (textBoxExtended10.Focused || textBoxExtended9.Focused)
                 {
-                    MokhatabinDataGridView();
+                    DocumentField f = new DocumentField();
+                    this.SendDataToFormDocumentField += new SendDataToDocumentField(f.getData);
+                    SendDataToFormDocumentField(ListMokhatab, "Field10");//Field10=مخاطب
+                    f.SentDataToForm += GetDataFromFormDocumentField;
+                    f.ShowDialog();
+                    SendDataToFormDocumentField = null;
+
+                    //MokhatabinDataGridView();
                     _FieldSelect = 1;
                     return true;
                 }
@@ -108,7 +171,14 @@ namespace NjitSoftware.View
                 Njit.Program.Controls.TextBoxExtended textBoxExtended11 = (Njit.Program.Controls.TextBoxExtended)pnlInfo.Controls["Field11"];
                 if (textBoxExtended12.Focused || textBoxExtended11.Focused)
                 {
-                    OnvanDataGridView2();
+                    DocumentField f = new DocumentField();
+                    this.SendDataToFormDocumentField += new SendDataToDocumentField(f.getData);
+                    SendDataToFormDocumentField(ListOnvan, "Field12");//Field12=عنوان نامه
+                    f.SentDataToForm += GetDataFromFormDocumentField;
+                    f.ShowDialog();
+                    SendDataToFormDocumentField = null;
+
+
                     _FieldSelect = 2;
                     return true;
                 }
@@ -116,7 +186,14 @@ namespace NjitSoftware.View
                 Njit.Program.Controls.TextBoxExtended textBoxExtended13 = (Njit.Program.Controls.TextBoxExtended)pnlInfo.Controls["Field13"];
                 if (textBoxExtended14.Focused || textBoxExtended13.Focused)
                 {
-                    EghdamDataGridView3();
+                    DocumentField f = new DocumentField();
+                    this.SendDataToFormDocumentField += new SendDataToDocumentField(f.getData);
+                    SendDataToFormDocumentField(ListEghdam, "Field14");//Field14=اقدام کننده
+                    f.SentDataToForm += GetDataFromFormDocumentField;
+                    f.ShowDialog();
+                    SendDataToFormDocumentField = null;
+
+                    //  EghdamDataGridView3();
                     _FieldSelect = 3;
                     return true;
                 }
@@ -3535,7 +3612,7 @@ namespace NjitSoftware.View
                 pnlFields.Size = new Size(query.FirstOrDefault().Width, query.FirstOrDefault().Height);
             }
         }
-        #region Start Sacnner 
+        #region Start Sacnner
         private void btnScan_DropDownItemClicked(object sender, C1.Win.C1Input.DropDownItemClickedEventArgs e)
         {
             if (e.ClickedItem.Text == "تنظیمات اسکنر سریع")
@@ -3781,7 +3858,7 @@ namespace NjitSoftware.View
 
             this.UseWaitCursor = false;
             SetLoading(false);
-       
+
         }
         private void btnScanFlatPeyvast_Click(object sender, EventArgs e)
         {
@@ -4168,6 +4245,11 @@ namespace NjitSoftware.View
                 }
                 pnlFields.Size = new Size(query.FirstOrDefault().Width, e.NewValue);
             }
+        }
+
+        private void ArchiverDocumentManagement_Load(object sender, EventArgs e)
+        {
+
         }
     }
 
