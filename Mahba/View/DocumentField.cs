@@ -35,15 +35,12 @@ namespace NjitSoftware.View
             {
                 case "Field12":
                     this.Text = "عنوان نامه";
-                    LabelTitle.Text = "عنوان نامه";
                     break;
                 case "Field10":
                     this.Text = "مخاطب نامه";
-                    LabelTitle.Text = "مخاطب نامه";
                     break;
                 case "Field14":
                     this.Text = "اقدام کننده";
-                    LabelTitle.Text = "اقدام کننده";
                     break;
                 default:
                     break;
