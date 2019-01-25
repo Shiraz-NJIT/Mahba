@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Njit" Class="ArchiveCommonDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.\ZAO;Initial Catalog=Njit;Integrated Security=True" SettingsObjectName="NjitSoftware.Properties.Settings" SettingsPropertyName="ArchiveCommonConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=Njit;Integrated Security=True" SettingsObjectName="NjitSoftware.Properties.Settings" SettingsPropertyName="NjitConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.AccessPermissionTree" Member="AccessPermissionTrees">
     <Type Name="AccessPermissionTree">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -255,7 +255,7 @@
       <Column Name="isLogin" Type="System.Boolean" CanBeNull="false" />
       <Column Name="isGuest" Type="System.Boolean" CanBeNull="false" />
       <Column Name="Expire" Type="System.DateTime" CanBeNull="true" />
-      <Column Member="IPAddress" Type="System.String" CanBeNull="true" />
+      <Column Name="IPAddress" Type="System.String" CanBeNull="true" />
       <Association Name="User_UserAccessPermission" Member="UserAccessPermissions" ThisKey="Code" OtherKey="UserCode" Type="UserAccessPermission" />
       <Association Name="User_UserLog" Member="UserLogs" ThisKey="Code" OtherKey="UserCode" Type="UserLog" />
       <Association Name="User_UserSetting" Member="UserSetting" ThisKey="Code" OtherKey="UserCode" Type="UserSetting" Cardinality="One" />
@@ -264,6 +264,8 @@
       <Association Name="User_PermissionSecurity" Member="PermissionSecurities" ThisKey="Code" OtherKey="PK_User" Type="PermissionSecurity" />
       <Association Name="User_PermissionTitle" Member="PermissionTitles" ThisKey="Code" OtherKey="PK_User" Type="PermissionTitle" />
       <Association Name="User_PermissionDossier" Member="PermissionDossiers" ThisKey="Code" OtherKey="PK_User" Type="PermissionDossier" />
+      <Association Name="User_Message" Member="Messages" ThisKey="Code" OtherKey="UserCode" Type="Message" />
+      <Association Name="User_MessageUser" Member="MessageUsers" ThisKey="Code" OtherKey="UserCode" Type="MessageUser" />
     </Type>
   </Table>
   <Table Name="dbo.UserAccessPermission" Member="UserAccessPermissions">
@@ -286,7 +288,7 @@
       <Column Name="Date" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Time" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="ArchiveID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Member="IPAddress" Type="System.String" CanBeNull="true" />
+      <Column Name="IPAddress" Type="System.String" CanBeNull="true" />
       <Association Name="Archive_UserLog" Member="Archive" ThisKey="ArchiveID" OtherKey="ID" Type="Archive" IsForeignKey="true" />
       <Association Name="User_UserLog" Member="User" ThisKey="UserCode" OtherKey="Code" Type="User" IsForeignKey="true" />
     </Type>
@@ -362,6 +364,29 @@
       <Column Name="DossierType" Type="System.Int32" CanBeNull="false" />
       <Association Name="User_PermissionDossier" Member="User" ThisKey="PK_User" OtherKey="Code" Type="User" IsForeignKey="true" />
       <Association Name="Archive_PermissionDossier" Member="Archive" ThisKey="PK_Archive" OtherKey="ID" Type="Archive" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Message" Member="Messages">
+    <Type Name="Message">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Text" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="SendDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Message_MessageUser" Member="MessageUsers" ThisKey="ID" OtherKey="MessageID" Type="MessageUser" />
+      <Association Name="User_Message" Member="User" ThisKey="UserCode" OtherKey="Code" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MessageUser" Member="MessageUsers">
+    <Type Name="MessageUser">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MessageID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DateShow" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="Message_MessageUser" Member="Message" ThisKey="MessageID" OtherKey="ID" Type="Message" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="User_MessageUser" Member="User" ThisKey="UserCode" OtherKey="Code" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
