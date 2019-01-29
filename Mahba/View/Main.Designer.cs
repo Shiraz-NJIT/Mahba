@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            this.timerShowNonificationMessages = new System.Windows.Forms.Timer();
             this.ribbonTabPageDossier = new C1.Win.C1Ribbon.RibbonTab();
             this.ribbonGroup1 = new C1.Win.C1Ribbon.RibbonGroup();
             this.btnNewDossier = new Njit.Program.ComponentOne.Controls.RibbonButton();
@@ -48,6 +49,8 @@
             this.ribbonTabPageLending = new C1.Win.C1Ribbon.RibbonTab();
             this.ribbonGroup8 = new C1.Win.C1Ribbon.RibbonGroup();
             this.btnLendingAdd = new Njit.Program.ComponentOne.Controls.RibbonButton();
+            this.btnShowMessage = new Njit.Program.ComponentOne.Controls.RibbonButton();
+            this.btnSendgMessage = new Njit.Program.ComponentOne.Controls.RibbonButton();
             this.ribbonSeparator1 = new C1.Win.C1Ribbon.RibbonSeparator();
             this.btnLendingList = new Njit.Program.ComponentOne.Controls.RibbonButton();
             this.ribbonGroup2 = new C1.Win.C1Ribbon.RibbonGroup();
@@ -83,7 +86,9 @@
             this.ribbonGroup15 = new C1.Win.C1Ribbon.RibbonGroup();
             this.btnManagerReports = new Njit.Program.ComponentOne.Controls.RibbonButton();
             this.ribbonTabPageAdditionals = new C1.Win.C1Ribbon.RibbonTab();
+            this.ribbonTabPageMessage= new C1.Win.C1Ribbon.RibbonTab();
             this.ribbonGroup5 = new C1.Win.C1Ribbon.RibbonGroup();
+            this.ribbonGroupMessage = new C1.Win.C1Ribbon.RibbonGroup();
             this.btnBackup = new Njit.Program.ComponentOne.Controls.RibbonButton();
             this.ribbonSeparator8 = new C1.Win.C1Ribbon.RibbonSeparator();
             this.btnRestore = new Njit.Program.ComponentOne.Controls.RibbonButton();
@@ -93,9 +98,21 @@
             this.btnAbout = new Njit.Program.ComponentOne.Controls.RibbonButton();
             this.ribbonGroup11 = new C1.Win.C1Ribbon.RibbonGroup();
             this.ScanerelegantButton = new Njit.Program.ComponentOne.Controls.RibbonButton();
+            this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusBar)).BeginInit();
             this.SuspendLayout();
+
+            // 
+            // timerShowNonificationMessages
+            // 
+            this.timerShowNonificationMessages.Enabled = false;
+            this.timerShowNonificationMessages.Interval = 5000;
+
+            this.timerShowNonificationMessages.Tick += new System.EventHandler(this.timerShowNonificationMessages_Tick);
+            // 
+            // Form1
+            // 
             // 
             // mainRibbon
             // 
@@ -104,6 +121,7 @@
             this.mainRibbon.Tabs.Add(this.ribbonTabPageManager);
             this.mainRibbon.Tabs.Add(this.ribbonTabPageReports);
             this.mainRibbon.Tabs.Add(this.ribbonTabPageAdditionals);
+            this.mainRibbon.Tabs.Add(this.ribbonTabPageMessage);
             // 
             // statusBar
             // 
@@ -253,6 +271,12 @@
             this.ribbonGroup8.Items.Add(this.btnLendingList);
             this.ribbonGroup8.Name = "ribbonGroup8";
             this.ribbonGroup8.Text = "                 ثبت و گزارش                ";
+
+            this.ribbonGroupMessage.Items.Add(this.btnShowMessage);
+            this.ribbonGroupMessage.Items.Add(this.btnSendgMessage);
+            this.ribbonGroupMessage.Name = "ribbonGroupMessage";
+            this.ribbonGroupMessage.Text = "پیام";
+
             // 
             // btnLendingAdd
             // 
@@ -261,6 +285,21 @@
             this.btnLendingAdd.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnLendingAdd.SmallImage")));
             this.btnLendingAdd.Text = "ثبت امانت";
             this.btnLendingAdd.Click += new System.EventHandler(this.btnLendingAdd_Click);
+            //message
+            this.btnShowMessage.LargeImage = global::NjitSoftware.Properties.Resources.documentOutAdd;
+            this.btnShowMessage.Name = "btnShowMessage";
+            this.btnShowMessage.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnLendingAdd.SmallImage")));
+            this.btnShowMessage.Text = "مشاهده پیاما";
+            this.btnShowMessage.Click += new System.EventHandler(this.btnShowMessage_Click);
+
+            this.btnSendgMessage.LargeImage = global::NjitSoftware.Properties.Resources.documentOutAdd;
+            this.btnSendgMessage.Name = "btnSendgMessage";
+            this.btnSendgMessage.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnLendingAdd.SmallImage")));
+            this.btnSendgMessage.Text = "ارسال پیام";
+            this.btnSendgMessage.Click += new System.EventHandler(this.btnSendgMessage_Click);
+
+
+            //end
             // 
             // ribbonSeparator1
             // 
@@ -520,6 +559,11 @@
             this.ribbonTabPageAdditionals.Groups.Add(this.ribbonGroup11);
             this.ribbonTabPageAdditionals.Name = "ribbonTabPageAdditionals";
             this.ribbonTabPageAdditionals.Text = "امکانات";
+            //**************
+
+            this.ribbonTabPageMessage.Groups.Add(this.ribbonGroupMessage);
+            this.ribbonTabPageMessage.Name = "ribbonTabPageMessage";
+            this.ribbonTabPageMessage.Text = "پیام";
             // 
             // ribbonGroup5
             // 
@@ -623,7 +667,9 @@
         private C1.Win.C1Ribbon.RibbonTab ribbonTabPageReports;
         private C1.Win.C1Ribbon.RibbonGroup ribbonGroup4;
         private C1.Win.C1Ribbon.RibbonTab ribbonTabPageAdditionals;
+        private C1.Win.C1Ribbon.RibbonTab ribbonTabPageMessage;
         private C1.Win.C1Ribbon.RibbonGroup ribbonGroup5;
+        private C1.Win.C1Ribbon.RibbonGroup ribbonGroupMessage;
         private Njit.Program.ComponentOne.Controls.RibbonButton btnNewDossier;
         private Njit.Program.ComponentOne.Controls.RibbonButton btnImportStudent;
         private Njit.Program.ComponentOne.Controls.RibbonButton btnArchiveDocumentManagement;
@@ -638,6 +684,8 @@
         private Njit.Program.ComponentOne.Controls.RibbonButton btnSelectDisplayField;
         private C1.Win.C1Ribbon.RibbonGroup ribbonGroup8;
         private Njit.Program.ComponentOne.Controls.RibbonButton btnLendingAdd;
+        private Njit.Program.ComponentOne.Controls.RibbonButton btnShowMessage;
+        private Njit.Program.ComponentOne.Controls.RibbonButton btnSendgMessage;
         private C1.Win.C1Ribbon.RibbonSeparator ribbonSeparator1;
         private Njit.Program.ComponentOne.Controls.RibbonButton btnLendingList;
         private Njit.Program.ComponentOne.Controls.RibbonButton btnProgramSetting;
@@ -678,5 +726,7 @@
         private Njit.Program.ComponentOne.Controls.RibbonButton btnPersonds;
         private Njit.Program.ComponentOne.Controls.RibbonButton btnPersonCompanies;
         private C1.Win.C1Ribbon.RibbonSeparator ribbonSeparator9;
+        private System.Windows.Forms.Timer timerShowNonificationMessages;
+
     }
 }

@@ -11,7 +11,7 @@ namespace NjitSoftware.View
 {
     public delegate void SendDataGridToFrmArchiveDocumentManagment(Dictionary<string, string> value,Dictionary<string, string> NewData, string type);
 
-    public partial class DocumentField : Form
+    public partial class DocumentField : Njit.Program.Forms.BaseFormSizable
     {
         public event SendDataGridToFrmArchiveDocumentManagment SentDataToForm;
 

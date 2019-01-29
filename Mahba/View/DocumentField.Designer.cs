@@ -40,8 +40,8 @@
             this.GridViewData = new Njit.Program.Telerik.Controls.RadGridViewExtended();
             this.gridViewTemplate1 = new Telerik.WinControls.UI.GridViewTemplate();
             this.panelData = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtB_id)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
@@ -53,19 +53,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridViewData.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewTemplate1)).BeginInit();
             this.panelData.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // radLabel1
             // 
             this.radLabel1.AutoSize = false;
             this.radLabel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.radLabel1.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel1.Location = new System.Drawing.Point(456, 0);
-            this.radLabel1.Margin = new System.Windows.Forms.Padding(2);
+            this.radLabel1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel1.Location = new System.Drawing.Point(608, 0);
             this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(40, 32);
+            this.radLabel1.Size = new System.Drawing.Size(53, 44);
             this.radLabel1.TabIndex = 1;
             this.radLabel1.Text = "کد";
             this.radLabel1.TextAlignment = System.Drawing.ContentAlignment.TopRight;
@@ -74,10 +73,9 @@
             // 
             this.txtB_id.AutoSize = false;
             this.txtB_id.Dock = System.Windows.Forms.DockStyle.Right;
-            this.txtB_id.Location = new System.Drawing.Point(352, 0);
-            this.txtB_id.Margin = new System.Windows.Forms.Padding(2);
+            this.txtB_id.Location = new System.Drawing.Point(469, 0);
             this.txtB_id.Name = "txtB_id";
-            this.txtB_id.Size = new System.Drawing.Size(104, 32);
+            this.txtB_id.Size = new System.Drawing.Size(139, 44);
             this.txtB_id.TabIndex = 2;
             this.txtB_id.TabStop = false;
             this.txtB_id.TextChanging += new Telerik.WinControls.TextChangingEventHandler(this.txtB_id_TextChanging);
@@ -86,11 +84,10 @@
             // 
             this.radLabel2.AutoSize = false;
             this.radLabel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.radLabel2.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel2.Location = new System.Drawing.Point(306, 0);
-            this.radLabel2.Margin = new System.Windows.Forms.Padding(2);
+            this.radLabel2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel2.Location = new System.Drawing.Point(408, 0);
             this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(46, 32);
+            this.radLabel2.Size = new System.Drawing.Size(61, 44);
             this.radLabel2.TabIndex = 3;
             this.radLabel2.Text = "عنوان";
             this.radLabel2.TextAlignment = System.Drawing.ContentAlignment.TopRight;
@@ -100,9 +97,8 @@
             this.txtB_title.AutoSize = false;
             this.txtB_title.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtB_title.Location = new System.Drawing.Point(0, 0);
-            this.txtB_title.Margin = new System.Windows.Forms.Padding(2);
             this.txtB_title.Name = "txtB_title";
-            this.txtB_title.Size = new System.Drawing.Size(306, 32);
+            this.txtB_title.Size = new System.Drawing.Size(408, 44);
             this.txtB_title.TabIndex = 4;
             this.txtB_title.TabStop = false;
             this.txtB_title.TextChanging += new Telerik.WinControls.TextChangingEventHandler(this.txtB_title_TextChanging);
@@ -110,12 +106,11 @@
             // Btn_Delete
             // 
             this.Btn_Delete.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Btn_Delete.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Delete.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Delete.Image = global::NjitSoftware.Properties.Resources.delete;
             this.Btn_Delete.Location = new System.Drawing.Point(0, 0);
-            this.Btn_Delete.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_Delete.Name = "Btn_Delete";
-            this.Btn_Delete.Size = new System.Drawing.Size(70, 32);
+            this.Btn_Delete.Size = new System.Drawing.Size(93, 44);
             this.Btn_Delete.TabIndex = 6;
             this.Btn_Delete.Text = "حذف";
             this.Btn_Delete.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
@@ -126,12 +121,11 @@
             // 
             this.btn_Save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Save.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_Save.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Save.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Save.Image = global::NjitSoftware.Properties.Resources.Save2;
-            this.btn_Save.Location = new System.Drawing.Point(95, 0);
-            this.btn_Save.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Save.Location = new System.Drawing.Point(127, 0);
             this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(76, 32);
+            this.btn_Save.Size = new System.Drawing.Size(101, 44);
             this.btn_Save.TabIndex = 5;
             this.btn_Save.Text = "ذخیره";
             this.btn_Save.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
@@ -142,10 +136,9 @@
             // 
             this.panelDataGridView.Controls.Add(this.GridViewData);
             this.panelDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDataGridView.Location = new System.Drawing.Point(0, 32);
-            this.panelDataGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.panelDataGridView.Location = new System.Drawing.Point(0, 44);
             this.panelDataGridView.Name = "panelDataGridView";
-            this.panelDataGridView.Size = new System.Drawing.Size(667, 409);
+            this.panelDataGridView.Size = new System.Drawing.Size(889, 567);
             this.panelDataGridView.TabIndex = 1;
             // 
             // GridViewData
@@ -153,11 +146,10 @@
             this.GridViewData.BackColor = System.Drawing.SystemColors.Control;
             this.GridViewData.Cursor = System.Windows.Forms.Cursors.Default;
             this.GridViewData.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridViewData.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.GridViewData.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GridViewData.ForeColor = System.Drawing.Color.Black;
             this.GridViewData.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.GridViewData.Location = new System.Drawing.Point(0, 0);
-            this.GridViewData.Margin = new System.Windows.Forms.Padding(2);
             // 
             // GridViewData
             // 
@@ -169,12 +161,12 @@
             gridViewTextBoxColumn1.HeaderText = "کد";
             gridViewTextBoxColumn1.Name = "id";
             gridViewTextBoxColumn1.ReadOnly = true;
-            gridViewTextBoxColumn1.Width = 154;
+            gridViewTextBoxColumn1.Width = 209;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "Value";
             gridViewTextBoxColumn2.HeaderText = "عنوان";
             gridViewTextBoxColumn2.Name = "title";
-            gridViewTextBoxColumn2.Width = 472;
+            gridViewTextBoxColumn2.Width = 639;
             this.GridViewData.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2});
@@ -186,7 +178,7 @@
             this.GridViewData.Name = "GridViewData";
             this.GridViewData.ReadOnly = true;
             this.GridViewData.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.GridViewData.Size = new System.Drawing.Size(667, 409);
+            this.GridViewData.Size = new System.Drawing.Size(889, 567);
             this.GridViewData.TabIndex = 4;
             this.GridViewData.Text = "radGridViewExtended1";
             this.GridViewData.Click += new System.EventHandler(this.GridViewData_Click);
@@ -203,20 +195,9 @@
             this.panelData.Controls.Add(this.panel1);
             this.panelData.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelData.Location = new System.Drawing.Point(0, 0);
-            this.panelData.Margin = new System.Windows.Forms.Padding(2);
             this.panelData.Name = "panelData";
-            this.panelData.Size = new System.Drawing.Size(667, 32);
+            this.panelData.Size = new System.Drawing.Size(889, 44);
             this.panelData.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btn_Save);
-            this.panel1.Controls.Add(this.Btn_Delete);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(171, 32);
-            this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
@@ -225,24 +206,32 @@
             this.panel2.Controls.Add(this.txtB_id);
             this.panel2.Controls.Add(this.radLabel1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(171, 0);
+            this.panel2.Location = new System.Drawing.Point(228, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(496, 32);
+            this.panel2.Size = new System.Drawing.Size(661, 44);
             this.panel2.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btn_Save);
+            this.panel1.Controls.Add(this.Btn_Delete);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(228, 44);
+            this.panel1.TabIndex = 0;
             // 
             // DocumentField
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(667, 441);
+            this.ClientSize = new System.Drawing.Size(889, 611);
             this.Controls.Add(this.panelDataGridView);
             this.Controls.Add(this.panelData);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.Name = "DocumentField";
-            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.RightToLeftLayout = true;
-            this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtB_id)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
@@ -254,8 +243,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridViewData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewTemplate1)).EndInit();
             this.panelData.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

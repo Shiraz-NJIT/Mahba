@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NjitSoftware.Controller.Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,11 +9,16 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Windows.Forms;
+using Tulpep.NotificationWindow;
 
 namespace NjitSoftware.View
 {
+    public delegate void SendMsg(string Title, string Message, string DateSent);
+
     public partial class Main : Njit.Program.ComponentOne.Forms.MainForm
     {
+        public SendMsg SendMessage;
+
         public Main()
         {
             InitializeComponent();
@@ -30,7 +36,8 @@ namespace NjitSoftware.View
         void NetworkStatus_AvailabilityChanged(object sender, NetworkStatusChangedArgs e)
         {
             if (NetworkStatus.IsAvailable)
-            { MessageBox.Show("ارتباط با سرور برقرار شد"); 
+            {
+                MessageBox.Show("ارتباط با سرور برقرار شد");
             }
             else
             {
@@ -206,7 +213,8 @@ namespace NjitSoftware.View
                     btnNewDossier_Click(btnNewDossier, EventArgs.Empty);
                     return true;
                 }
-                else {
+                else
+                {
                     PersianMessageBox.Show("بایگانی را انتخاب کنید");
                 }
             }
@@ -230,7 +238,7 @@ namespace NjitSoftware.View
             Setting.Archive.ThisProgram.SelectedArchiveTree = null;
             base.OnLoad(e);
         }
-
+        List<MessageViwModel> ListMessages;
         protected override void OnShown(EventArgs e)
         {
             base.OnShown(e);
@@ -240,7 +248,8 @@ namespace NjitSoftware.View
                 this.Close();
                 return;
             }
-    
+            ListMessages = MessageUserController.ListMessage(null,null);
+            timerShowNonificationMessages.Enabled = true;
             //if (Setting.Program.ThisProgram.GetLastRunDate().CompareTo(DateTime.Parse(DateTime.Now.Year.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Day.ToString())) > 0)
             //{
             //    PersianMessageBox.Show(this, "تاریخ سیستم از تاریخ آخرین اجرای نرم افزار کوچکتر است و اینگونه به نظر میرسد که تاریخ سیستم نادرست است\r\nلطفا تاریخ سیستم خود را تنظیم کنید");
@@ -375,6 +384,40 @@ namespace NjitSoftware.View
             }
         }
 
+        private void Main_Load(object sender, EventArgs e)
+        {
+            //MessageBox.Show("ghjk");
+        }
+        #region پیغام پیام
+        //لیست کلی پیام را میگیرد وسپس در تایمر تعداد پیام ها را میگیرد اگر بیشتر بود پیام میدهد
+        private void timerShowNonificationMessages_Tick(object sender, EventArgs e)
+        {
+
+            
+            if (MessageUserController.GetCountMessageForUser() > ListMessages.Count)
+            {
+                PopupNotifier popupNotifier = new PopupNotifier();
+                popupNotifier.TitleText = "پیام";
+                popupNotifier.TitleFont = new Font("Arial", 20);
+                popupNotifier.ContentFont = new Font("Arial", 10);
+                popupNotifier.Image = global::NjitSoftware.Properties.Resources.AlertIcon;
+                popupNotifier.ContentText = string.Format("شما یک پیام دارید");
+                popupNotifier.Click += new EventHandler(NotifyIcon1_Click);
+                popupNotifier.Popup();
+                ListMessages = MessageUserController.ListMessage(null, null);   
+            }
+        }
+        #endregion
+        #region بعد از کلیک روی نوتیوشن آخرین پیام را نمایش میدهد
+        
+        private void NotifyIcon1_Click(object sender, System.EventArgs e)
+        {
+            ShowDetailMessage f = new ShowDetailMessage();
+            this.SendMessage += f.GetMessage;
+            SendMessage(ListMessages.LastOrDefault().Title, ListMessages.LastOrDefault().Text, ConvertTo_PersianOREnglish_Date.GetPersianDate(ListMessages.LastOrDefault().DateSand));
+            f.ShowDialog();
+        }
+        #endregion
         private void btnNewDossier_Click(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
@@ -405,7 +448,7 @@ namespace NjitSoftware.View
         private void btnArchiveDocumnetShow_Click(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
-            using (View.ArchiveDocumentShow f = new View.ArchiveDocumentShow("",0))
+            using (View.ArchiveDocumentShow f = new View.ArchiveDocumentShow("", 0))
             {
                 f.ShowDialog(this);
             }
@@ -413,7 +456,7 @@ namespace NjitSoftware.View
         private void btnArchiveDocumnetManagement_Click(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
-            using (View.ArchiverDocumentManagement f = new View.ArchiverDocumentManagement("",0))
+            using (View.ArchiverDocumentManagement f = new View.ArchiverDocumentManagement("", 0))
             {
                 f.ShowDialog();
             }
@@ -466,7 +509,16 @@ namespace NjitSoftware.View
                 f.ShowDialog();
             }
         }
-
+        private void btnSendgMessage_Click(object sender, EventArgs e)
+        {
+            SendMessage f = new SendMessage();
+            f.ShowDialog();
+        }
+        private void btnShowMessage_Click(object sender, EventArgs e)
+        {
+            ShowMessage f = new ShowMessage();
+            f.ShowDialog();
+        }
         private void btnLendingAdd_Click(object sender, EventArgs e)
         {
             using (View.LendingManageForms.LendingAddEdit form = new LendingManageForms.LendingAddEdit(null))
