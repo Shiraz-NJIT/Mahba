@@ -248,6 +248,7 @@ namespace NjitSoftware.View
                 this.Close();
                 return;
             }
+            ShowUpdateApp();
             ListMessages = MessageUserController.ListMessage(null,null);
             timerShowNonificationMessages.Enabled = true;
             //if (Setting.Program.ThisProgram.GetLastRunDate().CompareTo(DateTime.Parse(DateTime.Now.Year.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Day.ToString())) > 0)
@@ -264,6 +265,23 @@ namespace NjitSoftware.View
             //View.ArchivesDiskSpaceManage f = new ArchivesDiskSpaceManage();
             //f.Show(this);
             //نمایش اینکه سندی دارد که بهش اعلام خرابی کرده باشند
+
+        }
+
+        private void ShowUpdateApp()
+        {
+           //if(NjitSoftware.Controller.Common.VerionAppController.isNewVersion())
+           // {
+           //     var Result = PersianMessageBox.Show("ورژن جدید برنامه آماده دانلود است آیا مایل به آپدیت برنامه هستین؟", "پیام", MessageBoxButtons.YesNoCancel);
+           //     if (Result == DialogResult.Yes)
+           //     {
+           //         string AppUpdatePathExe = NjitSoftware.Controller.Common.VerionAppController.AppUpdatePathExe();
+           //         System.Diagnostics.Process.Start(AppUpdatePathExe);
+           //         Application.Exit();
+           //     }
+
+
+           // }
 
         }
         public override void CloseUser()
