@@ -98,6 +98,7 @@
             this.btnAbout = new Njit.Program.ComponentOne.Controls.RibbonButton();
             this.ribbonGroup11 = new C1.Win.C1Ribbon.RibbonGroup();
             this.ScanerelegantButton = new Njit.Program.ComponentOne.Controls.RibbonButton();
+            this.Lbl_Version = new System.Windows.Forms.Label();
             this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusBar)).BeginInit();
@@ -275,7 +276,7 @@
             this.ribbonGroupMessage.Items.Add(this.btnShowMessage);
             this.ribbonGroupMessage.Items.Add(this.btnSendgMessage);
             this.ribbonGroupMessage.Name = "ribbonGroupMessage";
-            this.ribbonGroupMessage.Text = "پیام";
+            this.ribbonGroupMessage.Text = "پیام حسن رحمانی fghjkbnm,";
 
             // 
             // btnLendingAdd
@@ -637,12 +638,21 @@
             // 
             // Main
             // 
+
+            this.Lbl_Version.AutoSize = true;
+            this.Lbl_Version.Location = new System.Drawing.Point(180, 157);
+            this.Lbl_Version.Name = "Lbl_Version";
+            this.Lbl_Version.Size = new System.Drawing.Size(35, 17);
+            this.Lbl_Version.TabIndex = 0;
+            this.Lbl_Version.Text = "1.0.0.2";
+
             this.AllowCheckAccessPermission = false;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(892, 619);
             //this.ShowInTaskbar = false;
+            this.Controls.Add(this.Lbl_Version);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.Text = "نرم افزار مدیریت هوشمند بایگانی اسناد";
@@ -727,6 +737,6 @@
         private Njit.Program.ComponentOne.Controls.RibbonButton btnPersonCompanies;
         private C1.Win.C1Ribbon.RibbonSeparator ribbonSeparator9;
         private System.Windows.Forms.Timer timerShowNonificationMessages;
-
+        private System.Windows.Forms.Label Lbl_Version;
     }
 }

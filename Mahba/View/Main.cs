@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
@@ -249,7 +250,7 @@ namespace NjitSoftware.View
                 return;
             }
             ShowUpdateApp();
-            ListMessages = MessageUserController.ListMessage(null,null);
+            ListMessages = MessageUserController.ListMessage(null, null);
             timerShowNonificationMessages.Enabled = true;
             //if (Setting.Program.ThisProgram.GetLastRunDate().CompareTo(DateTime.Parse(DateTime.Now.Year.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Day.ToString())) > 0)
             //{
@@ -270,18 +271,33 @@ namespace NjitSoftware.View
 
         private void ShowUpdateApp()
         {
-           //if(NjitSoftware.Controller.Common.VerionAppController.isNewVersion())
-           // {
-           //     var Result = PersianMessageBox.Show("ورژن جدید برنامه آماده دانلود است آیا مایل به آپدیت برنامه هستین؟", "پیام", MessageBoxButtons.YesNoCancel);
-           //     if (Result == DialogResult.Yes)
-           //     {
-           //         string AppUpdatePathExe = NjitSoftware.Controller.Common.VerionAppController.AppUpdatePathExe();
-           //         System.Diagnostics.Process.Start(AppUpdatePathExe);
-           //         Application.Exit();
-           //     }
+            //اگر ورژن جدید در دیتابیس بود بررسی میکند که اگر برنامه جدید در کلاینت کاربر نصب نبود برنامه را میبندن و برنامه جدید را باز میکند
+            if (NjitSoftware.Controller.Common.VerionAppController.Version() != Lbl_Version.Text)
+            {
+                var Result = PersianMessageBox.Show("ورژن جدید برنامه آماده دانلود است آیا مایل به آپدیت برنامه هستین؟", "پیام", MessageBoxButtons.YesNoCancel);
+                if (Result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        Model.Common.VersionClient vc = new Model.Common.VersionClient();
+                        int userCode = Setting.User.ThisProgram.GetCurrentUser<Model.Common.User>().Code;
+                        vc.userId = userCode;
+                        vc.MashinPath = AppDomain.CurrentDomain.BaseDirectory;
 
+                        NjitSoftware.Controller.Common.VersionClientController.Insert(vc);
+                        //اجرا شدن برنامه برای بروزرسانی نرم افزار
+                        string AppUpdatePathExe = AppDomain.CurrentDomain.BaseDirectory;
+                        System.Diagnostics.Process.Start(AppUpdatePathExe + "Update\\MahbaUpdateApp.exe");//@"D:\WorkUpDareApp\MahbaUpdateApp.exe"
+                        Application.Exit();
+                    }
+                    catch (Exception ex)
+                    {
 
-           // }
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+            }
 
         }
         public override void CloseUser()
@@ -411,7 +427,7 @@ namespace NjitSoftware.View
         private void timerShowNonificationMessages_Tick(object sender, EventArgs e)
         {
 
-            
+
             if (MessageUserController.GetCountMessageForUser() > ListMessages.Count)
             {
                 PopupNotifier popupNotifier = new PopupNotifier();
@@ -422,12 +438,12 @@ namespace NjitSoftware.View
                 popupNotifier.ContentText = string.Format("شما یک پیام دارید");
                 popupNotifier.Click += new EventHandler(NotifyIcon1_Click);
                 popupNotifier.Popup();
-                ListMessages = MessageUserController.ListMessage(null, null);   
+                ListMessages = MessageUserController.ListMessage(null, null);
             }
         }
         #endregion
         #region بعد از کلیک روی نوتیوشن آخرین پیام را نمایش میدهد
-        
+
         private void NotifyIcon1_Click(object sender, System.EventArgs e)
         {
             ShowDetailMessage f = new ShowDetailMessage();
