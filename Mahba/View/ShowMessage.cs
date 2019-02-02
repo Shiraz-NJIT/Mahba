@@ -42,6 +42,8 @@ namespace NjitSoftware.View
 
                 if (MessageUserController.UpdateState(Id))
                 {
+                    RefreshNumberMessage();
+
                     DGVMessage.DataSource = "";
                     DGVMessage.DataSource = MessageUserController.ListMessage(null, null);
                 }
@@ -71,7 +73,26 @@ namespace NjitSoftware.View
                 PersianMessageBox.Show("فرم تاریخ اشتباه وارد شده است", "خطا");
             }
         }
+        #region گرفتن تب پیام
+        
+        C1.Win.C1Ribbon.RibbonTab lableNumber2;
+        /// <summary>
+        /// زمانی که روی پشاهده پیام کلیک شد تب پیام پاس داده میشود تا در صورت تغییر وضعیت به خوانده شده تعداد هم تغییر کند
+        /// </summary>
+        /// <param name="lableNumber"></param>
+        public void RefreshMessageNumber(C1.Win.C1Ribbon.RibbonTab lableNumber)
+        {
+            lableNumber2 = lableNumber;
+        }
+        #endregion
+        #region تغییر مت تب  پیام
 
+        public void RefreshNumberMessage()
+        {
+           lableNumber2.Text= " پیام (" + NjitSoftware.Controller.Common.MessageUserController.NumberMessageNoRead() + ")";
+        }
+        
+        #endregion
         private void Btn_Clear_Click(object sender, EventArgs e)
         {
             TxtB_FromDate.Text = "";

@@ -15,9 +15,12 @@ using Tulpep.NotificationWindow;
 namespace NjitSoftware.View
 {
     public delegate void SendMsg(string Title, string Message, string DateSent);
+    public delegate void RefreshMessageNumber(C1.Win.C1Ribbon.RibbonTab LableNM);
 
     public partial class Main : Njit.Program.ComponentOne.Forms.MainForm
     {
+        public RefreshMessageNumber RefreshMN;
+
         public SendMsg SendMessage;
 
         public Main()
@@ -239,6 +242,10 @@ namespace NjitSoftware.View
             Setting.Archive.ThisProgram.SelectedArchiveTree = null;
             base.OnLoad(e);
         }
+        //public void ResreshNumberMessage()
+        //{
+        //    ribbonTabPageMessage.Text += "(" + NjitSoftware.Controller.Common.MessageUserController.NumberMessageNoRead() + ")";
+        //}
         List<MessageViwModel> ListMessages;
         protected override void OnShown(EventArgs e)
         {
@@ -249,6 +256,7 @@ namespace NjitSoftware.View
                 this.Close();
                 return;
             }
+            ribbonTabPageMessage.Text += "("+ NjitSoftware.Controller.Common.MessageUserController.NumberMessageNoRead()+")";
             ShowUpdateApp();
             ListMessages = MessageUserController.ListMessage(null, null);
             timerShowNonificationMessages.Enabled = true;
@@ -438,6 +446,7 @@ namespace NjitSoftware.View
                 popupNotifier.ContentText = string.Format("شما یک پیام دارید");
                 popupNotifier.Click += new EventHandler(NotifyIcon1_Click);
                 popupNotifier.Popup();
+                ribbonTabPageMessage.Text += "(" + NjitSoftware.Controller.Common.MessageUserController.NumberMessageNoRead() + ")";
                 ListMessages = MessageUserController.ListMessage(null, null);
             }
         }
@@ -551,6 +560,9 @@ namespace NjitSoftware.View
         private void btnShowMessage_Click(object sender, EventArgs e)
         {
             ShowMessage f = new ShowMessage();
+            this.RefreshMN += f.RefreshMessageNumber;
+            RefreshMN(ribbonTabPageMessage);
+
             f.ShowDialog();
         }
         private void btnLendingAdd_Click(object sender, EventArgs e)

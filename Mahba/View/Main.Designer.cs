@@ -564,7 +564,7 @@
 
             this.ribbonTabPageMessage.Groups.Add(this.ribbonGroupMessage);
             this.ribbonTabPageMessage.Name = "ribbonTabPageMessage";
-            this.ribbonTabPageMessage.Text = "پیام";
+            this.ribbonTabPageMessage.Text = "پیام ";
             // 
             // ribbonGroup5
             // 
