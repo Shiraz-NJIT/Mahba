@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace NjitSoftware.View
 {
-    public delegate void SendDataGridToFrmArchiveDocumentManagment(Dictionary<string, string> value,Dictionary<string, string> NewData, string type);
+    public delegate void SendDataGridToFrmArchiveDocumentManagment(Dictionary<string, string> value, Dictionary<string, string> NewData, string type);
 
     public partial class DocumentField : Njit.Program.Forms.BaseFormSizable
     {
@@ -17,7 +17,9 @@ namespace NjitSoftware.View
 
         public DocumentField()
         {
+
             InitializeComponent();
+
         }
         public string SafeFarsiStr(string input)
         {
@@ -117,7 +119,7 @@ namespace NjitSoftware.View
             string id = GridViewData.SelectedRows[0].Cells["id"].Value.ToString();
             Dictionary<string, string> list = new Dictionary<string, string>();
             list.Add(id, title);
-            SentDataToForm(list, ListData,TypeClickF1);
+            SentDataToForm(list, ListData, TypeClickF1);
             SentDataToForm = null;
         }
         #endregion
@@ -152,7 +154,7 @@ namespace NjitSoftware.View
                 }
             }
             #region MyRegion
-            
+
             //switch (type)
             //{
             //    case "Field12":
@@ -241,7 +243,7 @@ namespace NjitSoftware.View
                 {
 
                     int id = int.Parse(txtB_id.Text);
-                    DialogResult dialogResult = MessageBox.Show("آیا میخواهید حذف کنید", "سوال", MessageBoxButtons.YesNo);
+                    DialogResult dialogResult = PersianMessageBox.Show("آیا میخواهید حذف کنید", "سوال", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
                     if (dialogResult == DialogResult.Yes)
                     {
                         try
@@ -284,5 +286,53 @@ namespace NjitSoftware.View
             }
         }
         #endregion
+        #region Down or Up Title
+
+        private void txtB_title_KeyDown(object sender, KeyEventArgs e)
+        {
+            FocusInDataGridVie(e);
+        }
+        #endregion
+        #region  تابع =>دکمه بالا یا پایین را فشار دهند فکوس روی دیتاگرید میرود
+
+        public void FocusInDataGridVie(KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down || e.KeyCode == Keys.Up)
+            {
+                GridViewData.Focus();
+            }
+        }
+        #endregion
+        #region Down or Up id
+
+        private void txtB_id_KeyDown(object sender, KeyEventArgs e)
+        {
+            FocusInDataGridVie(e);
+        }
+        #endregion
+        #region Up or Douwn btn delete
+        private void Btn_Delete_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 38 || e.KeyValue == 40)//38=up 40=douwn
+            {
+                GridViewData.Focus();
+            }
+        }
+        #endregion
+        #region Up or Douwn btn save
+        private void btn_Save_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 38 || e.KeyValue == 40)//38=up 40=douwn
+            {
+                GridViewData.Focus();
+            }
+        }
+        #endregion
+
+        private void DocumentField_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+
     }
 }

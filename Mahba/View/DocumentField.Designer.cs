@@ -65,7 +65,7 @@
             this.radLabel1.Location = new System.Drawing.Point(608, 0);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(53, 44);
-            this.radLabel1.TabIndex = 1;
+            this.radLabel1.TabIndex = 10;
             this.radLabel1.Text = "کد";
             this.radLabel1.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             // 
@@ -76,9 +76,10 @@
             this.txtB_id.Location = new System.Drawing.Point(469, 0);
             this.txtB_id.Name = "txtB_id";
             this.txtB_id.Size = new System.Drawing.Size(139, 44);
-            this.txtB_id.TabIndex = 2;
+            this.txtB_id.TabIndex = 1;
             this.txtB_id.TabStop = false;
             this.txtB_id.TextChanging += new Telerik.WinControls.TextChangingEventHandler(this.txtB_id_TextChanging);
+            this.txtB_id.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtB_id_KeyDown);
             // 
             // radLabel2
             // 
@@ -88,7 +89,7 @@
             this.radLabel2.Location = new System.Drawing.Point(408, 0);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(61, 44);
-            this.radLabel2.TabIndex = 3;
+            this.radLabel2.TabIndex = 12;
             this.radLabel2.Text = "عنوان";
             this.radLabel2.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             // 
@@ -99,9 +100,10 @@
             this.txtB_title.Location = new System.Drawing.Point(0, 0);
             this.txtB_title.Name = "txtB_title";
             this.txtB_title.Size = new System.Drawing.Size(408, 44);
-            this.txtB_title.TabIndex = 4;
+            this.txtB_title.TabIndex = 0;
             this.txtB_title.TabStop = false;
             this.txtB_title.TextChanging += new Telerik.WinControls.TextChangingEventHandler(this.txtB_title_TextChanging);
+            this.txtB_title.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtB_title_KeyDown);
             // 
             // Btn_Delete
             // 
@@ -111,11 +113,12 @@
             this.Btn_Delete.Location = new System.Drawing.Point(0, 0);
             this.Btn_Delete.Name = "Btn_Delete";
             this.Btn_Delete.Size = new System.Drawing.Size(93, 44);
-            this.Btn_Delete.TabIndex = 6;
+            this.Btn_Delete.TabIndex = 1;
             this.Btn_Delete.Text = "حذف";
             this.Btn_Delete.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_Delete.Click += new System.EventHandler(this.Btn_Delete_Click);
             this.Btn_Delete.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Btn_Delete_KeyDown);
+            this.Btn_Delete.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Btn_Delete_KeyUp);
             // 
             // btn_Save
             // 
@@ -126,11 +129,12 @@
             this.btn_Save.Location = new System.Drawing.Point(127, 0);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(101, 44);
-            this.btn_Save.TabIndex = 5;
+            this.btn_Save.TabIndex = 3;
             this.btn_Save.Text = "ذخیره";
             this.btn_Save.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             this.btn_Save.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btn_Save_KeyDown);
+            this.btn_Save.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btn_Save_KeyUp);
             // 
             // panelDataGridView
             // 
@@ -139,7 +143,7 @@
             this.panelDataGridView.Location = new System.Drawing.Point(0, 44);
             this.panelDataGridView.Name = "panelDataGridView";
             this.panelDataGridView.Size = new System.Drawing.Size(889, 567);
-            this.panelDataGridView.TabIndex = 1;
+            this.panelDataGridView.TabIndex = 2;
             // 
             // GridViewData
             // 
@@ -179,7 +183,7 @@
             this.GridViewData.ReadOnly = true;
             this.GridViewData.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.GridViewData.Size = new System.Drawing.Size(889, 567);
-            this.GridViewData.TabIndex = 4;
+            this.GridViewData.TabIndex = 5;
             this.GridViewData.Text = "radGridViewExtended1";
             this.GridViewData.Click += new System.EventHandler(this.GridViewData_Click);
             this.GridViewData.DoubleClick += new System.EventHandler(this.GridViewData_DoubleClick);
@@ -197,7 +201,7 @@
             this.panelData.Location = new System.Drawing.Point(0, 0);
             this.panelData.Name = "panelData";
             this.panelData.Size = new System.Drawing.Size(889, 44);
-            this.panelData.TabIndex = 0;
+            this.panelData.TabIndex = 1;
             // 
             // panel2
             // 
@@ -207,10 +211,10 @@
             this.panel2.Controls.Add(this.radLabel1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(228, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(661, 44);
-            this.panel2.TabIndex = 1;
+            this.panel2.TabIndex = 0;
             // 
             // panel1
             // 
@@ -218,10 +222,10 @@
             this.panel1.Controls.Add(this.Btn_Delete);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(228, 44);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 1;
             // 
             // DocumentField
             // 
@@ -230,8 +234,10 @@
             this.ClientSize = new System.Drawing.Size(889, 611);
             this.Controls.Add(this.panelDataGridView);
             this.Controls.Add(this.panelData);
-            this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.Margin = new System.Windows.Forms.Padding(3);
             this.Name = "DocumentField";
+            this.Text = "";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DocumentField_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtB_id)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();

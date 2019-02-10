@@ -15,6 +15,7 @@ namespace NjitSoftware.View.Controls
         public DossierSearchBox()
         {
             InitializeComponent();
+
         }
 
         protected override void OnLoad(EventArgs e)
@@ -25,8 +26,23 @@ namespace NjitSoftware.View.Controls
             this.archiveTabBindingSource.DataSource = Controller.Archive.ArchiveTabController.GetActiveDossierTabs();
             searchMethodBindingSource.DataSource = SearchMethod.GetAllSearchMethods();
             this.tabControl1.SelectedTab = tabPage3;
-    
         }
+
+        //private void SetWidthColumnsDataGrid()
+        //{
+        //    string _FormName = "";
+        //    Model.Common.ArchiveCommonDataClassesDataContext dc = new Model.Common.ArchiveCommonDataClassesDataContext(Setting.Sql.ThisProgram.DatabaseConnection.ConnectionString);
+
+        //    for (int j = 0; j < radGridViewSimple.ColumnCount; j++)
+        //    {
+        //        _FormName = radGridViewSimple.Columns[j].Name;
+        //        var query = dc.FormStates.Where(t => t.MachineName == Environment.MachineName && t.FormName == _FormName);
+        //        if (query.Count() == 1)
+        //        {
+        //            radGridViewSimple.Columns[j].Width = query.FirstOrDefault().Width;
+        //        }
+        //    }
+        //}
 
         public class SearchRequestEventArgs : EventArgs
         {
@@ -72,7 +88,7 @@ namespace NjitSoftware.View.Controls
                 this.archiveFieldBindingSource.DataSource = list;
             }
         }
-
+        bool FirstLoadDatagrid_radGridViewSimple = true;
         private void btnAddOrSearch_Click(object sender, EventArgs e)
         {
             if (comboBoxExtendedField_Simple.SelectedItem == null)
@@ -99,9 +115,101 @@ namespace NjitSoftware.View.Controls
             }
             radGridViewSimple.DataSource = Controller.Archive.DossierController.GetDossierList(Controller.Archive.ArchiveTabController.GetFirstDossierTab(), new SearchField(comboBoxExtendedField_Simple.SelectedItem as Model.Archive.ArchiveField, comboBoxExtendedMethod_Simple.SelectedItem as SearchMethod, textBoxExtendedValue_Simple.Text, SearchField.Relations.None));
             radGridViewSimple.ContextMenuOpening += radGridViewAdvanced_ContextMenuOpening;
-            radGridViewSimple.BestFitColumnsSmart();
-        }
 
+            //اگرعرض ستونها عوض شود
+            radGridViewSimple.ColumnWidthChanging += radGridViewSimple_ColumnWidthChanging;
+
+            radGridViewSimple.BestFitColumnsSmart();
+
+        }
+        bool GetQuery = true;
+        List<Model.Common.FormState> LstFormState;
+        //تغییر اندازه ستونها
+        void radGridViewSimple_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        {
+            int i = e.ColumnIndex;
+            if (i == radGridViewSimple.ColumnCount-1)// radGridViewSimple.ColumnCount)
+            {
+                FirstLoadDatagrid_radGridViewSimple = false;
+            }
+            CheckWhdth(radGridViewSimple, i, FirstLoadDatagrid_radGridViewSimple);
+            
+        }
+        public void CheckWhdth(Njit.Program.Telerik.Controls.RadGridViewExtended radGridView, int i,bool FirstLoadDatagrid)
+        {
+            if (GetQuery)
+            {
+                Model.Common.ArchiveCommonDataClassesDataContext db = new Model.Common.ArchiveCommonDataClassesDataContext(Setting.Sql.ThisProgram.DatabaseConnection.ConnectionString);
+                LstFormState = db.FormStates.Where(a => a.MachineName == Environment.MachineName).ToList();
+                if (LstFormState == null)
+                {
+                    var model = new Model.Common.FormState
+                    {
+                        FormName = radGridView.Columns[0].Name,
+                        Height = 0,
+                        Width = radGridView.Columns[0].Width,
+                        X = 1,
+                        Y = 2,
+                        MachineName = Environment.MachineName,
+                        WindowState = 20
+                    };
+                    InsertUpdateFormState(model, 1);
+                }
+                GetQuery = false;
+            }
+            string _FormName = "";
+            _FormName = radGridView.Columns[i].Name;
+
+            var Data = LstFormState.Where(a => a.FormName == _FormName).FirstOrDefault();
+
+            if (Data == null)
+            {
+                var model = new Model.Common.FormState
+                {
+                    FormName = radGridView.Columns[i].Name,
+                    Height = 0,
+                    Width = radGridView.Columns[i].Width,
+                    X = 1,
+                    Y = 2,
+                    MachineName = Environment.MachineName,
+                    WindowState = 20
+                };
+                InsertUpdateFormState(model, 1);
+            }
+            else if (Data.FormName == _FormName)
+            {
+                if (FirstLoadDatagrid)//زمانی که صفحه لود میشود عرض را از دیتابیس میگیرد
+                {
+                    radGridView.Columns[i].Width = Data.Width;
+                }
+                else//اگر بعد از لود صفحه تغییر در عرض رخ داد در دیتابیس تغییر میکند
+                {
+                    var model = new Model.Common.FormState
+                    {
+                        FormName = radGridView.Columns[i].Name,
+                        Height = 0,
+                        Width = radGridView.Columns[i].Width,
+                        X = 1,
+                        Y = 2,
+                        MachineName = Environment.MachineName,
+                        WindowState = 20
+                    };
+                    InsertUpdateFormState(model, 2);
+                }
+            }
+        }
+        public void InsertUpdateFormState(Model.Common.FormState model, int type)
+        {
+            Model.Common.ArchiveCommonDataClassesDataContext db = new Model.Common.ArchiveCommonDataClassesDataContext(Setting.Sql.ThisProgram.DatabaseConnection.ConnectionString);
+            if (type == 1)
+                db.FormStates.InsertOnSubmit(model);
+            else
+            {
+                var model2 = db.FormStates.Where(a => a.MachineName == model.MachineName && a.FormName == model.FormName).FirstOrDefault();
+                model2.Width = model.Width;
+            }
+            db.SubmitChanges();
+        }
         private void CheckAndOR()
         {
             if (listBoxSearch.Items.Count > 0)
@@ -121,9 +229,25 @@ namespace NjitSoftware.View.Controls
                 for (int i = 0; i < listBoxSearch.Items.Count; i++)
                     searchFields[i] = listBoxSearch.Items[i] as SearchField;
                 radGridViewAdvanced.DataSource = Controller.Archive.DossierController.GetDossierList(firstTab, searchFields);
+                //اگرعرض ستونها عوض شود
+                radGridViewAdvanced.ColumnWidthChanging += radGridViewAdvanced_ColumnWidthChanging;
                 radGridViewAdvanced.BestFitColumnsSmart();
                 radGridViewAdvanced.ContextMenuOpening += radGridViewAdvanced_ContextMenuOpening;
+
+
+
             }
+        }
+        bool FirstLoadDatagrid_radGridViewAdvanced = true;
+        private void radGridViewAdvanced_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        {
+            int i = e.ColumnIndex;
+            if (i == radGridViewAdvanced.ColumnCount - 1)// radGridViewSimple.ColumnCount)
+            {
+                FirstLoadDatagrid_radGridViewAdvanced= false;
+            }
+            CheckWhdth(radGridViewAdvanced, i, FirstLoadDatagrid_radGridViewAdvanced);
+
         }
 
         private void toolStripMenuItemDelete_Click(object sender, EventArgs e)
@@ -253,8 +377,21 @@ namespace NjitSoftware.View.Controls
                         radGridViewAll.Columns[i].IsVisible = false;
                     }
                 }
+                radGridViewAll.ColumnWidthChanging += radGridViewAll_ColumnWidthChanging;
+
                 radGridViewAll.BestFitColumnsSmart();
             }
+        }
+        bool FirstLoadDatagrid_radGridViewAll = true;
+        private void radGridViewAll_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        {
+            int i = e.ColumnIndex;
+            if (i == radGridViewAll.ColumnCount - 1)// radGridViewSimple.ColumnCount)
+            {
+                FirstLoadDatagrid_radGridViewAll = false;
+            }
+            CheckWhdth(radGridViewAll, i, FirstLoadDatagrid_radGridViewAll);
+
         }
         void menuItem_Click(object sender, EventArgs e)
         {
@@ -466,7 +603,7 @@ namespace NjitSoftware.View.Controls
             }
         }
 
-        
+
         private void textBoxExtendedValue_Advance_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -489,7 +626,7 @@ namespace NjitSoftware.View.Controls
 
         }
 
-       
+
         private void textBoxExtendedValue_Simple_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -509,8 +646,8 @@ namespace NjitSoftware.View.Controls
             return membership.RoleCode == roleCode;
         }
 
-        #region اینتر کردن گرید ویو 
-        
+        #region اینتر کردن گرید ویو
+
         private void radGridViewSimple_DoubleClick(object sender, EventArgs e)
         {
             if (GetSelectedDossier(radGridViewSimple) == null)
@@ -739,8 +876,30 @@ namespace NjitSoftware.View.Controls
             }
         }
 
+        private void btn_AddList_Click(object sender, EventArgs e)
+        {
+            Model.Archive.ArchiveDataClassesDataContext dc = new Model.Archive.ArchiveDataClassesDataContext(Setting.Sql.ThisProgram.DatabaseConnection.ConnectionString);
+            var query = dc.Dossiers.Where(a => a.PersonnelNumber == txtB_PersonnelNumber.Text);
+            if (query == null)
+            {
+                PersianMessageBox.Show(string.Format(" هیچ پرونده ای به شماره ی {0} یافت نشد", txtB_PersonnelNumber.Text));
+            }
+            else
+            {
 
-   
+                //radGridViewViwDossier.DataSource = ;
+
+            }
+        }
+        public class dose
+        {
+            public string PersonnelNumber { get; set; }
+            public string Field1 { get; set; }
+            public string Field2 { get; set; }
+
+        }
+
+
 
 
 

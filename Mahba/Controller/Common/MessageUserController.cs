@@ -37,6 +37,12 @@ namespace NjitSoftware.Controller.Common
 
         }
         #endregion
+        internal static int NumberMessageNoRead()
+        {
+            Model.Common.ArchiveCommonDataClassesDataContext db = new Model.Common.ArchiveCommonDataClassesDataContext(Setting.Sql.ThisProgram.DatabaseConnection.ConnectionString);
+            int id_User = Setting.User.ThisProgram.GetCurrentUser<Model.Common.User>().Code;
+            return db.MessageUsers.Where(a => a.UserCode == id_User && a.State ==(int) NjitSoftware.Enums.StateTypeMessage.خوانده_نشده).Count();
+        }
         #region لیست پیام ها برای نمایش
         /// <summary>
         /// لیست پیام ها را می اوردد

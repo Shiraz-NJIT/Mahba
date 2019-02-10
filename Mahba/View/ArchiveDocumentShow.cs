@@ -55,7 +55,7 @@ namespace NjitSoftware.View
             //شروطی که برای ستونها در نظر گرفته شده است
             radGridViewExtended1.ContextMenuOpening += radGridViewExtended1_ContextMenuOpening;
             //اگر جای ستونها عوض شود
-            radGridViewExtended1.ColumnIndexChanging += radGridViewExtended1_ColumnIndexChanging;
+            //radGridViewExtended1.ColumnIndexChanging += radGridViewExtended1_ColumnIndexChanging;
             //اگرعرض ستونها عوض شود
             radGridViewExtended1.ColumnWidthChanging += radGridViewExtended1_ColumnWidthChanging;
             radGridViewExtended1.CellMouseMove += radGridViewExtended1_CellMouseMove;
@@ -948,7 +948,7 @@ namespace NjitSoftware.View
                             //    item.ID = Count+"";
                             //        Count++;
                             //}
-                            this._CurrentDocument = _CurrentDocument = Controller.Archive.DocumentController.GetDocument(this.PersonnelNumber, sortedList.FirstOrDefault().ID);
+                                this._CurrentDocument = _CurrentDocument = Controller.Archive.DocumentController.GetDocument(this.PersonnelNumber, sortedList.FirstOrDefault().ID);
                             LoadDocuments_IN_Left_Panle();
                             ShowImage_In_Center_Panel();
                         }
