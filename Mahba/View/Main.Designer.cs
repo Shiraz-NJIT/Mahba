@@ -639,7 +639,7 @@
             // Main
             // 
             this.lblProgramVersion.Text = "نسخه برنامه:";
-            this.txtProgramVersion.Text = "1.0.0.2";
+            this.txtProgramVersion.Text = "2.0.0.0";
 
             this.AllowCheckAccessPermission = false;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

@@ -71,7 +71,7 @@
             // 
             this.radGridViewExtended.MasterTemplate.AllowAddNewRow = false;
             this.radGridViewExtended.MasterTemplate.AllowColumnReorder = false;
-            this.radGridViewExtended.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            //this.radGridViewExtended.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewTextBoxColumn1.FormatString = "";
             gridViewTextBoxColumn1.HeaderText = "";
             gridViewTextBoxColumn1.Name = "column1";

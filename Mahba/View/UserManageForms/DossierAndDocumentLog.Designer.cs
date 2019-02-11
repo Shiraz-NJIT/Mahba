@@ -185,7 +185,7 @@
             // radGridView
             // 
             this.radGridView.MasterTemplate.AllowAddNewRow = false;
-            this.radGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            //this.radGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             this.radGridView.MasterTemplate.ClipboardCopyMode = Telerik.WinControls.UI.GridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             this.radGridView.MasterTemplate.EnableAlternatingRowColor = true;
             this.radGridView.MasterTemplate.EnableFiltering = true;

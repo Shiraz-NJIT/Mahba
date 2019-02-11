@@ -112,7 +112,7 @@ namespace NjitSoftware.View.LendingManageForms
             this.radGridView.MasterTemplate.AllowAddNewRow = false;
             this.radGridView.MasterTemplate.AllowDeleteRow = false;
             this.radGridView.MasterTemplate.AllowEditRow = false;
-            this.radGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            //this.radGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             this.radGridView.MasterTemplate.EnableFiltering = true;
             this.radGridView.MasterTemplate.MultiSelect = true;
             this.radGridView.MasterTemplate.ShowGroupedColumns = true;

@@ -16,6 +16,8 @@ namespace NjitSoftware.View.UserManageForms
             InitializeComponent();
             Setting.Program.ThisProgram.LoadFormState(this);
             ProgramEvents.UserLogsChanged += ProgramEvents_UserLogsChanged;
+            this.radGridView.BestFitColumnsSmart();
+           
         }
 
         private void ProgramEvents_UserLogsChanged(object sender, EventArgs e)

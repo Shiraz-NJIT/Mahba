@@ -143,7 +143,7 @@
             // 
             this.radGridViewExtended1.MasterTemplate.AllowAddNewRow = false;
             this.radGridViewExtended1.MasterTemplate.AllowColumnReorder = false;
-            this.radGridViewExtended1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            //this.radGridViewExtended1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             this.radGridViewExtended1.MasterTemplate.EnableGrouping = false;
             this.radGridViewExtended1.Name = "radGridViewExtended1";
             this.radGridViewExtended1.ReadOnly = true;

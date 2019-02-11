@@ -159,7 +159,7 @@
             // 
             this.GridViewData.MasterTemplate.AllowAddNewRow = false;
             this.GridViewData.MasterTemplate.AllowColumnReorder = false;
-            this.GridViewData.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            //this.GridViewData.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewTextBoxColumn1.EnableExpressionEditor = true;
             gridViewTextBoxColumn1.FieldName = "Key";
             gridViewTextBoxColumn1.HeaderText = "کد";

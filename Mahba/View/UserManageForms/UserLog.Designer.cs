@@ -166,6 +166,7 @@
             // 
             // radGridView
             // 
+            //this.radGridView.AutoScroll = true;
             this.radGridView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(237)))), ((int)(((byte)(241)))));
             this.radGridView.Cursor = System.Windows.Forms.Cursors.Default;
             this.radGridView.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -179,7 +180,7 @@
             this.radGridView.MasterTemplate.AllowAddNewRow = false;
             this.radGridView.MasterTemplate.AllowDeleteRow = false;
             this.radGridView.MasterTemplate.AllowEditRow = false;
-            this.radGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            //this.radGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;this.radGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewTextBoxColumn1.DataType = typeof(int);
             gridViewTextBoxColumn1.EnableExpressionEditor = false;
             gridViewTextBoxColumn1.FieldName = "Radif";

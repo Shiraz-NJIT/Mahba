@@ -265,7 +265,7 @@
             // 
             // DGVMessage
             // 
-            this.DGVMessage.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            //this.DGVMessage.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewTextBoxColumn1.EnableExpressionEditor = false;
             gridViewTextBoxColumn1.FieldName = "Counter";
             gridViewTextBoxColumn1.HeaderText = "ردیف";
