@@ -280,7 +280,7 @@ namespace NjitSoftware.View
         private void ShowUpdateApp()
         {
             //اگر ورژن جدید در دیتابیس بود بررسی میکند که اگر برنامه جدید در کلاینت کاربر نصب نبود برنامه را میبندن و برنامه جدید را باز میکند
-            if (NjitSoftware.Controller.Common.VerionAppController.Version() != Lbl_Version.Text)
+            if (NjitSoftware.Controller.Common.VerionAppController.Version() != txtProgramVersion.Text)
             {
                 var Result = PersianMessageBox.Show("ورژن جدید برنامه آماده دانلود است آیا مایل به آپدیت برنامه هستین؟", "پیام", MessageBoxButtons.YesNoCancel);
                 if (Result == DialogResult.Yes)
