@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -15,23 +16,36 @@ namespace Njit.Program.Telerik.Controls
             this.CellDoubleClick += RadGridViewExtended_CellDoubleClick;
             this.SelectionChanged += RadGridViewExtended_SelectionChanged;
             //this.RowsChanged += RadGridViewExtended_RowsChanged;
+            //this.VerticalScrollState = ScrollState.AlwaysShow;
+            //this.HorizontalScrollState = ScrollState.AlwaysShow;
+            this.AutoScroll = true;
+            this.BackColor = SystemColors.Control;
+            this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+
         }
 
        
 
         public void BestFitColumnsSmart()
         {
-            this.AutoSizeColumnsMode = global:: Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.None;
+            //this.AutoSizeColumnsMode = global:: Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.None;
             foreach (var item in this.Columns)
-                item.MaxWidth = 300;
+            {
+                item.MinWidth = 100;
+                //item.MaxWidth = 300;
+            }
             this.BestFitColumns();
-            int width = 0;
-            foreach (var item in this.Columns.Where(t => t.IsVisible))
-                width += item.Width;
-            if (width <= this.Width)
-                this.AutoSizeColumnsMode = global:: Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            else
-                this.AutoSizeColumnsMode = global::Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.None;
+            //int width = 0;
+            //foreach (var item in this.Columns.Where(t => t.IsVisible))
+            //    width += item.Width;
+            //if (width <= this.Width)
+            //    this.AutoSizeColumnsMode = global:: Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            //else
+            //    this.AutoSizeColumnsMode = global::Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.None;
         }
 
         protected override void OnHandleCreated(EventArgs e)
