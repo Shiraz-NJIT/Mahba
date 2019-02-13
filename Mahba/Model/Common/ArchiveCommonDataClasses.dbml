@@ -264,8 +264,10 @@
       <Association Name="User_PermissionSecurity" Member="PermissionSecurities" ThisKey="Code" OtherKey="PK_User" Type="PermissionSecurity" />
       <Association Name="User_PermissionTitle" Member="PermissionTitles" ThisKey="Code" OtherKey="PK_User" Type="PermissionTitle" />
       <Association Name="User_PermissionDossier" Member="PermissionDossiers" ThisKey="Code" OtherKey="PK_User" Type="PermissionDossier" />
+      <Association Name="User_VersionClient" Member="VersionClients" ThisKey="Code" OtherKey="userId" Type="VersionClient" />
       <Association Name="User_Message" Member="Messages" ThisKey="Code" OtherKey="UserCode" Type="Message" />
       <Association Name="User_MessageUser" Member="MessageUsers" ThisKey="Code" OtherKey="UserCode" Type="MessageUser" />
+      <Association Name="User_SearchBoxSetting" Member="SearchBoxSettings" ThisKey="Code" OtherKey="UserCode" Type="SearchBoxSetting" />
     </Type>
   </Table>
   <Table Name="dbo.UserAccessPermission" Member="UserAccessPermissions">
@@ -366,16 +368,31 @@
       <Association Name="Archive_PermissionDossier" Member="Archive" ThisKey="PK_Archive" OtherKey="ID" Type="Archive" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.VersionClient" Member="VersionClients">
+    <Type Name="VersionClient">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="userId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MashinPath" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ClientIP" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="User_VersionClient" Member="User" ThisKey="userId" OtherKey="Code" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VesionApp" Member="VesionApps">
+    <Type Name="VesionApp">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Version" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Table Name="dbo.Message" Member="Messages">
     <Type Name="Message">
       <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Title" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="Text" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Text" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
       <Column Name="SendDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="UserCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Message_MessageUser" Member="MessageUsers" ThisKey="ID" OtherKey="MessageID" Type="MessageUser" />
-      <Association Name="User_Message" Member="User" ThisKey="UserCode" OtherKey="Code" Type="User" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="User_Message" Member="User" ThisKey="UserCode" OtherKey="Code" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.MessageUser" Member="MessageUsers">
@@ -384,9 +401,19 @@
       <Column Name="UserCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="MessageID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
       <Column Name="State" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="DateShow" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Association Name="Message_MessageUser" Member="Message" ThisKey="MessageID" OtherKey="ID" Type="Message" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Column Name="DateShow" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Message_MessageUser" Member="Message" ThisKey="MessageID" OtherKey="ID" Type="Message" IsForeignKey="true" />
       <Association Name="User_MessageUser" Member="User" ThisKey="UserCode" OtherKey="Code" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SearchBoxSetting" Member="SearchBoxSettings">
+    <Type Name="SearchBoxSetting">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ArchiveSelected" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArchiveFieldSelectedIndex" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ConditionIdSelectedIndex" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="User_SearchBoxSetting" Member="User" ThisKey="UserCode" OtherKey="Code" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

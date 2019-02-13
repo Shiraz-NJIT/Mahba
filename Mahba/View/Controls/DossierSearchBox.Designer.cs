@@ -149,7 +149,7 @@
             this.textBoxExtendedValue_Simple.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxExtendedValue_Simple.Location = new System.Drawing.Point(201, 40);
             this.textBoxExtendedValue_Simple.Name = "textBoxExtendedValue_Simple";
-            this.textBoxExtendedValue_Simple.Size = new System.Drawing.Size(154, 26);
+            this.textBoxExtendedValue_Simple.Size = new System.Drawing.Size(154, 22);
             this.textBoxExtendedValue_Simple.TabIndex = 1;
             this.textBoxExtendedValue_Simple.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxExtendedValue_Simple_KeyUp);
             // 
@@ -159,7 +159,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(646, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 18);
+            this.label2.Size = new System.Drawing.Size(31, 14);
             this.label2.TabIndex = 2;
             this.label2.Text = "فیلد:";
             // 
@@ -173,7 +173,7 @@
             this.comboBoxExtendedMethod_Simple.FormattingEnabled = true;
             this.comboBoxExtendedMethod_Simple.Location = new System.Drawing.Point(361, 40);
             this.comboBoxExtendedMethod_Simple.Name = "comboBoxExtendedMethod_Simple";
-            this.comboBoxExtendedMethod_Simple.Size = new System.Drawing.Size(134, 26);
+            this.comboBoxExtendedMethod_Simple.Size = new System.Drawing.Size(134, 22);
             this.comboBoxExtendedMethod_Simple.TabIndex = 4;
             this.comboBoxExtendedMethod_Simple.ValueMember = "Code";
             this.comboBoxExtendedMethod_Simple.SelectedValueChanged += new System.EventHandler(this.comboBoxExtendedMethod_SelectedValueChanged);
@@ -192,7 +192,7 @@
             this.comboBoxExtendedField_Simple.FormattingEnabled = true;
             this.comboBoxExtendedField_Simple.Location = new System.Drawing.Point(501, 40);
             this.comboBoxExtendedField_Simple.Name = "comboBoxExtendedField_Simple";
-            this.comboBoxExtendedField_Simple.Size = new System.Drawing.Size(139, 26);
+            this.comboBoxExtendedField_Simple.Size = new System.Drawing.Size(139, 22);
             this.comboBoxExtendedField_Simple.TabIndex = 3;
             this.comboBoxExtendedField_Simple.ValueMember = "ID";
             // 
@@ -213,7 +213,7 @@
             this.comboBoxExtendedTab_Simple.FormattingEnabled = true;
             this.comboBoxExtendedTab_Simple.Location = new System.Drawing.Point(450, 12);
             this.comboBoxExtendedTab_Simple.Name = "comboBoxExtendedTab_Simple";
-            this.comboBoxExtendedTab_Simple.Size = new System.Drawing.Size(190, 26);
+            this.comboBoxExtendedTab_Simple.Size = new System.Drawing.Size(190, 22);
             this.comboBoxExtendedTab_Simple.TabIndex = 1;
             this.comboBoxExtendedTab_Simple.ValueMember = "ID";
             this.comboBoxExtendedTab_Simple.SelectedValueChanged += new System.EventHandler(this.comboBoxExtendedTab_SelectedValueChanged);
@@ -227,10 +227,10 @@
             this.listBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.listBoxSearch.ContextMenuStrip = this.contextMenuStripSearchField;
             this.listBoxSearch.FormattingEnabled = true;
-            this.listBoxSearch.ItemHeight = 18;
+            this.listBoxSearch.ItemHeight = 14;
             this.listBoxSearch.Location = new System.Drawing.Point(27, 60);
             this.listBoxSearch.Name = "listBoxSearch";
-            this.listBoxSearch.Size = new System.Drawing.Size(618, 58);
+            this.listBoxSearch.Size = new System.Drawing.Size(618, 46);
             this.listBoxSearch.TabIndex = 8;
             this.listBoxSearch.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBoxSearch_MouseDown);
             // 
@@ -240,13 +240,13 @@
             this.toolStripMenuItemDelete});
             this.contextMenuStripSearchField.Name = "contextMenuStripSearchField";
             this.contextMenuStripSearchField.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.contextMenuStripSearchField.Size = new System.Drawing.Size(111, 28);
+            this.contextMenuStripSearchField.Size = new System.Drawing.Size(100, 26);
             this.contextMenuStripSearchField.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStripSearchField_Opening);
             // 
             // toolStripMenuItemDelete
             // 
             this.toolStripMenuItemDelete.Name = "toolStripMenuItemDelete";
-            this.toolStripMenuItemDelete.Size = new System.Drawing.Size(110, 24);
+            this.toolStripMenuItemDelete.Size = new System.Drawing.Size(99, 22);
             this.toolStripMenuItemDelete.Text = "حذف";
             this.toolStripMenuItemDelete.Click += new System.EventHandler(this.toolStripMenuItemDelete_Click);
             // 
@@ -260,7 +260,7 @@
             this.comboBoxExtendedField_Advance.FormattingEnabled = true;
             this.comboBoxExtendedField_Advance.Location = new System.Drawing.Point(424, 31);
             this.comboBoxExtendedField_Advance.Name = "comboBoxExtendedField_Advance";
-            this.comboBoxExtendedField_Advance.Size = new System.Drawing.Size(139, 26);
+            this.comboBoxExtendedField_Advance.Size = new System.Drawing.Size(139, 22);
             this.comboBoxExtendedField_Advance.TabIndex = 4;
             this.comboBoxExtendedField_Advance.ValueMember = "ID";
             // 
@@ -274,7 +274,7 @@
             this.comboBoxExtendedMethod_Advance.FormattingEnabled = true;
             this.comboBoxExtendedMethod_Advance.Location = new System.Drawing.Point(284, 31);
             this.comboBoxExtendedMethod_Advance.Name = "comboBoxExtendedMethod_Advance";
-            this.comboBoxExtendedMethod_Advance.Size = new System.Drawing.Size(134, 26);
+            this.comboBoxExtendedMethod_Advance.Size = new System.Drawing.Size(134, 22);
             this.comboBoxExtendedMethod_Advance.TabIndex = 5;
             this.comboBoxExtendedMethod_Advance.ValueMember = "Code";
             this.comboBoxExtendedMethod_Advance.SelectedValueChanged += new System.EventHandler(this.comboBoxExtendedMethod_SelectedValueChanged);
@@ -285,7 +285,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(569, 35);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 18);
+            this.label3.Size = new System.Drawing.Size(31, 14);
             this.label3.TabIndex = 3;
             this.label3.Text = "فیلد:";
             // 
@@ -294,7 +294,7 @@
             this.textBoxExtendedValue_Advance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxExtendedValue_Advance.Location = new System.Drawing.Point(124, 31);
             this.textBoxExtendedValue_Advance.Name = "textBoxExtendedValue_Advance";
-            this.textBoxExtendedValue_Advance.Size = new System.Drawing.Size(154, 26);
+            this.textBoxExtendedValue_Advance.Size = new System.Drawing.Size(154, 22);
             this.textBoxExtendedValue_Advance.TabIndex = 1;
             this.textBoxExtendedValue_Advance.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxExtendedValue_Advance_KeyDown);
             this.textBoxExtendedValue_Advance.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxExtendedValue_Advance_KeyUp);
@@ -322,7 +322,7 @@
             "یا"});
             this.comboBoxExtendedAndOr_Advance.Location = new System.Drawing.Point(606, 31);
             this.comboBoxExtendedAndOr_Advance.Name = "comboBoxExtendedAndOr_Advance";
-            this.comboBoxExtendedAndOr_Advance.Size = new System.Drawing.Size(39, 26);
+            this.comboBoxExtendedAndOr_Advance.Size = new System.Drawing.Size(39, 22);
             this.comboBoxExtendedAndOr_Advance.TabIndex = 2;
             this.comboBoxExtendedAndOr_Advance.Text = "و";
             // 
@@ -339,7 +339,7 @@
             this.comboBoxExtendedTab_Advance.FormattingEnabled = true;
             this.comboBoxExtendedTab_Advance.Location = new System.Drawing.Point(455, 3);
             this.comboBoxExtendedTab_Advance.Name = "comboBoxExtendedTab_Advance";
-            this.comboBoxExtendedTab_Advance.Size = new System.Drawing.Size(190, 26);
+            this.comboBoxExtendedTab_Advance.Size = new System.Drawing.Size(190, 22);
             this.comboBoxExtendedTab_Advance.TabIndex = 1;
             this.comboBoxExtendedTab_Advance.ValueMember = "ID";
             this.comboBoxExtendedTab_Advance.SelectedValueChanged += new System.EventHandler(this.comboBoxExtendedTab_Advance_SelectedValueChanged);
@@ -350,7 +350,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(651, 6);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 18);
+            this.label4.Size = new System.Drawing.Size(83, 14);
             this.label4.TabIndex = 0;
             this.label4.Text = "گروه اطلاعاتی:";
             // 
@@ -373,18 +373,23 @@
             // 
             this.tabPage1.Controls.Add(this.radGridViewSimple);
             this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 27);
+            this.tabPage1.Location = new System.Drawing.Point(4, 23);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(744, 396);
+            this.tabPage1.Size = new System.Drawing.Size(744, 400);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "جستجوی ساده";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // radGridViewSimple
             // 
+            this.radGridViewSimple.AutoScroll = true;
+            this.radGridViewSimple.BackColor = System.Drawing.SystemColors.Control;
+            this.radGridViewSimple.Cursor = System.Windows.Forms.Cursors.Default;
             this.radGridViewSimple.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radGridViewSimple.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.radGridViewSimple.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.radGridViewSimple.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.radGridViewSimple.Location = new System.Drawing.Point(3, 77);
             // 
             // radGridViewSimple
@@ -399,7 +404,7 @@
             this.radGridViewSimple.Name = "radGridViewSimple";
             this.radGridViewSimple.ReadOnly = true;
             this.radGridViewSimple.ShowNoDataText = false;
-            this.radGridViewSimple.Size = new System.Drawing.Size(738, 316);
+            this.radGridViewSimple.Size = new System.Drawing.Size(738, 320);
             this.radGridViewSimple.TabIndex = 8;
             this.radGridViewSimple.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.radGridViews_CellDoubleClick);
             this.radGridViewSimple.DoubleClick += new System.EventHandler(this.radGridViewSimple_DoubleClick);
@@ -426,7 +431,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(646, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 18);
+            this.label1.Size = new System.Drawing.Size(83, 14);
             this.label1.TabIndex = 7;
             this.label1.Text = "گروه اطلاعاتی:";
             // 
@@ -434,18 +439,23 @@
             // 
             this.tabPage2.Controls.Add(this.radGridViewAdvanced);
             this.tabPage2.Controls.Add(this.panel2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 27);
+            this.tabPage2.Location = new System.Drawing.Point(4, 23);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(744, 396);
+            this.tabPage2.Size = new System.Drawing.Size(744, 400);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "جستجوی پیشرفته";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // radGridViewAdvanced
             // 
+            this.radGridViewAdvanced.AutoScroll = true;
+            this.radGridViewAdvanced.BackColor = System.Drawing.SystemColors.Control;
+            this.radGridViewAdvanced.Cursor = System.Windows.Forms.Cursors.Default;
             this.radGridViewAdvanced.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radGridViewAdvanced.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.radGridViewAdvanced.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.radGridViewAdvanced.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.radGridViewAdvanced.Location = new System.Drawing.Point(3, 157);
             // 
             // radGridViewAdvanced
@@ -460,7 +470,7 @@
             this.radGridViewAdvanced.Name = "radGridViewAdvanced";
             this.radGridViewAdvanced.ReadOnly = true;
             this.radGridViewAdvanced.ShowNoDataText = false;
-            this.radGridViewAdvanced.Size = new System.Drawing.Size(738, 236);
+            this.radGridViewAdvanced.Size = new System.Drawing.Size(738, 240);
             this.radGridViewAdvanced.TabIndex = 11;
             this.radGridViewAdvanced.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.radGridViews_CellDoubleClick);
             this.radGridViewAdvanced.DoubleClick += new System.EventHandler(this.radGridViewAdvanced_DoubleClick);
@@ -487,10 +497,10 @@
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.radGridViewAll);
-            this.tabPage3.Location = new System.Drawing.Point(4, 27);
+            this.tabPage3.Location = new System.Drawing.Point(4, 23);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(744, 396);
+            this.tabPage3.Size = new System.Drawing.Size(744, 400);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "نمایش همه پرونده ها";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -498,8 +508,13 @@
             // 
             // radGridViewAll
             // 
+            this.radGridViewAll.AutoScroll = true;
+            this.radGridViewAll.BackColor = System.Drawing.SystemColors.Control;
+            this.radGridViewAll.Cursor = System.Windows.Forms.Cursors.Default;
             this.radGridViewAll.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radGridViewAll.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.radGridViewAll.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.radGridViewAll.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.radGridViewAll.Location = new System.Drawing.Point(3, 3);
             // 
             // radGridViewAll
@@ -514,7 +529,7 @@
             this.radGridViewAll.Name = "radGridViewAll";
             this.radGridViewAll.ReadOnly = true;
             this.radGridViewAll.ShowNoDataText = false;
-            this.radGridViewAll.Size = new System.Drawing.Size(738, 390);
+            this.radGridViewAll.Size = new System.Drawing.Size(738, 394);
             this.radGridViewAll.TabIndex = 9;
             this.radGridViewAll.CellDoubleClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.radGridViews_CellDoubleClick);
             this.radGridViewAll.DoubleClick += new System.EventHandler(this.radGridViewAll_DoubleClick);
@@ -523,10 +538,10 @@
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.panelAll);
-            this.tabPage4.Location = new System.Drawing.Point(4, 27);
+            this.tabPage4.Location = new System.Drawing.Point(4, 23);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(744, 396);
+            this.tabPage4.Size = new System.Drawing.Size(744, 400);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "انتقال نامه به پرونده";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -539,7 +554,7 @@
             this.panelAll.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelAll.Location = new System.Drawing.Point(3, 3);
             this.panelAll.Name = "panelAll";
-            this.panelAll.Size = new System.Drawing.Size(738, 390);
+            this.panelAll.Size = new System.Drawing.Size(738, 394);
             this.panelAll.TabIndex = 0;
             // 
             // panelLeft
@@ -548,7 +563,7 @@
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(0, 100);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(327, 290);
+            this.panelLeft.Size = new System.Drawing.Size(327, 294);
             this.panelLeft.TabIndex = 2;
             // 
             // panelLeftTop
@@ -589,7 +604,7 @@
             this.panelDataGrid.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelDataGrid.Location = new System.Drawing.Point(401, 100);
             this.panelDataGrid.Name = "panelDataGrid";
-            this.panelDataGrid.Size = new System.Drawing.Size(337, 290);
+            this.panelDataGrid.Size = new System.Drawing.Size(337, 294);
             this.panelDataGrid.TabIndex = 1;
             // 
             // comboBox2
@@ -599,7 +614,7 @@
             "مساوی باشد با"});
             this.comboBox2.Location = new System.Drawing.Point(82, 20);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 26);
+            this.comboBox2.Size = new System.Drawing.Size(121, 22);
             this.comboBox2.TabIndex = 2;
             // 
             // comboBox1
@@ -609,17 +624,19 @@
             "شماره دانشجویی"});
             this.comboBox1.Location = new System.Drawing.Point(219, 6);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 26);
+            this.comboBox1.Size = new System.Drawing.Size(121, 22);
             this.comboBox1.TabIndex = 1;
             // 
             // radGridViewViwDossier
             // 
+            this.radGridViewViwDossier.AutoScroll = true;
             this.radGridViewViwDossier.BackColor = System.Drawing.Color.Transparent;
             this.radGridViewViwDossier.Cursor = System.Windows.Forms.Cursors.Default;
+            this.radGridViewViwDossier.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radGridViewViwDossier.Font = new System.Drawing.Font("Tahoma", 9F);
             this.radGridViewViwDossier.ForeColor = System.Drawing.SystemColors.ControlText;
             this.radGridViewViwDossier.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radGridViewViwDossier.Location = new System.Drawing.Point(36, 82);
+            this.radGridViewViwDossier.Location = new System.Drawing.Point(0, 0);
             // 
             // radGridViewViwDossier
             // 
@@ -641,7 +658,7 @@
             gridViewTextBoxColumn3});
             this.radGridViewViwDossier.Name = "radGridViewViwDossier";
             this.radGridViewViwDossier.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.radGridViewViwDossier.Size = new System.Drawing.Size(240, 150);
+            this.radGridViewViwDossier.Size = new System.Drawing.Size(337, 294);
             this.radGridViewViwDossier.TabIndex = 0;
             this.radGridViewViwDossier.Text = "radGridViewExtended1";
             // 
@@ -679,9 +696,9 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label7.Location = new System.Drawing.Point(108, 0);
+            this.label7.Location = new System.Drawing.Point(133, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(140, 18);
+            this.label7.Size = new System.Drawing.Size(115, 14);
             this.label7.TabIndex = 11;
             this.label7.Text = "تعداد نامه های پرونده";
             // 
@@ -699,7 +716,7 @@
             this.textBoxExtended2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxExtended2.Location = new System.Drawing.Point(0, 0);
             this.textBoxExtended2.Name = "textBoxExtended2";
-            this.textBoxExtended2.Size = new System.Drawing.Size(327, 26);
+            this.textBoxExtended2.Size = new System.Drawing.Size(327, 22);
             this.textBoxExtended2.TabIndex = 9;
             // 
             // panelTopLTop
@@ -715,9 +732,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label6.Location = new System.Drawing.Point(217, 0);
+            this.label6.Location = new System.Drawing.Point(237, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 18);
+            this.label6.Size = new System.Drawing.Size(90, 14);
             this.label6.TabIndex = 10;
             this.label6.Text = "نام نام خانوادگی";
             // 
@@ -766,7 +783,7 @@
             this.txtB_PersonnelNumber.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtB_PersonnelNumber.Location = new System.Drawing.Point(0, 0);
             this.txtB_PersonnelNumber.Name = "txtB_PersonnelNumber";
-            this.txtB_PersonnelNumber.Size = new System.Drawing.Size(337, 26);
+            this.txtB_PersonnelNumber.Size = new System.Drawing.Size(337, 22);
             this.txtB_PersonnelNumber.TabIndex = 8;
             // 
             // panelTopRTop
@@ -782,9 +799,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label5.Location = new System.Drawing.Point(249, 0);
+            this.label5.Location = new System.Drawing.Point(264, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 18);
+            this.label5.Size = new System.Drawing.Size(73, 14);
             this.label5.TabIndex = 9;
             this.label5.Text = "شماره پرونده";
             // 

@@ -21,3 +21,8 @@ E:\PezeshkiMahba\Njit\Out\Njit.Common.pdb
 E:\PezeshkiMahba\Njit\Njit.Common\obj\Debug\Njit.Common.csprojResolveAssemblyReference.cache
 E:\PezeshkiMahba\Njit\Njit.Common\obj\Debug\Njit.Common.dll
 E:\PezeshkiMahba\Njit\Njit.Common\obj\Debug\Njit.Common.pdb
+E:\PezeshkiMahba\Version2\Mahba\Njit\Out\Njit.Common.dll
+E:\PezeshkiMahba\Version2\Mahba\Njit\Out\Njit.Common.pdb
+E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Common\obj\Debug\Njit.Common.csprojResolveAssemblyReference.cache
+E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Common\obj\Debug\Njit.Common.dll
+E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Common\obj\Debug\Njit.Common.pdb

@@ -114,12 +114,21 @@ namespace NjitSoftware.Model.Common
     partial void InsertPermissionDossier(PermissionDossier instance);
     partial void UpdatePermissionDossier(PermissionDossier instance);
     partial void DeletePermissionDossier(PermissionDossier instance);
+    partial void InsertVersionClient(VersionClient instance);
+    partial void UpdateVersionClient(VersionClient instance);
+    partial void DeleteVersionClient(VersionClient instance);
+    partial void InsertVesionApp(VesionApp instance);
+    partial void UpdateVesionApp(VesionApp instance);
+    partial void DeleteVesionApp(VesionApp instance);
     partial void InsertMessage(Message instance);
     partial void UpdateMessage(Message instance);
     partial void DeleteMessage(Message instance);
     partial void InsertMessageUser(MessageUser instance);
     partial void UpdateMessageUser(MessageUser instance);
     partial void DeleteMessageUser(MessageUser instance);
+    partial void InsertSearchBoxSetting(SearchBoxSetting instance);
+    partial void UpdateSearchBoxSetting(SearchBoxSetting instance);
+    partial void DeleteSearchBoxSetting(SearchBoxSetting instance);
     #endregion
 		
 		public ArchiveCommonDataClassesDataContext() : 
@@ -384,6 +393,22 @@ namespace NjitSoftware.Model.Common
 			}
 		}
 		
+		public System.Data.Linq.Table<VersionClient> VersionClients
+		{
+			get
+			{
+				return this.GetTable<VersionClient>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VesionApp> VesionApps
+		{
+			get
+			{
+				return this.GetTable<VesionApp>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Message> Messages
 		{
 			get
@@ -397,6 +422,14 @@ namespace NjitSoftware.Model.Common
 			get
 			{
 				return this.GetTable<MessageUser>();
+			}
+		}
+		
+		public System.Data.Linq.Table<SearchBoxSetting> SearchBoxSettings
+		{
+			get
+			{
+				return this.GetTable<SearchBoxSetting>();
 			}
 		}
 	}
@@ -5545,9 +5578,13 @@ namespace NjitSoftware.Model.Common
 		
 		private EntitySet<PermissionDossier> _PermissionDossiers;
 		
+		private EntitySet<VersionClient> _VersionClients;
+		
 		private EntitySet<Message> _Messages;
 		
 		private EntitySet<MessageUser> _MessageUsers;
+		
+		private EntitySet<SearchBoxSetting> _SearchBoxSettings;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -5591,8 +5628,10 @@ namespace NjitSoftware.Model.Common
 			this._PermissionSecurities = new EntitySet<PermissionSecurity>(new Action<PermissionSecurity>(this.attach_PermissionSecurities), new Action<PermissionSecurity>(this.detach_PermissionSecurities));
 			this._PermissionTitles = new EntitySet<PermissionTitle>(new Action<PermissionTitle>(this.attach_PermissionTitles), new Action<PermissionTitle>(this.detach_PermissionTitles));
 			this._PermissionDossiers = new EntitySet<PermissionDossier>(new Action<PermissionDossier>(this.attach_PermissionDossiers), new Action<PermissionDossier>(this.detach_PermissionDossiers));
+			this._VersionClients = new EntitySet<VersionClient>(new Action<VersionClient>(this.attach_VersionClients), new Action<VersionClient>(this.detach_VersionClients));
 			this._Messages = new EntitySet<Message>(new Action<Message>(this.attach_Messages), new Action<Message>(this.detach_Messages));
 			this._MessageUsers = new EntitySet<MessageUser>(new Action<MessageUser>(this.attach_MessageUsers), new Action<MessageUser>(this.detach_MessageUsers));
+			this._SearchBoxSettings = new EntitySet<SearchBoxSetting>(new Action<SearchBoxSetting>(this.attach_SearchBoxSettings), new Action<SearchBoxSetting>(this.detach_SearchBoxSettings));
 			OnCreated();
 		}
 		
@@ -5976,6 +6015,19 @@ namespace NjitSoftware.Model.Common
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_VersionClient", Storage="_VersionClients", ThisKey="Code", OtherKey="userId")]
+		public EntitySet<VersionClient> VersionClients
+		{
+			get
+			{
+				return this._VersionClients;
+			}
+			set
+			{
+				this._VersionClients.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Message", Storage="_Messages", ThisKey="Code", OtherKey="UserCode")]
 		public EntitySet<Message> Messages
 		{
@@ -5999,6 +6051,19 @@ namespace NjitSoftware.Model.Common
 			set
 			{
 				this._MessageUsers.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_SearchBoxSetting", Storage="_SearchBoxSettings", ThisKey="Code", OtherKey="UserCode")]
+		public EntitySet<SearchBoxSetting> SearchBoxSettings
+		{
+			get
+			{
+				return this._SearchBoxSettings;
+			}
+			set
+			{
+				this._SearchBoxSettings.Assign(value);
 			}
 		}
 		
@@ -6106,6 +6171,18 @@ namespace NjitSoftware.Model.Common
 			entity.User = null;
 		}
 		
+		private void attach_VersionClients(VersionClient entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_VersionClients(VersionClient entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
 		private void attach_Messages(Message entity)
 		{
 			this.SendPropertyChanging();
@@ -6125,6 +6202,18 @@ namespace NjitSoftware.Model.Common
 		}
 		
 		private void detach_MessageUsers(MessageUser entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_SearchBoxSettings(SearchBoxSetting entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_SearchBoxSettings(SearchBoxSetting entity)
 		{
 			this.SendPropertyChanging();
 			entity.User = null;
@@ -8203,6 +8292,267 @@ namespace NjitSoftware.Model.Common
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VersionClient")]
+	public partial class VersionClient : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _userId;
+		
+		private string _MashinPath;
+		
+		private string _ClientIP;
+		
+		private EntityRef<User> _User;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnuserIdChanging(int value);
+    partial void OnuserIdChanged();
+    partial void OnMashinPathChanging(string value);
+    partial void OnMashinPathChanged();
+    partial void OnClientIPChanging(string value);
+    partial void OnClientIPChanged();
+    #endregion
+		
+		public VersionClient()
+		{
+			this._User = default(EntityRef<User>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_userId", DbType="Int NOT NULL")]
+		public int userId
+		{
+			get
+			{
+				return this._userId;
+			}
+			set
+			{
+				if ((this._userId != value))
+				{
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnuserIdChanging(value);
+					this.SendPropertyChanging();
+					this._userId = value;
+					this.SendPropertyChanged("userId");
+					this.OnuserIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MashinPath", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string MashinPath
+		{
+			get
+			{
+				return this._MashinPath;
+			}
+			set
+			{
+				if ((this._MashinPath != value))
+				{
+					this.OnMashinPathChanging(value);
+					this.SendPropertyChanging();
+					this._MashinPath = value;
+					this.SendPropertyChanged("MashinPath");
+					this.OnMashinPathChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClientIP", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string ClientIP
+		{
+			get
+			{
+				return this._ClientIP;
+			}
+			set
+			{
+				if ((this._ClientIP != value))
+				{
+					this.OnClientIPChanging(value);
+					this.SendPropertyChanging();
+					this._ClientIP = value;
+					this.SendPropertyChanged("ClientIP");
+					this.OnClientIPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_VersionClient", Storage="_User", ThisKey="userId", OtherKey="Code", IsForeignKey=true)]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.VersionClients.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.VersionClients.Add(this);
+						this._userId = value.Code;
+					}
+					else
+					{
+						this._userId = default(int);
+					}
+					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VesionApp")]
+	public partial class VesionApp : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _Version;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnVersionChanging(string value);
+    partial void OnVersionChanged();
+    #endregion
+		
+		public VesionApp()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Version", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Version
+		{
+			get
+			{
+				return this._Version;
+			}
+			set
+			{
+				if ((this._Version != value))
+				{
+					this.OnVersionChanging(value);
+					this.SendPropertyChanging();
+					this._Version = value;
+					this.SendPropertyChanged("Version");
+					this.OnVersionChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Message")]
 	public partial class Message : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -8290,7 +8640,7 @@ namespace NjitSoftware.Model.Common
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Text", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Text", DbType="NText NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
 		public string Text
 		{
 			get
@@ -8387,7 +8737,7 @@ namespace NjitSoftware.Model.Common
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Message", Storage="_User", ThisKey="UserCode", OtherKey="Code", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Message", Storage="_User", ThisKey="UserCode", OtherKey="Code", IsForeignKey=true)]
 		public User User
 		{
 			get
@@ -8468,7 +8818,7 @@ namespace NjitSoftware.Model.Common
 		
 		private int _State;
 		
-		private System.DateTime _DateShow;
+		private System.Nullable<System.DateTime> _DateShow;
 		
 		private EntityRef<Message> _Message;
 		
@@ -8486,7 +8836,7 @@ namespace NjitSoftware.Model.Common
     partial void OnMessageIDChanged();
     partial void OnStateChanging(int value);
     partial void OnStateChanged();
-    partial void OnDateShowChanging(System.DateTime value);
+    partial void OnDateShowChanging(System.Nullable<System.DateTime> value);
     partial void OnDateShowChanged();
     #endregion
 		
@@ -8585,8 +8935,8 @@ namespace NjitSoftware.Model.Common
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateShow", DbType="Date NOT NULL")]
-		public System.DateTime DateShow
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateShow", DbType="Date")]
+		public System.Nullable<System.DateTime> DateShow
 		{
 			get
 			{
@@ -8605,7 +8955,7 @@ namespace NjitSoftware.Model.Common
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Message_MessageUser", Storage="_Message", ThisKey="MessageID", OtherKey="ID", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Message_MessageUser", Storage="_Message", ThisKey="MessageID", OtherKey="ID", IsForeignKey=true)]
 		public Message Message
 		{
 			get
@@ -8662,6 +9012,205 @@ namespace NjitSoftware.Model.Common
 					if ((value != null))
 					{
 						value.MessageUsers.Add(this);
+						this._UserCode = value.Code;
+					}
+					else
+					{
+						this._UserCode = default(int);
+					}
+					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SearchBoxSetting")]
+	public partial class SearchBoxSetting : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _ArchiveSelected;
+		
+		private int _ArchiveFieldSelectedIndex;
+		
+		private int _ConditionIdSelectedIndex;
+		
+		private int _UserCode;
+		
+		private EntityRef<User> _User;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnArchiveSelectedChanging(int value);
+    partial void OnArchiveSelectedChanged();
+    partial void OnArchiveFieldSelectedIndexChanging(int value);
+    partial void OnArchiveFieldSelectedIndexChanged();
+    partial void OnConditionIdSelectedIndexChanging(int value);
+    partial void OnConditionIdSelectedIndexChanged();
+    partial void OnUserCodeChanging(int value);
+    partial void OnUserCodeChanged();
+    #endregion
+		
+		public SearchBoxSetting()
+		{
+			this._User = default(EntityRef<User>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArchiveSelected", DbType="Int NOT NULL")]
+		public int ArchiveSelected
+		{
+			get
+			{
+				return this._ArchiveSelected;
+			}
+			set
+			{
+				if ((this._ArchiveSelected != value))
+				{
+					this.OnArchiveSelectedChanging(value);
+					this.SendPropertyChanging();
+					this._ArchiveSelected = value;
+					this.SendPropertyChanged("ArchiveSelected");
+					this.OnArchiveSelectedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArchiveFieldSelectedIndex", DbType="Int NOT NULL")]
+		public int ArchiveFieldSelectedIndex
+		{
+			get
+			{
+				return this._ArchiveFieldSelectedIndex;
+			}
+			set
+			{
+				if ((this._ArchiveFieldSelectedIndex != value))
+				{
+					this.OnArchiveFieldSelectedIndexChanging(value);
+					this.SendPropertyChanging();
+					this._ArchiveFieldSelectedIndex = value;
+					this.SendPropertyChanged("ArchiveFieldSelectedIndex");
+					this.OnArchiveFieldSelectedIndexChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConditionIdSelectedIndex", DbType="Int NOT NULL")]
+		public int ConditionIdSelectedIndex
+		{
+			get
+			{
+				return this._ConditionIdSelectedIndex;
+			}
+			set
+			{
+				if ((this._ConditionIdSelectedIndex != value))
+				{
+					this.OnConditionIdSelectedIndexChanging(value);
+					this.SendPropertyChanging();
+					this._ConditionIdSelectedIndex = value;
+					this.SendPropertyChanged("ConditionIdSelectedIndex");
+					this.OnConditionIdSelectedIndexChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserCode", DbType="Int NOT NULL")]
+		public int UserCode
+		{
+			get
+			{
+				return this._UserCode;
+			}
+			set
+			{
+				if ((this._UserCode != value))
+				{
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUserCodeChanging(value);
+					this.SendPropertyChanging();
+					this._UserCode = value;
+					this.SendPropertyChanged("UserCode");
+					this.OnUserCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_SearchBoxSetting", Storage="_User", ThisKey="UserCode", OtherKey="Code", IsForeignKey=true)]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.SearchBoxSettings.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.SearchBoxSettings.Add(this);
 						this._UserCode = value.Code;
 					}
 					else

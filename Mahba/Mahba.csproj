@@ -127,7 +127,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\KP-ImageViewerV2.dll</HintPath>
     </Reference>
+    <Reference Include="LiveSwitch.TextControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\LiveSwitch.TextControl.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
@@ -222,6 +229,10 @@
     <Reference Include="TelerikData">
       <HintPath>..\..\..\..\Components\Telerik\RadControls for WinForms Q1 2012\Bin\TelerikData.dll</HintPath>
     </Reference>
+    <Reference Include="Tulpep.NotificationWindow, Version=1.1.25.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Tulpep.NotificationWindow.dll</HintPath>
+    </Reference>
     <Reference Include="Vintasoft.Barcode">
       <HintPath>..\..\..\..\Components\Barcode\Vintasoft Barcode.NET Library\Vintasoft.Barcode.for.NET.v5.1.Cracked.AHCU\Vintasoft.Barcode.dll</HintPath>
     </Reference>
@@ -236,6 +247,11 @@
     <Compile Include="Controller\Archive\LegalPersonController.cs" />
     <Compile Include="Controller\Archive\RightfulPersonController.cs" />
     <Compile Include="Controller\Common\AccessPermissionTree.cs" />
+    <Compile Include="Controller\Common\MessageController.cs" />
+    <Compile Include="Controller\Common\MessageUserController.cs" />
+    <Compile Include="Controller\Common\SearchBoxSettingController.cs" />
+    <Compile Include="Controller\Common\VerionAppController.cs" />
+    <Compile Include="Controller\Common\VersionClientController.cs" />
     <Compile Include="CounterFieldSetting.cs" />
     <Compile Include="Dossier1.cs" />
     <Compile Include="Enums\BoxTypes.cs" />
@@ -250,6 +266,7 @@
     <Compile Include="Enums\DisplayFieldCodes.cs" />
     <Compile Include="Enums\FieldTypes.cs" />
     <Compile Include="Enums\FixedValueTypes.cs" />
+    <Compile Include="Enums\StateTypeMessage.cs" />
     <Compile Include="Model\ArchiveDocument\DocumentDataClasses.cs">
       <DependentUpon>DocumentDataClasses.dbml</DependentUpon>
     </Compile>
@@ -300,9 +317,9 @@
     <Compile Include="Enums\StatusOfFields.cs" />
     <Compile Include="Enums\TabTypes.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="ScannerSetting.cs" />
     <Compile Include="ScannerSettingManager.cs" />
@@ -545,6 +562,12 @@
     <Compile Include="View\DocumentFailure.Designer.cs">
       <DependentUpon>DocumentFailure.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\DocumentField.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DocumentField.Designer.cs">
+      <DependentUpon>DocumentField.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\DossierChangeDataField.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -721,11 +744,35 @@
     <Compile Include="View\SelectArchive.Designer.cs">
       <DependentUpon>SelectArchive.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\SendMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SendMessage.Designer.cs">
+      <DependentUpon>SendMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ShowDetailMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ShowDetailMessage.Designer.cs">
+      <DependentUpon>ShowDetailMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ShowMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ShowMessage.Designer.cs">
+      <DependentUpon>ShowMessage.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\SplashScreen.designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControlTextEditor\Editor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControlTextEditor\Editor.Designer.cs">
+      <DependentUpon>Editor.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UserManageForms\AddUser.cs">
       <SubType>Form</SubType>
@@ -805,9 +852,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ArchiveDocumentShow.resx">
       <DependentUpon>ArchiveDocumentShow.cs</DependentUpon>
@@ -908,6 +955,9 @@
     <EmbeddedResource Include="View\DocumentFailure.resx">
       <DependentUpon>DocumentFailure.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\DocumentField.resx">
+      <DependentUpon>DocumentField.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\DossierChangeDataField.resx">
       <DependentUpon>DossierChangeDataField.cs</DependentUpon>
     </EmbeddedResource>
@@ -995,8 +1045,20 @@
     <EmbeddedResource Include="View\SelectArchive.resx">
       <DependentUpon>SelectArchive.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\SendMessage.resx">
+      <DependentUpon>SendMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ShowDetailMessage.resx">
+      <DependentUpon>ShowDetailMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ShowMessage.resx">
+      <DependentUpon>ShowMessage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControlTextEditor\Editor.resx">
+      <DependentUpon>Editor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserManageForms\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
@@ -1077,6 +1139,81 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\about.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\addDark16.png" />
+    <None Include="Resources\AddFiles.png" />
+    <None Include="Resources\add_small.png" />
+    <None Include="Resources\AlertIcon.png" />
+    <None Include="Resources\Archive.png" />
+    <None Include="Resources\ArchiveChange.png" />
+    <None Include="Resources\ArchiveGroup.png" />
+    <None Include="Resources\Background.jpg" />
+    <None Include="Resources\Backup.png" />
+    <None Include="Resources\brightness.png" />
+    <None Include="Resources\brightnessDown.png" />
+    <None Include="Resources\brightnessup.png" />
+    <None Include="Resources\changePassword.png" />
+    <None Include="Resources\Chart.png" />
+    <None Include="Resources\CheckList.png" />
+    <None Include="Resources\Close.png" />
+    <None Include="Resources\contrast.png" />
+    <None Include="Resources\contrastDown.png" />
+    <None Include="Resources\contrastUP.png" />
+    <None Include="Resources\Convert.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\delete_small.png" />
+    <None Include="Resources\Document.png" />
+    <None Include="Resources\DocumentEmpty.ico" />
+    <None Include="Resources\DocumentEmpty.png" />
+    <None Include="Resources\documentOut.png" />
+    <None Include="Resources\documentOutAdd.png" />
+    <None Include="Resources\DocumentSearch.png" />
+    <None Include="Resources\DossierManage.png" />
+    <None Include="Resources\DossierNew.png" />
+    <None Include="Resources\DossierSearch.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\edit_small.png" />
+    <None Include="Resources\group.png" />
+    <None Include="Resources\LeftArrow.png" />
+    <None Include="Resources\lock.png" />
+    <None Include="Resources\Logo.jpg" />
+    <None Include="Resources\maximize.png" />
+    <None Include="Resources\minimize.png" />
+    <None Include="Resources\NewDoc.png" />
+    <None Include="Resources\NewDossier.png" />
+    <None Include="Resources\next22.png" />
+    <None Include="Resources\Njit.jpg" />
+    <None Include="Resources\PageAdd.png" />
+    <None Include="Resources\Paperclip.png" />
+    <None Include="Resources\penDark16.png" />
+    <None Include="Resources\Person.png" />
+    <None Include="Resources\Person1.png" />
+    <None Include="Resources\PersonCompany.png" />
+    <None Include="Resources\previous22.png" />
+    <None Include="Resources\Print.png" />
+    <None Include="Resources\recycleBinDark16.png" />
+    <None Include="Resources\rename.png" />
+    <None Include="Resources\reportBook.png" />
+    <None Include="Resources\Restore.png" />
+    <None Include="Resources\RightArrow.png" />
+    <None Include="Resources\RotateLeft1.png" />
+    <None Include="Resources\RotateRight1.png" />
+    <None Include="Resources\Save.png" />
+    <None Include="Resources\Save1.png" />
+    <None Include="Resources\Save2.png" />
+    <None Include="Resources\Scanner.png" />
+    <None Include="Resources\Security.png" />
+    <None Include="Resources\setting.png" />
+    <None Include="Resources\ShowDossier.png" />
+    <None Include="Resources\Spinner.gif" />
+    <None Include="Resources\Splash.jpg" />
+    <None Include="Resources\Table.png" />
+    <None Include="Resources\unlock.png" />
+    <None Include="Resources\userAdd.png" />
+    <None Include="Resources\UserGroup.png" />
+    <None Include="Resources\UserReport.png" />
+    <None Include="Resources\users.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -1094,157 +1231,6 @@
     <None Include="Reports - Backup\Report.frx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\add.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\add_small.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\AlertIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Njit.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Backup.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\changePassword.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\delete.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\delete_small.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\edit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\edit_small.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\maximize.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\minimize.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Save.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\setting.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\userAdd.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\users.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Archive.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\lock.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\unlock.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\rename.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\penDark16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\recycleBinDark16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\addDark16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\LeftArrow.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\RightArrow.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\group.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ArchiveGroup.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ShowDossier.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\NewDossier.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Person.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Background.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\DossierManage.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\DossierNew.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Document.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\NewDoc.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Save1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Security.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ArchiveChange.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\UserGroup.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\UserReport.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\about.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Print.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\DossierSearch.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Convert.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Close.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Save2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PageAdd.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\DocumentSearch.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Scanner.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\AddFiles.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Paperclip.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
@@ -1262,6 +1248,11 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.4.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 4.0 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
       <Visible>False</Visible>
       <ProductName>Windows Installer 4.5</ProductName>
@@ -1274,30 +1265,25 @@
   <ItemGroup>
     <Content Include="App.ico" />
     <Content Include="bin\Release\KaupischITC.ScanWIA.dll" />
-    <None Include="Resources\Spinner.gif" />
-    <None Include="Resources\brightnessDown.png" />
-    <None Include="Resources\brightnessup.png" />
-    <None Include="Resources\contrastUP.png" />
-    <None Include="Resources\contrastDown.png" />
-    <None Include="Resources\RotateRight1.png" />
-    <None Include="Resources\RotateLeft1.png" />
-    <None Include="Resources\PersonCompany.png" />
-    <None Include="Resources\Person1.png" />
-    <None Include="Resources\contrast.png" />
-    <None Include="Resources\brightness.png" />
-    <None Include="Resources\Splash.jpg" />
-    <None Include="Resources\Logo.jpg" />
-    <None Include="Resources\Chart.png" />
-    <None Include="Resources\Table.png" />
-    <None Include="Resources\Restore.png" />
-    <None Include="Resources\documentOutAdd.png" />
-    <None Include="Resources\DocumentEmpty.png" />
-    <None Include="Resources\DocumentEmpty.ico" />
-    <None Include="Resources\previous22.png" />
-    <None Include="Resources\next22.png" />
-    <None Include="Resources\CheckList.png" />
-    <None Include="Resources\documentOut.png" />
-    <None Include="Resources\reportBook.png" />
+    <Content Include="Model\Common\Database1.sdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\backcolor.bmp" />
+    <None Include="Resources\uol.bmp" />
+    <None Include="Resources\bolf.bmp" />
+    <None Include="Resources\cj.bmp" />
+    <None Include="Resources\color.bmp" />
+    <None Include="Resources\fj.bmp" />
+    <None Include="Resources\indent.bmp" />
+    <None Include="Resources\italic.bmp" />
+    <None Include="Resources\bold.bmp" />
+    <None Include="Resources\link.bmp" />
+    <None Include="Resources\lj.bmp" />
+    <None Include="Resources\ol.bmp" />
+    <None Include="Resources\outdent.bmp" />
+    <Content Include="Resources\right_arrow.bmp" />
+    <None Include="Resources\rj.bmp" />
+    <None Include="Resources\underscore.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

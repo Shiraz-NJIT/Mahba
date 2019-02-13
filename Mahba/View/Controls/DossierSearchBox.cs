@@ -101,6 +101,7 @@ namespace NjitSoftware.View.Controls
             }
             if (textBoxExtendedValue_Simple.Text == "" && ((comboBoxExtendedField_Simple.SelectedItem as Model.Archive.ArchiveField).IsNumber()))
             {
+                
                 PersianMessageBox.Show(this, string.Format("برای فیلد '{0}' یک مقدار عددی وارد کنید", comboBoxExtendedField_Simple.Text));
                 textBoxExtendedValue_Simple.SelectAll();
                 textBoxExtendedValue_Simple.SetError(string.Format("برای فیلد '{0}' یک مقدار عددی وارد کنید", comboBoxExtendedField_Simple.Text), true);
@@ -108,11 +109,13 @@ namespace NjitSoftware.View.Controls
             }
             if (textBoxExtendedValue_Simple.Text != "" && ((comboBoxExtendedField_Simple.SelectedItem as Model.Archive.ArchiveField).IsNumber() && !textBoxExtendedValue_Simple.Text.IsNumber()))
             {
+               
                 PersianMessageBox.Show(this, string.Format("برای فیلد '{0}' یک مقدار عددی وارد کنید", comboBoxExtendedField_Simple.Text));
                 textBoxExtendedValue_Simple.SelectAll();
                 textBoxExtendedValue_Simple.SetError(string.Format("برای فیلد '{0}' یک مقدار عددی وارد کنید", comboBoxExtendedField_Simple.Text), true);
                 return;
             }
+            Controller.Common.SearchBoxSettingController.Insert(comboBoxExtendedField_Simple.SelectedIndex, comboBoxExtendedMethod_Simple.SelectedIndex);
             radGridViewSimple.DataSource = Controller.Archive.DossierController.GetDossierList(Controller.Archive.ArchiveTabController.GetFirstDossierTab(), new SearchField(comboBoxExtendedField_Simple.SelectedItem as Model.Archive.ArchiveField, comboBoxExtendedMethod_Simple.SelectedItem as SearchMethod, textBoxExtendedValue_Simple.Text, SearchField.Relations.None));
             radGridViewSimple.ContextMenuOpening += radGridViewAdvanced_ContextMenuOpening;
 
@@ -128,14 +131,14 @@ namespace NjitSoftware.View.Controls
         void radGridViewSimple_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
         {
             int i = e.ColumnIndex;
-            if (i == radGridViewSimple.ColumnCount-1)// radGridViewSimple.ColumnCount)
+            if (i == radGridViewSimple.ColumnCount - 1)// radGridViewSimple.ColumnCount)
             {
                 FirstLoadDatagrid_radGridViewSimple = false;
             }
             CheckWhdth(radGridViewSimple, i, FirstLoadDatagrid_radGridViewSimple);
-            
+
         }
-        public void CheckWhdth(Njit.Program.Telerik.Controls.RadGridViewExtended radGridView, int i,bool FirstLoadDatagrid)
+        public void CheckWhdth(Njit.Program.Telerik.Controls.RadGridViewExtended radGridView, int i, bool FirstLoadDatagrid)
         {
             if (GetQuery)
             {
@@ -244,7 +247,7 @@ namespace NjitSoftware.View.Controls
             int i = e.ColumnIndex;
             if (i == radGridViewAdvanced.ColumnCount - 1)// radGridViewSimple.ColumnCount)
             {
-                FirstLoadDatagrid_radGridViewAdvanced= false;
+                FirstLoadDatagrid_radGridViewAdvanced = false;
             }
             CheckWhdth(radGridViewAdvanced, i, FirstLoadDatagrid_radGridViewAdvanced);
 
@@ -315,6 +318,7 @@ namespace NjitSoftware.View.Controls
             }
             if (textBoxExtendedValue_Advance.Text == "" && ((comboBoxExtendedField_Advance.SelectedItem as Model.Archive.ArchiveField).IsNumber()))
             {
+             
                 PersianMessageBox.Show(this, string.Format("برای فیلد '{0}' یک مقدار عددی وارد کنید", comboBoxExtendedField_Advance.Text));
                 textBoxExtendedValue_Advance.SelectAll();
                 textBoxExtendedValue_Advance.SetError(string.Format("برای فیلد '{0}' یک مقدار عددی وارد کنید", comboBoxExtendedField_Advance.Text), true);
@@ -322,11 +326,13 @@ namespace NjitSoftware.View.Controls
             }
             if (textBoxExtendedValue_Advance.Text != "" && ((comboBoxExtendedField_Advance.SelectedItem as Model.Archive.ArchiveField).IsNumber() && !textBoxExtendedValue_Advance.Text.IsNumber()))
             {
+           
                 PersianMessageBox.Show(this, string.Format("برای فیلد '{0}' یک مقدار عددی وارد کنید", comboBoxExtendedField_Advance.Text));
                 textBoxExtendedValue_Advance.SelectAll();
                 textBoxExtendedValue_Advance.SetError(string.Format("برای فیلد '{0}' یک مقدار عددی وارد کنید", comboBoxExtendedField_Advance.Text), true);
                 return;
             }
+            Controller.Common.SearchBoxSettingController.Insert(comboBoxExtendedField_Advance.SelectedIndex, comboBoxExtendedMethod_Advance.SelectedIndex);
             SearchField.Relations relation = SearchField.Relations.None;
             if (comboBoxExtendedAndOr_Advance.Enabled == false)
                 relation = SearchField.Relations.None;
@@ -616,11 +622,20 @@ namespace NjitSoftware.View.Controls
 
             if (tabControl1.SelectedTab == tabPage1)
             {
+                Model.Common.SearchBoxSetting sbs = Controller.Common.SearchBoxSettingController.GetDefault();
+
+                comboBoxExtendedField_Simple.SelectedIndex = sbs.ArchiveFieldSelectedIndex;
+                comboBoxExtendedMethod_Simple.SelectedIndex = sbs.ConditionIdSelectedIndex;
                 textBoxExtendedValue_Simple.Focus();
             }
 
             else if (tabControl1.SelectedTab == tabPage2)
             {
+                Model.Common.SearchBoxSetting sbs = Controller.Common.SearchBoxSettingController.GetDefault();
+
+                comboBoxExtendedField_Advance.SelectedIndex = sbs.ArchiveFieldSelectedIndex;
+                comboBoxExtendedMethod_Advance.SelectedIndex = sbs.ConditionIdSelectedIndex;
+                
                 textBoxExtendedValue_Advance.Focus();
             }
 

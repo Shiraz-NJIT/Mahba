@@ -45,6 +45,8 @@
             this.statusBar = new C1.Win.C1Ribbon.C1StatusBar();
             this.ribbonLabelProgramTitle = new C1.Win.C1Ribbon.RibbonLabel();
             this.lblProgramTitle = new C1.Win.C1Ribbon.RibbonLabel();
+            this.lblProgramVersion = new C1.Win.C1Ribbon.RibbonLabel();
+            this.txtProgramVersion = new C1.Win.C1Ribbon.RibbonLabel();
             this.ribbonLabelUser = new C1.Win.C1Ribbon.RibbonLabel();
             this.lblUser = new C1.Win.C1Ribbon.RibbonLabel();
             this.ribbonLabelDate = new C1.Win.C1Ribbon.RibbonLabel();
@@ -135,6 +137,8 @@
             // 
             this.statusBar.LeftPaneItems.Add(this.ribbonLabelProgramTitle);
             this.statusBar.LeftPaneItems.Add(this.lblProgramTitle);
+            this.statusBar.LeftPaneItems.Add(this.lblProgramVersion);
+            this.statusBar.LeftPaneItems.Add(this.txtProgramVersion);
             this.statusBar.LeftPaneItems.Add(this.ribbonLabelUser);
             this.statusBar.LeftPaneItems.Add(this.lblUser);
             this.statusBar.LeftPaneItems.Add(this.ribbonLabelDate);
@@ -153,10 +157,21 @@
             // lblProgramTitle
             // 
             this.lblProgramTitle.Name = "lblProgramTitle";
-            this.lblProgramTitle.Text = "                              ";
+            this.lblProgramTitle.Text = "نسخه برنامه:";
+            // 
+            // lblProgramVersion
+            // 
+            this.lblProgramVersion.Name = "lblProgramVersion";
+            this.lblProgramVersion.Text = "                              ";
+            // 
+            // txtProgramVersion
+            // 
+            this.txtProgramVersion.Name = "txtProgramVersion";
+            this.txtProgramVersion.Text = "                              ";
             // 
             // ribbonLabelUser
             // 
+
             this.ribbonLabelUser.Name = "ribbonLabelUser";
             this.ribbonLabelUser.Text = "کاربر:";
             // 
@@ -214,6 +229,8 @@
         protected Controls.RibbonButton btnShutdown;
         protected C1.Win.C1Ribbon.RibbonLabel ribbonLabelProgramTitle;
         protected C1.Win.C1Ribbon.RibbonLabel lblProgramTitle;
+        protected C1.Win.C1Ribbon.RibbonLabel lblProgramVersion;
+        protected C1.Win.C1Ribbon.RibbonLabel txtProgramVersion;
         protected C1.Win.C1Ribbon.RibbonLabel ribbonLabelUser;
         protected C1.Win.C1Ribbon.RibbonLabel lblUser;
         protected C1.Win.C1Ribbon.RibbonLabel ribbonLabelDate;

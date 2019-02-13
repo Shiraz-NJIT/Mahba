@@ -1426,8 +1426,6 @@ E:\PezeshkiMahba\Version2\Mahba\Mahba\bin\Debug\C1.Win.C1Report.4.xml
 E:\PezeshkiMahba\Version2\Mahba\Mahba\bin\Debug\C1.Win.C1RibbonPreview.4.xml
 E:\PezeshkiMahba\Version2\Mahba\Mahba\bin\Debug\C1.Win.C1SplitContainer.4.xml
 E:\PezeshkiMahba\Version2\Mahba\Mahba\bin\Debug\C1.Win.ImportServices.4.xml
-E:\PezeshkiMahba\Version2\Mahba\Mahba\bin\Debug\KaupischITC.ScanWIA.pdb
-E:\PezeshkiMahba\Version2\Mahba\Mahba\obj\Debug\Mahba.csprojResolveAssemblyReference.cache
 E:\PezeshkiMahba\Version2\Mahba\Mahba\obj\Debug\NjitSoftware.C1LocalizedResources.C1.Win.C1Ribbon.4.resources
 E:\PezeshkiMahba\Version2\Mahba\Mahba\obj\Debug\NjitSoftware.Properties.Resources.resources
 E:\PezeshkiMahba\Version2\Mahba\Mahba\obj\Debug\NjitSoftware.View.ArchiveDocumentShow.resources
@@ -1507,3 +1505,10 @@ E:\PezeshkiMahba\Version2\Mahba\Mahba\obj\Debug\NjitSoftware.View.UserManageForm
 E:\PezeshkiMahba\Version2\Mahba\Mahba\obj\Debug\NjitSoftware.View.UserManageForms.UserRoleList.resources
 E:\PezeshkiMahba\Version2\Mahba\Mahba\obj\Debug\Mahba.csproj.GenerateResource.Cache
 E:\PezeshkiMahba\Version2\Mahba\Mahba\obj\Debug\Mahba.exe.licenses
+E:\PezeshkiMahba\Version2\Mahba\Mahba\obj\Debug\NjitSoftware.View.DocumentField.resources
+E:\PezeshkiMahba\Version2\Mahba\Mahba\bin\Debug\Model\Common\Database1.sdf
+E:\PezeshkiMahba\Version2\Mahba\Mahba\obj\Debug\NjitSoftware.View.SendMessage.resources
+E:\PezeshkiMahba\Version2\Mahba\Mahba\obj\Debug\NjitSoftware.View.ShowDetailMessage.resources
+E:\PezeshkiMahba\Version2\Mahba\Mahba\obj\Debug\NjitSoftware.View.ShowMessage.resources
+E:\PezeshkiMahba\Version2\Mahba\Mahba\obj\Debug\NjitSoftware.View.UserControlTextEditor.Editor.resources
+E:\PezeshkiMahba\Version2\Mahba\Mahba\obj\Debug\Mahba.csprojResolveAssemblyReference.cache

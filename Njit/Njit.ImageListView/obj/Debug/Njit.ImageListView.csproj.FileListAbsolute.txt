@@ -42,3 +42,12 @@ E:\PezeshkiMahba\Njit\Njit.ImageListView\obj\Debug\Njit.ImageListView.ImageListV
 E:\PezeshkiMahba\Njit\Njit.ImageListView\obj\Debug\Njit.ImageListView.csproj.GenerateResource.Cache
 E:\PezeshkiMahba\Njit\Njit.ImageListView\obj\Debug\Njit.ImageListView.dll
 E:\PezeshkiMahba\Njit\Njit.ImageListView\obj\Debug\Njit.ImageListView.pdb
+E:\PezeshkiMahba\Version2\Mahba\Njit\Out\Njit.ImageListView.dll.config
+E:\PezeshkiMahba\Version2\Mahba\Njit\Out\Njit.ImageListView.dll
+E:\PezeshkiMahba\Version2\Mahba\Njit\Out\Njit.ImageListView.pdb
+E:\PezeshkiMahba\Version2\Mahba\Njit\Out\ImageListView.XML
+E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.ImageListView\obj\Debug\Njit.ImageListView.csprojResolveAssemblyReference.cache
+E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.ImageListView\obj\Debug\Njit.ImageListView.ImageListViewResources.resources
+E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.ImageListView\obj\Debug\Njit.ImageListView.csproj.GenerateResource.Cache
+E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.ImageListView\obj\Debug\Njit.ImageListView.dll
+E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.ImageListView\obj\Debug\Njit.ImageListView.pdb

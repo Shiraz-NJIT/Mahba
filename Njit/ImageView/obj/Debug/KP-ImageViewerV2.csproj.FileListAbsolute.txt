@@ -21,3 +21,11 @@ E:\Work\mahba\Pezeshki\Mahba\Njit\ImageView\obj\Debug\KaiwaProjects.Properties.R
 E:\Work\mahba\Pezeshki\Mahba\Njit\ImageView\obj\Debug\KP-ImageViewerV2.csproj.GenerateResource.Cache
 E:\Work\mahba\Pezeshki\Mahba\Njit\ImageView\obj\Debug\KP-ImageViewerV2.dll
 E:\Work\mahba\Pezeshki\Mahba\Njit\ImageView\obj\Debug\KP-ImageViewerV2.pdb
+E:\PezeshkiMahba\Version2\Mahba\Njit\ImageView\bin\Debug\KP-ImageViewerV2.dll
+E:\PezeshkiMahba\Version2\Mahba\Njit\ImageView\bin\Debug\KP-ImageViewerV2.pdb
+E:\PezeshkiMahba\Version2\Mahba\Njit\ImageView\obj\Debug\KaiwaProjects.KpImageViewer.resources
+E:\PezeshkiMahba\Version2\Mahba\Njit\ImageView\obj\Debug\KaiwaProjects.Properties.Resources.resources
+E:\PezeshkiMahba\Version2\Mahba\Njit\ImageView\obj\Debug\KP-ImageViewerV2.csproj.GenerateResource.cache
+E:\PezeshkiMahba\Version2\Mahba\Njit\ImageView\obj\Debug\KP-ImageViewerV2.dll
+E:\PezeshkiMahba\Version2\Mahba\Njit\ImageView\obj\Debug\KP-ImageViewerV2.pdb
+E:\PezeshkiMahba\Version2\Mahba\Njit\ImageView\obj\Debug\KP-ImageViewerV2.csprojResolveAssemblyReference.cache
