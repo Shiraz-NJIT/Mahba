@@ -164,7 +164,7 @@
     </Reference>
     <Reference Include="Njit.Program, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Njit.Program.dll</HintPath>
+      <HintPath>..\Njit\Njit.Program\obj\Debug\Njit.Program.dll</HintPath>
     </Reference>
     <Reference Include="Njit.Program.C1, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -176,7 +176,7 @@
     </Reference>
     <Reference Include="Njit.Program.Telerik, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Njit.Program.Telerik.dll</HintPath>
+      <HintPath>..\Njit\Njit.Program.Telerik\bin\Debug\Njit.Program.Telerik.dll</HintPath>
     </Reference>
     <Reference Include="Njit.Sql, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -400,6 +400,12 @@
     <Compile Include="View\Controls\AutoCompleteTextBoxSample3.cs" />
     <Compile Include="View\Controls\AutoCompleteTextBoxSample3.Designer.cs">
       <DependentUpon>AutoCompleteTextBoxSample3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\AutoCompleteTextBoxSamplePersonel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Controls\AutoCompleteTextBoxSamplePersonel.Designer.cs">
+      <DependentUpon>AutoCompleteTextBoxSamplePersonel.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Controls\DocumentView.cs">
       <SubType>UserControl</SubType>

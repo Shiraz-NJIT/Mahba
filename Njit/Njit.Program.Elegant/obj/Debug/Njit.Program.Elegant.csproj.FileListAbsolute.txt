@@ -175,9 +175,4 @@ E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.Elegant\obj\Debug\Njit.Program
 E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.Elegant\obj\Debug\Njit.Program.Elegant.csproj.GenerateResource.Cache
 E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.Elegant\obj\Debug\Njit.Program.Elegant.dll
 E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.Elegant\obj\Debug\Njit.Program.Elegant.pdb
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.Elegant\bin\Debug\EnvDTE.dll
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.Elegant\bin\Debug\stdole.dll
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.Elegant\bin\Debug\Njit.Program.dll.config
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.Elegant\obj\Debug\Njit.Program.Elegant.csprojAssemblyReference.cache
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.Elegant\obj\Debug\Njit.Program.Elegant.csproj.CoreCompileInputs.cache
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.Elegant\obj\Debug\Njit.Program.Elegant.csproj.CopyComplete
+E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.Elegant\obj\Debug\Njit.Program.Elegant.csprojResolveAssemblyReference.cache

@@ -1,4 +1,4 @@
-﻿namespace AutoCompleteTextBoxSample
+﻿namespace AutoCompleteTextBoxSamplePersonel
 {
     using System;
     using System.Collections;           // if you would like to use ArrayList insted
@@ -10,7 +10,7 @@
 
     // the component is derived from a TextBox 
     // and is therfore called TextBox, but ment is this class (AutoCompleteTextbox)
-    public class AutoCompleteTextbox : TextBox
+    public class AutoCompleteTextBoxSamplePersonel : TextBox
     {
         #region Fields
 
@@ -28,7 +28,7 @@
         #region Constructors
 
         // the constructor
-        public AutoCompleteTextbox()
+        public AutoCompleteTextBoxSamplePersonel()
             : base()
         {
             // assigning some default values
@@ -385,7 +385,7 @@
             if (e.KeyCode == Keys.Enter)
             {
                 // select the current item
-                SelectItem();
+              //  SelectItem();
                 // work done
                 e.Handled = true;
             }
@@ -501,21 +501,12 @@
             foreach (string Str in AutoCompleteList)
             {
                 // be casesensitive
-                if (CaseSensitive)
-                {
+               
                     // search for the substring (equal to SQL Like Command)
-                    if ((Str.IndexOf(this.Text) > -1))
+                    if (Str.StartsWith(this.Text))
                     // Add candidates to new CurrentAutoCompleteList
                     { CurrentAutoCompleteList.Add(Str); }
-                }
-                // or ignore case
-                else
-                {
-                    // and search for the substring (equal to SQL Like Command)
-                    if ((Str.ToLower().IndexOf(this.Text.ToLower()) > -1))
-                    // Add candidates to new CurrentAutoCompleteList
-                    { CurrentAutoCompleteList.Add(Str); }
-                }
+               
             }
             #region Excursus: Performance measuring of Linq queries
             // This is a simple example of speedmeasurement for Linq querries

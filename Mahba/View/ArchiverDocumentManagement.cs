@@ -23,8 +23,9 @@ namespace NjitSoftware.View
     public partial class ArchiverDocumentManagement : Njit.Program.ComponentOne.Forms.ListFormWithoutMainRibbon
     {
         public SendDataToDocumentField SendDataToFormDocumentField;
-
+        public int? Document_ParentId { get; set; }
         private string PersonnelNumber;
+
         private Model.Archive.Document _CurrentDocument = null;
         [DefaultValue(null)]
         string tempDirectory;
@@ -76,8 +77,7 @@ namespace NjitSoftware.View
             imageListView.ThumbnailSize = new Size(Setting.User.ThisProgram.LoadedUserSetting.ArchiveDocumentsZoom, Setting.User.ThisProgram.LoadedUserSetting.ArchiveDocumentsZoom);
             kpImageViewer1.Mouse1Click += kpImageViewer1_Mouse1Click;
             tempDirectory = System.IO.Path.Combine(System.IO.Path.GetTempPath(), "~Mahba");
-            //درست کردن اندازه سایز پنل 
-            SetPanelFieldSize();
+
         }
 
 
@@ -92,7 +92,7 @@ namespace NjitSoftware.View
 
         #region گرفتن اطلاعات از فرم DocumentField
 
-        public void GetDataFromFormDocumentField(Dictionary<string, string> value,Dictionary<string, string> NewData,string type)
+        public void GetDataFromFormDocumentField(Dictionary<string, string> value, Dictionary<string, string> NewData, string type)
         {
             switch (type)
             {
@@ -108,7 +108,7 @@ namespace NjitSoftware.View
                     textBoxExtended10.SelectItem();
                     textBoxExtended10.SelectionStart = textBoxExtended10.SelectionStart;
                     textBoxExtended10.SelectionLength = 0;
-                    
+
                     break;
                 case "Field12":
                     AutoCompleteTextbox3 textBoxExtended12 = (AutoCompleteTextbox3)pnlInfo.Controls["Field12"];
@@ -121,7 +121,7 @@ namespace NjitSoftware.View
                     textBoxExtended12.SelectItem();
                     textBoxExtended12.SelectionStart = textBoxExtended12.SelectionStart;
                     textBoxExtended12.SelectionLength = 0;
-                    
+
                     break;
                 case "Field14":
                     AutoCompleteTextbox3 textBoxExtended14 = (AutoCompleteTextbox3)pnlInfo.Controls["Field14"];
@@ -134,7 +134,7 @@ namespace NjitSoftware.View
                     textBoxExtended14.SelectItem();
                     textBoxExtended14.SelectionStart = textBoxExtended14.SelectionStart;
                     textBoxExtended14.SelectionLength = 0;
-                    
+
                     break;
                 default:
                     break;
@@ -286,7 +286,7 @@ namespace NjitSoftware.View
             //نمایش اسناد این پرونده
             LoadDocuments_IN_Left_Panle();
             //فوکوس کردن بروی شماره پرونده
-            Njit.Program.Controls.TextBoxExtended textBoxExtended = pnlInfo.Controls.Find("Field4", true).FirstOrDefault() as Njit.Program.Controls.TextBoxExtended;
+            AutoCompleteTextBoxSamplePersonel.AutoCompleteTextBoxSamplePersonel textBoxExtended = pnlInfo.Controls.Find("Field4", true).FirstOrDefault() as AutoCompleteTextBoxSamplePersonel.AutoCompleteTextBoxSamplePersonel;
             textBoxExtended.Focus();
             //نمایش شماره اسناد 
             LoadShomareName();
@@ -454,16 +454,14 @@ namespace NjitSoftware.View
 
                         if (CurrentField.FieldName == "Field4")
                         {
-                            textBoxExtended.Text = this.PersonnelNumber;
-                            AutoCompleteStringCollection autoCompleteStringCollection = new AutoCompleteStringCollection();
-                            autoCompleteStringCollection.AddRange(Controller.Archive.DossierController.GetAllPersonnelNumbers());
-                            textBoxExtended.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                            textBoxExtended.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                            textBoxExtended.AutoCompleteCustomSource = autoCompleteStringCollection;
-                            textBoxExtended.KeyDown += txtPersonnelNumber_KeyDown;
-                            pnlInfo.Controls.Add(textBoxExtended);
+                            AutoCompleteTextBoxSamplePersonel.AutoCompleteTextBoxSamplePersonel txtPN = DossierFormHelper.CreateAutoTextBoxPersonel(CurrentField.Label, CurrentField.FieldName, CurrentField.FieldTypeCode, CurrentField.MinLength, CurrentField.MaxLength, CurrentField.MinValue, CurrentField.MaxValue, CurrentField.DefaultValue, XText, YText);
+                            txtPN.AutoCompleteList = Controller.Archive.DossierController.GetAllPersonnelNumbers().ToList();
+                            txtPN.Size = new Size(270, 20);
+                            txtPN.Font = new System.Drawing.Font("Tahoma", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+                            txtPN.KeyDown += txtPersonnelNumber_KeyDown;
+                            txtPN.Text = this.PersonnelNumber;
+                            pnlInfo.Controls.Add(txtPN);
                             break;
-
                         }
                         #endregion
                         #region نام_و_نام_خانوادگی
@@ -790,7 +788,7 @@ namespace NjitSoftware.View
 
         private void loadNameFamilyNN()
         {
-            Njit.Program.Controls.TextBoxExtended txtPN = (Njit.Program.Controls.TextBoxExtended)pnlInfo.Controls["Field4"];
+            AutoCompleteTextBoxSamplePersonel.AutoCompleteTextBoxSamplePersonel txtPN = (AutoCompleteTextBoxSamplePersonel.AutoCompleteTextBoxSamplePersonel)pnlInfo.Controls["Field4"];
             AutoCompleteTextbox3 txtName = (AutoCompleteTextbox3)pnlInfo.Controls["Field5"];
             AutoCompleteTextbox3 txtNN = (AutoCompleteTextbox3)pnlInfo.Controls["Field6"];
             txtName.Text = "";
@@ -1161,6 +1159,12 @@ namespace NjitSoftware.View
                         textBoxAuto.Text = "";
                         textBoxAuto.SelectedIndex = -1;
                     }
+                    else if (control is AutoCompleteTextBoxSamplePersonel.AutoCompleteTextBoxSamplePersonel)
+                    {
+                        AutoCompleteTextBoxSamplePersonel.AutoCompleteTextBoxSamplePersonel textBoxAuto = (AutoCompleteTextBoxSamplePersonel.AutoCompleteTextBoxSamplePersonel)control;
+                        textBoxAuto.Text = "";
+                        textBoxAuto.SelectedIndex = -1;
+                    }
                 }
 
             }
@@ -1380,7 +1384,7 @@ namespace NjitSoftware.View
                 _CurrentDocument = null;
                 //ابتدا شماره پرونده ارسال شده را مشخص می کنم
                 var Field4 = "";
-                Njit.Program.Controls.TextBoxExtended txtPersonnelNumber = (Njit.Program.Controls.TextBoxExtended)pnlInfo.Controls["Field4"];
+                AutoCompleteTextBoxSamplePersonel.AutoCompleteTextBoxSamplePersonel txtPersonnelNumber = (AutoCompleteTextBoxSamplePersonel.AutoCompleteTextBoxSamplePersonel)pnlInfo.Controls["Field4"];
                 if (txtPersonnelNumber.Text != "")
                     Field4 = txtPersonnelNumber.Text;
 
@@ -1842,12 +1846,28 @@ namespace NjitSoftware.View
                 try
                 {
                     System.Text.StringBuilder Error = new StringBuilder();
+                    int? parentid = null;
                     foreach (string file in openFileDialog.FileNames)
                     {
                         try
                         {
-                            this.SelectedSaveFormat = getFormat(file);
-                            SaveDocument(file);
+                            //اولین عکس بشود پدر تمام اسناد دیگر و بافی اسناد بشود پیوست هایش
+                            if (parentid == null)
+                            {
+                                this.SelectedSaveFormat = getFormat(file);
+                                SaveDocument(file);
+                                _CurrentDocument = Controller.Archive.DocumentController.GetDocument(Convert.ToInt32(this.Document_ParentId));
+                             
+                                parentid = this.Document_ParentId;
+                            }
+                            else
+                            {
+                               
+                                this.SelectedSaveFormat = getFormat(file);
+                                SaveDocument2(file);
+                            }
+
+                           
                         }
                         catch (Exception ex)
                         {
@@ -1855,7 +1875,11 @@ namespace NjitSoftware.View
                             Error.Append("_");
                         }
                     }
-                    NotDataDocument();
+                    LoadDocuments_IN_Left_Panle();
+                    ShowImage_In_Center_Panel();              
+                      
+                    //نمایش اسناد فاقد اطلاعات
+                    // NotDataDocument();
                 }
                 catch (Exception ex)
                 {
@@ -1890,7 +1914,7 @@ namespace NjitSoftware.View
         public void SaveDocument(string file)
         {
             Model.Archive.ArchiveTab archiveTab = Controller.Archive.ArchiveTabController.GetName("Document2");
-            Controller.Archive.DocumentController.AddDocument(this.PersonnelNumber, file, null, false, (Njit.Program.ComponentOne.Enums.SaveFormats)this.SelectedSaveFormat, Njit.Program.ComponentOne.Enums.CompressionTypes.None, archiveTab);
+            this.Document_ParentId = Controller.Archive.DocumentController.AddDocument(this.PersonnelNumber, file, null, false, (Njit.Program.ComponentOne.Enums.SaveFormats)this.SelectedSaveFormat, Njit.Program.ComponentOne.Enums.CompressionTypes.None, archiveTab).ID;
             Setting.User.ThisProgram.AddLog(Setting.User.UserOparatesPlaceNames.لاگیری_سند_و_پرونده, Setting.User.UserOparatesNames.اضافه_کردن_سند_به_پرونده, this.PersonnelNumber, file);
         }
         public enum SaveFormats
@@ -3191,427 +3215,9 @@ namespace NjitSoftware.View
         #endregion
 
 
-        #region F1
-        //اقدام کننده
-        private void EghdamDataGridView3()
-        {
-            if (btnSaveInfo.Visible)
-            {
-                pnlFields.Visible = true;
-                radGridViewFields.DataSource = null;
-                radGridViewFields.DataSource = ListEghdam.OrderBy(q => q.Value).ToList();
-                radGridViewFields.Columns[0].Width = 100;
-                radGridViewFields.Columns[0].HeaderText = "شماره";
-                radGridViewFields.Columns[1].HeaderText = "نام";
-                FieldstxtName.Focus();
-                txtName.Text = "لیست اقدام کنندگان";
-            }
-            else
-            {
-                pnlFields.Visible = false;
-            }
-        }
-
-        private void OnvanDataGridView2()
-        {
-            if (btnSaveInfo.Visible)
-            {
-                pnlFields.Visible = true;
-                radGridViewFields.DataSource = null;
-                radGridViewFields.DataSource = ListOnvan.OrderBy(q => q.Value).ToList();
-                radGridViewFields.Columns[0].Width = 100;
-                radGridViewFields.Columns[0].HeaderText = "شماره";
-                radGridViewFields.Columns[1].HeaderText = "نام";
-                FieldstxtName.Focus();
-                txtName.Text = "لیست عناوین ";
-            }
-            else
-            {
-                pnlFields.Visible = false;
-            }
-
-        }
-
-        private void MokhatabinDataGridView()
-        {
-            if (btnSaveInfo.Visible)
-            {
-                pnlFields.Visible = true;
-                radGridViewFields.DataSource = null;
-                radGridViewFields.DataSource = ListMokhatab.OrderBy(q => q.Value).ToList();
-                radGridViewFields.Columns[0].Width = 100;
-                radGridViewFields.Columns[0].HeaderText = "شماره";
-                radGridViewFields.Columns[1].HeaderText = "نام";
-                FieldstxtName.Focus();
-                txtName.Text = "لیست مخاطبین ";
-            }
-            else
-            {
-                pnlFields.Visible = false;
-            }
-        }
 
 
 
-
-        private void FieldsdataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0)
-            {
-                return;
-            }
-
-            MessageBox.Show(e.RowIndex.ToString());
-        }
-
-        private void FieldsdataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0)
-            {
-                return;
-            }
-            MessageBox.Show(e.RowIndex.ToString());
-        }
-        private string _KeyField = null;
-        [DefaultValue(null)]
-        protected string KeyField
-        {
-            get
-            {
-                return _KeyField;
-            }
-            set
-            {
-                _KeyField = value;
-            }
-        }
-
-        private void FieldsbtnEdit_Click(object sender, EventArgs e)
-        {
-            if (FieldstxtName.Text.Trim() != "")
-            {
-                try
-                {
-                    this.CaptionField = "Title";
-                    this.KeyField = "ID";
-                    int _Id = 0;
-                    if (_FieldSelect == 1)
-                    {
-                        this.TableName = "Field10";
-                        _Id = Convert.ToInt32(this.TableValue);
-                    }
-                    else if (_FieldSelect == 2)
-                    {
-                        this.TableName = "Field12";
-                        _Id = Convert.ToInt32(this.TableValue);
-                    }
-                    else if (_FieldSelect == 3)
-                    {
-                        this.TableName = "Field14";
-                        _Id = Convert.ToInt32(this.TableValue);
-                    }
-                    Njit.Sql.DataAccess da = new Njit.Sql.DataAccess(Setting.Sql.ThisProgram.ArchiveConnection.ConnectionString);
-                    if (_Id != 0)
-                    {
-                        (da ?? (Njit.Program.Options.SettingInitializer.GetDataAccess())).Execute(CommandType.Text, string.Format("UPDATE [{0}] SET [{1}]=@p1 WHERE [{2}]=@p2", this.TableName, this.CaptionField, this.KeyField), "@p1", FieldstxtName.Text, "@p2", _Id);
-                        GetDataFromDatabase_Shomare_Mokhatabt_Onvan();
-                        Insert_Data_Mokhatabin_Onvan_Eghdam();
-                        if (_FieldSelect == 1)
-                        {
-                            MokhatabinDataGridView();
-                        }
-                        else if (_FieldSelect == 2)
-                        {
-                            OnvanDataGridView2();
-                        }
-                        else if (_FieldSelect == 3)
-                        {
-                            EghdamDataGridView3();
-                        }
-                        Setting.User.ThisProgram.AddLog(Setting.User.UserOparatesPlaceNames.لاگیری_سند_و_پرونده, Setting.User.UserOparatesNames.ویرایش, this.PersonnelNumber, "ویرایش فیلد اطلاعاتی" + FieldstxtName.Text);
-
-                        PersianMessageBox.Show("اطلاعات با موفقیت ویرایش شد.");
-                    }
-                    else
-                    {
-                        throw new Exception("فیلد مورد نظر وجود ندارد");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    PersianMessageBox.Show(this, "خطا در ثبت اطلاعات" + "\r\n\r\n" + ex.Message);
-                    return;
-                }
-
-            }
-
-        }
-
-        private void FieldsbtnDelete_Click(object sender, EventArgs e)
-        {
-            DialogResult dr = PersianMessageBox.Show("آیا از حذف اطلاعات اطمینان دارید؟", "حذف اطلاعات", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-            if (dr == DialogResult.OK)
-            {
-                if (FieldstxtName.Text != null)
-                {
-
-                    try
-                    {
-                        this.CaptionField = "Title";
-                        this.KeyField = "ID";
-                        int _Id = 0;
-                        if (_FieldSelect == 1)
-                        {
-                            this.TableName = "Field10";
-                            _Id = Convert.ToInt32(this.TableValue);
-                        }
-                        else if (_FieldSelect == 2)
-                        {
-                            this.TableName = "Field12";
-                            _Id = Convert.ToInt32(this.TableValue);
-                        }
-                        else if (_FieldSelect == 3)
-                        {
-                            this.TableName = "Field14";
-                            _Id = Convert.ToInt32(this.TableValue);
-                        }
-                        Njit.Sql.DataAccess da = new Njit.Sql.DataAccess(Setting.Sql.ThisProgram.ArchiveConnection.ConnectionString);
-                        if (_Id != 0)
-                        {
-                            (da ?? (Njit.Program.Options.SettingInitializer.GetDataAccess())).Execute(CommandType.Text, string.Format("DELETE FROM [{0}] WHERE [{1}]=@p", this.TableName, this.KeyField), "@p", _Id);
-                            GetDataFromDatabase_Shomare_Mokhatabt_Onvan();
-                            Insert_Data_Mokhatabin_Onvan_Eghdam();
-                            if (_FieldSelect == 1)
-                            {
-                                MokhatabinDataGridView();
-                            }
-                            else if (_FieldSelect == 2)
-                            {
-                                OnvanDataGridView2();
-                            }
-                            else if (_FieldSelect == 3)
-                            {
-                                EghdamDataGridView3();
-                            }
-                            Setting.User.ThisProgram.AddLog(Setting.User.UserOparatesPlaceNames.لاگیری_سند_و_پرونده, Setting.User.UserOparatesNames.حذف, this.PersonnelNumber, "حذف فیلد اطلاعاتی" + FieldstxtName.Text);
-
-                            PersianMessageBox.Show("اطلاعات با موفقیت حذف شد.");
-                        }
-                        else
-                        {
-                            throw new Exception("فیلد مورد نظر وجود ندارد");
-                        }
-                    }
-                    catch (System.Data.SqlClient.SqlException ex)
-                    {
-                        if (ex.ErrorCode == -2146232060 && ex.Number == 547)
-                        {
-                            PersianMessageBox.Show(this, "'" + this.TableValue + "' قابل حذف نیست. از این اطلاعات در جای دیگر استفاده شده است");
-                        }
-                        else
-                        {
-                            PersianMessageBox.Show(this, "خطا در حذف '" + this.TableValue + "'" + Environment.NewLine + Environment.NewLine + ex.Message);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        PersianMessageBox.Show(this, "خطا در حذف '" + this.TableValue + "'" + Environment.NewLine + Environment.NewLine + ex.Message);
-                        return;
-                    }
-
-                }
-            }
-        }
-
-
-        private string _TableName = null;
-        [DefaultValue(null)]
-        protected string TableName
-        {
-            get
-            {
-                return _TableName;
-            }
-            set
-            {
-                _TableName = value;
-            }
-        }
-        private string _TableValue = null;
-        [DefaultValue(null)]
-        protected string TableValue
-        {
-            get
-            {
-                return _TableValue;
-            }
-            set
-            {
-                _TableValue = value;
-            }
-        }
-        private string _CaptionField = null;
-        [DefaultValue(null)]
-        protected string CaptionField
-        {
-            get
-            {
-                return _CaptionField;
-            }
-            set
-            {
-                _CaptionField = value;
-            }
-        }
-        private void FieldsbtnAdd_Click(object sender, EventArgs e)
-        {
-            if (FieldstxtName.Text.Trim() == "")
-            {
-                PersianMessageBox.Show(this, "مقدار وارد نشده است");
-                errorProvider.SetError(FieldstxtName, "مقدار وارد نشده است");
-                FieldstxtName.Focus();
-                return;
-            }
-            try
-            {
-                this.CaptionField = "Title";
-                if (_FieldSelect == 1)
-                {
-                    this.TableName = "Field10";
-                    if (ListMokhatab.Any(q => q.Value == FieldstxtName.Text && q.Value.Length == FieldstxtName.Text.Length))
-                    {
-                        throw new Exception(string.Format("در لیست مخاطبین' {0} ' وجود دارد", FieldstxtName.Text));
-                    }
-                }
-                else if (_FieldSelect == 2)
-                {
-                    this.TableName = "Field12";
-                    if (ListOnvan.Any(q => q.Value == FieldstxtName.Text && q.Value.Length == FieldstxtName.Text.Length))
-                    {
-                        throw new Exception(string.Format("در لیست عناوین' {0} ' وجود دارد", FieldstxtName.Text));
-                    }
-                }
-                else if (_FieldSelect == 3)
-                {
-                    this.TableName = "Field14";
-                    if (ListEghdam.Any(q => q.Value == FieldstxtName.Text && q.Value.Length == FieldstxtName.Text.Length))
-                    {
-                        throw new Exception(string.Format("در لیست اقدام کنندگان ' {0} ' وجود دارد", FieldstxtName.Text));
-                    }
-                }
-                Njit.Sql.DataAccess da = new Njit.Sql.DataAccess(Setting.Sql.ThisProgram.ArchiveConnection.ConnectionString);
-                (da ?? (Njit.Program.Options.SettingInitializer.GetDataAccess())).Execute(CommandType.Text, string.Format("INSERT INTO [{0}] ([{1}]) VALUES(@p)", this.TableName, this.CaptionField), "@p", FieldstxtName.Text);
-                GetDataFromDatabase_Shomare_Mokhatabt_Onvan();
-                Insert_Data_Mokhatabin_Onvan_Eghdam();
-                if (_FieldSelect == 1)
-                {
-                    MokhatabinDataGridView();
-                }
-                else if (_FieldSelect == 2)
-                {
-                    OnvanDataGridView2();
-                }
-                else if (_FieldSelect == 3)
-                {
-                    EghdamDataGridView3();
-                }
-                Setting.User.ThisProgram.AddLog(Setting.User.UserOparatesPlaceNames.لاگیری_سند_و_پرونده, Setting.User.UserOparatesNames.ثبت, this.PersonnelNumber, "اضافه کردن فیلد اطلاعاتی" + FieldstxtName.Text);
-                PersianMessageBox.Show("اطلاعات با موفقیت اضافه شد.");
-            }
-            catch (Exception ex)
-            {
-                PersianMessageBox.Show(this, "خطا در ثبت اطلاعات" + "\r\n\r\n" + ex.Message);
-                return;
-            }
-        }
-
-        private void radGridViewFields_CellClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
-        {
-            foreach (Telerik.WinControls.UI.GridViewRowInfo item in radGridViewFields.SelectedRows)
-            {
-                FieldstxtName.Text = item.Cells[1].Value.ToString();
-                this.TableValue = item.Cells[0].Value.ToString();
-            }
-
-        }
-
-        private void radGridViewFields_CellDoubleClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
-        {
-            foreach (Telerik.WinControls.UI.GridViewRowInfo item in radGridViewFields.SelectedRows)
-            {
-                FieldstxtName.Text = item.Cells[1].Value.ToString();
-                this.TableValue = item.Cells[0].Value.ToString();
-            }
-            if (_FieldSelect == 1)
-            {
-                AutoCompleteTextbox3 textBoxExtended10 = (AutoCompleteTextbox3)pnlInfo.Controls["Field10"];
-                Njit.Program.Controls.TextBoxExtended textBoxExtended9 = (Njit.Program.Controls.TextBoxExtended)pnlInfo.Controls["Field9"];
-                textBoxExtended9.Text = TableValue;
-                textBoxExtended10.Text = FieldstxtName.Text;
-                textBoxExtended10.SelectItem();
-
-            }
-            else if (_FieldSelect == 2)
-            {
-                AutoCompleteTextbox3 textBoxExtended12 = (AutoCompleteTextbox3)pnlInfo.Controls["Field12"];
-                Njit.Program.Controls.TextBoxExtended textBoxExtended11 = (Njit.Program.Controls.TextBoxExtended)pnlInfo.Controls["Field11"];
-                textBoxExtended11.Text = TableValue;
-                textBoxExtended12.Text = FieldstxtName.Text;
-                textBoxExtended12.SelectItem();
-
-
-            }
-            else if (_FieldSelect == 3)
-            {
-                AutoCompleteTextbox3 textBoxExtended14 = (AutoCompleteTextbox3)pnlInfo.Controls["Field14"];
-                Njit.Program.Controls.TextBoxExtended textBoxExtended13 = (Njit.Program.Controls.TextBoxExtended)pnlInfo.Controls["Field13"];
-                textBoxExtended13.Text = TableValue;
-                textBoxExtended14.Text = FieldstxtName.Text;
-                textBoxExtended14.SelectItem();
-
-
-            }
-            pnlFields.Visible = false;
-        }
-        //دکمه خروج
-        private void button2_Click(object sender, EventArgs e)
-        {
-            pnlFields.Visible = false;
-        }
-
-        #endregion
-
-        private void colorSlider1_Scroll(object sender, ScrollEventArgs e)
-        {
-            if (CanRefreshThumbs(e.Type))
-            {
-                Model.Common.ArchiveCommonDataClassesDataContext dc = new Model.Common.ArchiveCommonDataClassesDataContext(Setting.Sql.ThisProgram.DatabaseConnection.ConnectionString);
-                var query = dc.FormStates.Where(t => t.MachineName == Environment.MachineName && t.FormName == "FieldPanel");
-                if (query.Count() == 1)
-                {
-                    query.FirstOrDefault().Width = e.NewValue;
-                    dc.SubmitChanges();
-                }
-                else
-                {
-                    Model.Common.FormState state = Model.Common.FormState.GetNewInstance(Environment.MachineName, "FieldPanel", 0, e.NewValue, 100, 0, 0);
-                    Model.Common.FormState.Insert(dc, state);
-                    dc.SubmitChanges();
-                    query = dc.FormStates.Where(t => t.MachineName == Environment.MachineName && t.FormName == "FieldPanel");
-                }
-                pnlFields.Size = new Size(e.NewValue, query.FirstOrDefault().Height);
-            }
-
-        }
-        private void SetPanelFieldSize()
-        {
-            Model.Common.ArchiveCommonDataClassesDataContext dc = new Model.Common.ArchiveCommonDataClassesDataContext(Setting.Sql.ThisProgram.DatabaseConnection.ConnectionString);
-            var query = dc.FormStates.Where(t => t.MachineName == Environment.MachineName && t.FormName == "FieldPanel");
-            if (query.Count() == 1)
-            {
-                pnlFields.Size = new Size(query.FirstOrDefault().Width, query.FirstOrDefault().Height);
-            }
-        }
         #region Start Sacnner
         private void btnScan_DropDownItemClicked(object sender, C1.Win.C1Input.DropDownItemClickedEventArgs e)
         {
@@ -4225,32 +3831,7 @@ namespace NjitSoftware.View
 
         #endregion
 
-        private void colorSlider2_Scroll(object sender, ScrollEventArgs e)
-        {
-            if (CanRefreshThumbs(e.Type))
-            {
-                Model.Common.ArchiveCommonDataClassesDataContext dc = new Model.Common.ArchiveCommonDataClassesDataContext(Setting.Sql.ThisProgram.DatabaseConnection.ConnectionString);
-                var query = dc.FormStates.Where(t => t.MachineName == Environment.MachineName && t.FormName == "FieldPanel");
-                if (query.Count() == 1)
-                {
-                    query.FirstOrDefault().Height = e.NewValue;
-                    dc.SubmitChanges();
-                }
-                else
-                {
-                    Model.Common.FormState state = Model.Common.FormState.GetNewInstance(Environment.MachineName, "FieldPanel", 0, 400, e.NewValue, 0, 0);
-                    Model.Common.FormState.Insert(dc, state);
-                    dc.SubmitChanges();
-                    query = dc.FormStates.Where(t => t.MachineName == Environment.MachineName && t.FormName == "FieldPanel");
-                }
-                pnlFields.Size = new Size(query.FirstOrDefault().Width, e.NewValue);
-            }
-        }
 
-        private void ArchiverDocumentManagement_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 
 }

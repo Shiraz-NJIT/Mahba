@@ -852,6 +852,13 @@ namespace NjitSoftware
                         break;
 
                     case (int)Enums.BoxTypes.کادر_متن:
+                        if (field.FieldName == "Field4")
+                        {
+                            AutoCompleteTextBoxSamplePersonel.AutoCompleteTextBoxSamplePersonel _TextBoxAutoExtended = panel.Controls[field.FieldName] as AutoCompleteTextBoxSamplePersonel.AutoCompleteTextBoxSamplePersonel;
+                            SetDocumnetSqlCommandParameter(_SqlCommand, ref values, field.FieldName, _TextBoxAutoExtended.Text);
+                            AddFirstParameter = false;
+                            break;
+                        }
                         if (field.FieldName == "Field5")
                         {
                             AutoCompleteTextBoxSample3.AutoCompleteTextbox3 _TextBoxAutoExtended = panel.Controls[field.FieldName] as AutoCompleteTextBoxSample3.AutoCompleteTextbox3;

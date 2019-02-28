@@ -456,11 +456,14 @@ namespace NjitSoftware.View
         /// </summary>
         private void SetPersonnelNumberAutoComplate()
         {
-            AutoCompleteStringCollection autoCompleteStringCollection = new AutoCompleteStringCollection();
-            autoCompleteStringCollection.AddRange(listNameNN.Select(q => q.PersonnelNumber).ToArray());
-            txtPersonnelNumber.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            txtPersonnelNumber.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            txtPersonnelNumber.AutoCompleteCustomSource = autoCompleteStringCollection;
+            //AutoCompleteStringCollection autoCompleteStringCollection = new AutoCompleteStringCollection();
+        
+            //autoCompleteStringCollection.AddRange(listNameNN.Select(q => q.PersonnelNumber).ToArray());
+            //txtPersonnelNumber.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            //txtPersonnelNumber.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            //txtPersonnelNumber.AutoCompleteCustomSource = autoCompleteStringCollection;
+            txtPersonnelNumber.AutoCompleteList = listNameNN.Select(q => q.PersonnelNumber).ToList();
+         
         }
         #endregion
         #endregion

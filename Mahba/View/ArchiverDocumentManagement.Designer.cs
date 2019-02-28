@@ -38,24 +38,6 @@
             this.pnlImageView = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.picLoader = new System.Windows.Forms.PictureBox();
-            this.pnlFields = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.FieldstxtName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.FieldsbtnDelete = new System.Windows.Forms.Button();
-            this.FieldsbtnAdd = new System.Windows.Forms.Button();
-            this.FieldsbtnEdit = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.colorSlider1 = new Njit.Program.Controls.ColorSlider();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.colorSlider2 = new Njit.Program.Controls.ColorSlider();
             this.kpImageViewer1 = new KaiwaProjects.KpImageViewer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -112,15 +94,6 @@
             this.pnlImageView.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLoader)).BeginInit();
-            this.pnlFields.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel12.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlRight.SuspendLayout();
             this.panleInfo.SuspendLayout();
@@ -246,7 +219,6 @@
             // panel4
             // 
             this.panel4.Controls.Add(this.picLoader);
-            this.panel4.Controls.Add(this.pnlFields);
             this.panel4.Controls.Add(this.kpImageViewer1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(10, 0);
@@ -266,215 +238,6 @@
             this.picLoader.TabIndex = 10;
             this.picLoader.TabStop = false;
             this.picLoader.Visible = false;
-            // 
-            // pnlFields
-            // 
-            this.pnlFields.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlFields.Controls.Add(this.panel11);
-            this.pnlFields.Controls.Add(this.panel5);
-            this.pnlFields.Controls.Add(this.panel10);
-            this.pnlFields.Location = new System.Drawing.Point(16, 72);
-            this.pnlFields.Name = "pnlFields";
-            this.pnlFields.Size = new System.Drawing.Size(624, 384);
-            this.pnlFields.TabIndex = 5;
-            this.pnlFields.Visible = false;
-            // 
-            // panel11
-            // 
-            this.panel11.Controls.Add(this.panel7);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(19, 78);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(603, 304);
-            this.panel11.TabIndex = 12;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.txtName);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(603, 304);
-            this.panel7.TabIndex = 10;
-            // 
-            // txtName
-            // 
-            this.txtName.BackColor = System.Drawing.Color.Azure;
-            this.txtName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtName.Enabled = false;
-            this.txtName.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.txtName.Location = new System.Drawing.Point(0, 0);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(603, 26);
-            this.txtName.TabIndex = 1;
-            this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel5.Controls.Add(this.panel8);
-            this.panel5.Controls.Add(this.panel6);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(19, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(603, 78);
-            this.panel5.TabIndex = 7;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.FieldstxtName);
-            this.panel8.Controls.Add(this.label1);
-            this.panel8.Controls.Add(this.panel12);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel8.Location = new System.Drawing.Point(0, 21);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(603, 57);
-            this.panel8.TabIndex = 1;
-            // 
-            // FieldstxtName
-            // 
-            this.FieldstxtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FieldstxtName.Dock = System.Windows.Forms.DockStyle.Right;
-            this.FieldstxtName.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FieldstxtName.Location = new System.Drawing.Point(104, 0);
-            this.FieldstxtName.Name = "FieldstxtName";
-            this.FieldstxtName.Size = new System.Drawing.Size(444, 33);
-            this.FieldstxtName.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label1.Location = new System.Drawing.Point(548, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 21);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "عنوان:";
-            // 
-            // panel12
-            // 
-            this.panel12.Controls.Add(this.FieldsbtnDelete);
-            this.panel12.Controls.Add(this.FieldsbtnAdd);
-            this.panel12.Controls.Add(this.FieldsbtnEdit);
-            this.panel12.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel12.Location = new System.Drawing.Point(0, 32);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(603, 25);
-            this.panel12.TabIndex = 6;
-            // 
-            // FieldsbtnDelete
-            // 
-            this.FieldsbtnDelete.BackColor = System.Drawing.Color.IndianRed;
-            this.FieldsbtnDelete.Dock = System.Windows.Forms.DockStyle.Left;
-            this.FieldsbtnDelete.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.FieldsbtnDelete.Location = new System.Drawing.Point(0, 0);
-            this.FieldsbtnDelete.Name = "FieldsbtnDelete";
-            this.FieldsbtnDelete.Size = new System.Drawing.Size(75, 25);
-            this.FieldsbtnDelete.TabIndex = 5;
-            this.FieldsbtnDelete.Text = "حذف";
-            this.FieldsbtnDelete.UseVisualStyleBackColor = false;
-            this.FieldsbtnDelete.Click += new System.EventHandler(this.FieldsbtnDelete_Click);
-            // 
-            // FieldsbtnAdd
-            // 
-            this.FieldsbtnAdd.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.FieldsbtnAdd.Dock = System.Windows.Forms.DockStyle.Right;
-            this.FieldsbtnAdd.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.FieldsbtnAdd.Location = new System.Drawing.Point(453, 0);
-            this.FieldsbtnAdd.Name = "FieldsbtnAdd";
-            this.FieldsbtnAdd.Size = new System.Drawing.Size(75, 25);
-            this.FieldsbtnAdd.TabIndex = 6;
-            this.FieldsbtnAdd.Text = "اضافه";
-            this.FieldsbtnAdd.UseVisualStyleBackColor = false;
-            this.FieldsbtnAdd.Click += new System.EventHandler(this.FieldsbtnAdd_Click);
-            // 
-            // FieldsbtnEdit
-            // 
-            this.FieldsbtnEdit.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.FieldsbtnEdit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.FieldsbtnEdit.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.FieldsbtnEdit.Location = new System.Drawing.Point(528, 0);
-            this.FieldsbtnEdit.Name = "FieldsbtnEdit";
-            this.FieldsbtnEdit.Size = new System.Drawing.Size(75, 25);
-            this.FieldsbtnEdit.TabIndex = 1;
-            this.FieldsbtnEdit.Text = "ویرایش";
-            this.FieldsbtnEdit.UseVisualStyleBackColor = false;
-            this.FieldsbtnEdit.Click += new System.EventHandler(this.FieldsbtnEdit_Click);
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.panel9);
-            this.panel6.Controls.Add(this.colorSlider1);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(603, 27);
-            this.panel6.TabIndex = 0;
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.button2);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel9.Location = new System.Drawing.Point(577, 0);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(26, 27);
-            this.panel9.TabIndex = 0;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.MistyRose;
-            this.button2.Image = global::NjitSoftware.Properties.Resources.Close;
-            this.button2.Location = new System.Drawing.Point(6, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(20, 21);
-            this.button2.TabIndex = 1;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // colorSlider1
-            // 
-            this.colorSlider1.BarPenColor = System.Drawing.Color.DarkGray;
-            this.colorSlider1.ElapsedInnerColor = System.Drawing.Color.DarkSlateBlue;
-            this.colorSlider1.ElapsedOuterColor = System.Drawing.Color.SkyBlue;
-            this.colorSlider1.LargeChange = 200;
-            this.colorSlider1.Location = new System.Drawing.Point(6, 3);
-            this.colorSlider1.Maximum = 1000;
-            this.colorSlider1.Minimum = 100;
-            this.colorSlider1.MouseWheelBarPartitions = 100;
-            this.colorSlider1.Name = "colorSlider1";
-            this.colorSlider1.Size = new System.Drawing.Size(549, 15);
-            this.colorSlider1.SmallChange = 100;
-            this.colorSlider1.TabIndex = 37;
-            this.colorSlider1.Value = 100;
-            this.colorSlider1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.colorSlider1_Scroll);
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.colorSlider2);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel10.Location = new System.Drawing.Point(0, 0);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(19, 382);
-            this.panel10.TabIndex = 11;
-            // 
-            // colorSlider2
-            // 
-            this.colorSlider2.BarPenColor = System.Drawing.Color.DarkGray;
-            this.colorSlider2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.colorSlider2.ElapsedInnerColor = System.Drawing.Color.DarkSlateBlue;
-            this.colorSlider2.ElapsedOuterColor = System.Drawing.Color.SkyBlue;
-            this.colorSlider2.LargeChange = 200;
-            this.colorSlider2.Location = new System.Drawing.Point(0, 0);
-            this.colorSlider2.Maximum = 1000;
-            this.colorSlider2.Minimum = 100;
-            this.colorSlider2.MouseWheelBarPartitions = 100;
-            this.colorSlider2.Name = "colorSlider2";
-            this.colorSlider2.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.colorSlider2.Size = new System.Drawing.Size(19, 382);
-            this.colorSlider2.SmallChange = 100;
-            this.colorSlider2.TabIndex = 38;
-            this.colorSlider2.Value = 100;
-            this.colorSlider2.Scroll += new System.Windows.Forms.ScrollEventHandler(this.colorSlider2_Scroll);
             // 
             // kpImageViewer1
             // 
@@ -952,7 +715,7 @@
             // 
             // ArchiverDocumentManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1285, 606);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -962,7 +725,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ثبت و مشاهده اسناد بایگانی";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.ArchiverDocumentManagement_Load);
             this.panelCommand.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
             this.pnlListView.ResumeLayout(false);
@@ -971,17 +733,6 @@
             this.pnlImageView.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLoader)).EndInit();
-            this.pnlFields.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel12.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.pnlRight.ResumeLayout(false);
             this.panleInfo.ResumeLayout(false);
@@ -1054,30 +805,12 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel pnlFields;
-        private System.Windows.Forms.Panel panel7;
         private Njit.Program.Telerik.Controls.RadGridViewExtended radGridViewFields;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button FieldsbtnAdd;
-        private System.Windows.Forms.TextBox FieldstxtName;
-        private System.Windows.Forms.Button FieldsbtnDelete;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button FieldsbtnEdit;
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel9;
-        private Njit.Program.Controls.ColorSlider colorSlider1;
         private C1.Win.C1Input.DropDownItem AddDocumentPeyvast;
         private C1.Win.C1Input.C1SplitButton btnScan;
         private C1.Win.C1Input.DropDownItem dropDownItem6;
         private C1.Win.C1Input.DropDownItem dropDownItem7;
         private C1.Win.C1Input.DropDownItem dropDownItem1;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Panel panel10;
-        private Njit.Program.Controls.ColorSlider colorSlider2;
         private C1.Win.C1Input.DropDownItem dropDownItem3;
         private C1.Win.C1Input.DropDownItem dropDownItem4;
         private C1.Win.C1Input.DropDownItem dropDownItem5;

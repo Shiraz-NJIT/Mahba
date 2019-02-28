@@ -23,7 +23,7 @@ namespace NjitSoftware.View
             saveFileDialog1.RestoreDirectory = true;
             saveFileDialog1.CreatePrompt = true;
             saveFileDialog1.FileName = "اطلاعات دانشجویان برنامه مهبا";
-            radGridViewExtended1.BestFitColumnsSmart();
+            radGridViewExtended1.BestColumn();
         }
         public DataTable ReadExcel(string fileName, string fileExt)
         {
@@ -70,6 +70,10 @@ namespace NjitSoftware.View
 
         private void btnChoose_Click(object sender, EventArgs e)
         {
+            radGridViewExtended1.DataSource = null;
+            dataGridView1.DataSource = null;
+            btnChoose.Cursor = Cursors.WaitCursor; 
+            
             string filePath = string.Empty;
             string fileExt = string.Empty;
             OpenFileDialog file = new OpenFileDialog();//open dialog to choose file
@@ -141,6 +145,7 @@ namespace NjitSoftware.View
                 else
                     MessageBox.Show("Please choose .xls or .xlsx file only.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);//custom messageBox to show error
             }
+            btnChoose.Cursor = Cursors.Default; 
         }
         public bool CheckPersonnelNumber(string PersonnelNumber)
         {

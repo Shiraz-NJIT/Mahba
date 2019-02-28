@@ -281,6 +281,23 @@ namespace NjitSoftware
 
             return textBox;
         }
+        public static AutoCompleteTextBoxSamplePersonel.AutoCompleteTextBoxSamplePersonel CreateAutoTextBoxPersonel(string label, string fieldName, int fieldTypeCode, int? minLength, int? maxLength, double? minValue, double? maxValue, string defaultValue, int x, int y, System.Windows.Forms.RightToLeft rightToLeft = RightToLeft.Yes)
+        {
+            AutoCompleteTextBoxSamplePersonel.AutoCompleteTextBoxSamplePersonel textBox = new AutoCompleteTextBoxSamplePersonel.AutoCompleteTextBoxSamplePersonel();
+            textBox.Tag = label; ;
+            textBox.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            textBox.Location = new System.Drawing.Point(x, y);
+            textBox.Name = fieldName;
+            textBox.RightToLeft = rightToLeft;
+            textBox.Size = new System.Drawing.Size(160, 20);
+            textBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            textBox.BackColor = System.Drawing.Color.White;
+            textBox.ForeColor = System.Drawing.Color.Black;
+            // SetControlInputType(textBox, fieldTypeCode, minLength, maxLength, minValue, maxValue);
+            textBox.Text = defaultValue ?? "";
+
+            return textBox;
+        }
         public static AutoCompleteTextbox3 CreateAutoTextBox3(string label, string fieldName, int fieldTypeCode, int? minLength, int? maxLength, double? minValue, double? maxValue, string defaultValue, int x, int y, System.Windows.Forms.RightToLeft rightToLeft = RightToLeft.Yes)
         {
             AutoCompleteTextbox3 textBox = new AutoCompleteTextbox3();

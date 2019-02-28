@@ -94,7 +94,7 @@
             this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnClose.Location = new System.Drawing.Point(723, 18);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 27);
+            this.btnClose.Size = new System.Drawing.Size(75, 29);
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "خروج";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -105,7 +105,7 @@
             this.btnChoose.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnChoose.Location = new System.Drawing.Point(798, 18);
             this.btnChoose.Name = "btnChoose";
-            this.btnChoose.Size = new System.Drawing.Size(123, 27);
+            this.btnChoose.Size = new System.Drawing.Size(123, 29);
             this.btnChoose.TabIndex = 0;
             this.btnChoose.Text = "انتخاب فایل";
             this.btnChoose.UseVisualStyleBackColor = true;
@@ -117,21 +117,20 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(20, 35);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(884, 146);
+            this.dataGridView1.Size = new System.Drawing.Size(884, 144);
             this.dataGridView1.TabIndex = 5;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.dossierTypeComboBoxExtended);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.linkHelp);
             this.groupBox1.Controls.Add(this.btnClose);
             this.groupBox1.Controls.Add(this.btnChoose);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(3, 18);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(924, 48);
+            this.groupBox1.Size = new System.Drawing.Size(924, 50);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ورود اطلاعات";
@@ -156,23 +155,24 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.ForeColor = System.Drawing.Color.Coral;
-            this.label1.Location = new System.Drawing.Point(3, 32);
+            this.label1.Location = new System.Drawing.Point(3, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(339, 14);
+            this.label1.Size = new System.Drawing.Size(835, 14);
             this.label1.TabIndex = 4;
-            this.label1.Text = "نکته: ترتیب ستون ها مطابق با فایل\" راهنمای ورود اطلاعات \" باشد";
+            this.label1.Text = "نکته: ترتیب ستون ها مطابق با فایل\" راهنمای ورود اطلاعات \" باشد و حتما فیلد دانشجو" +
+    "ی میهمان و آیا فارق التحصیل هستید را با بله یا خیر یا 1و 0 یا trueوfalseپر کنید";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Controls.Add(this.groupBox3);
+            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(3, 66);
+            this.groupBox2.Location = new System.Drawing.Point(3, 68);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(20);
-            this.groupBox2.Size = new System.Drawing.Size(924, 384);
+            this.groupBox2.Size = new System.Drawing.Size(924, 382);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "اطلاعات دانشجویان ";
@@ -181,7 +181,7 @@
             // 
             this.groupBox3.Controls.Add(this.radGridViewExtended1);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox3.Location = new System.Drawing.Point(20, 181);
+            this.groupBox3.Location = new System.Drawing.Point(20, 179);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(884, 183);
             this.groupBox3.TabIndex = 8;
@@ -190,6 +190,7 @@
             // 
             // radGridViewExtended1
             // 
+            this.radGridViewExtended1.AutoScroll = true;
             this.radGridViewExtended1.BackColor = System.Drawing.SystemColors.Control;
             this.radGridViewExtended1.Cursor = System.Windows.Forms.Cursors.Default;
             this.radGridViewExtended1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -233,6 +234,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radGridViewExtended1.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridViewExtended1)).EndInit();

@@ -1512,3 +1512,7 @@ E:\PezeshkiMahba\Version2\Mahba\Mahba\obj\Debug\NjitSoftware.View.ShowDetailMess
 E:\PezeshkiMahba\Version2\Mahba\Mahba\obj\Debug\NjitSoftware.View.ShowMessage.resources
 E:\PezeshkiMahba\Version2\Mahba\Mahba\obj\Debug\NjitSoftware.View.UserControlTextEditor.Editor.resources
 E:\PezeshkiMahba\Version2\Mahba\Mahba\obj\Debug\Mahba.csprojResolveAssemblyReference.cache
+E:\PezeshkiMahba\Version2\Mahba\Mahba\bin\Debug\Njit.Program.Telerik.dll
+E:\PezeshkiMahba\Version2\Mahba\Mahba\bin\Debug\Njit.Program.Telerik.pdb
+E:\PezeshkiMahba\Version2\Mahba\Mahba\bin\Debug\Njit.Program.dll
+E:\PezeshkiMahba\Version2\Mahba\Mahba\bin\Debug\Njit.Program.pdb

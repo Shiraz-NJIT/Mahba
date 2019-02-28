@@ -405,6 +405,4 @@ E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program\obj\Debug\Njit.Program.Propert
 E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program\obj\Debug\Njit.Program.csproj.GenerateResource.Cache
 E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program\obj\Debug\Njit.Program.dll
 E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program\obj\Debug\Njit.Program.pdb
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program\obj\Debug\Njit.Program.csprojAssemblyReference.cache
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program\obj\Debug\Njit.Program.csproj.CoreCompileInputs.cache
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program\obj\Debug\Njit.Program.csproj.CopyComplete
+E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program\obj\Debug\Njit.Program.csprojResolveAssemblyReference.cache

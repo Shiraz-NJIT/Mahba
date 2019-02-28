@@ -16,6 +16,7 @@ namespace Njit.Program.Controls
         public TextBoxExtended()
         {
             InitializeComponent();
+      
             toolStripMenuItemCopy.Click += ToolStripMenuItemCopyClick;
             toolStripMenuItemCut.Click += ToolStripMenuItemCutClick;
             toolStripMenuItemDelete.Click += ToolStripMenuItemDeleteClick;
@@ -23,6 +24,8 @@ namespace Njit.Program.Controls
             toolStripMenuItemSelectAll.Click += ToolStripMenuItemSelectAllClick;
             toolStripMenuItemUndo.Click += ToolStripMenuItemUndoClick;
         }
+
+      
 
         private int _MinLength;
         [DefaultValue(0)]
@@ -681,6 +684,7 @@ namespace Njit.Program.Controls
 
         private void contextMenuStrip_Opening(object sender, CancelEventArgs e)
         {
+            
             toolStripMenuItemUndo.Enabled = this.CanUndo;
             toolStripMenuItemDelete.Enabled = toolStripMenuItemCopy.Enabled = toolStripMenuItemCut.Enabled = this.SelectionLength > 0;
             toolStripMenuItemPaste.Enabled = Clipboard.ContainsText() && this.Enabled && !this.ReadOnly;

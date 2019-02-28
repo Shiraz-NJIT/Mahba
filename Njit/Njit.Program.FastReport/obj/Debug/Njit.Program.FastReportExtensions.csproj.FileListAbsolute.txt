@@ -137,7 +137,4 @@ E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.FastReport\obj\Debug\Njit.Prog
 E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.FastReport\obj\Debug\Njit.Program.FastReportExtensions.csproj.GenerateResource.Cache
 E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.FastReport\obj\Debug\Njit.Program.FastReport.dll
 E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.FastReport\obj\Debug\Njit.Program.FastReport.pdb
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.FastReport\bin\Debug\Njit.Program.dll.config
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.FastReport\obj\Debug\Njit.Program.FastReportExtensions.csprojAssemblyReference.cache
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.FastReport\obj\Debug\Njit.Program.FastReportExtensions.csproj.CoreCompileInputs.cache
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.FastReport\obj\Debug\Njit.Program.FastReportExtensions.csproj.CopyComplete
+E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.FastReport\obj\Debug\Njit.Program.FastReportExtensions.csprojResolveAssemblyReference.cache

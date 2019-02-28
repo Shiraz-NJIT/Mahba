@@ -36,17 +36,3 @@ E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.Telerik\bin\Debug\Njit.Program
 E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.Telerik\bin\Debug\Njit.Program.Telerik.pdb
 E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.Telerik\obj\Debug\Njit.Program.Telerik.dll
 E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.Telerik\obj\Debug\Njit.Program.Telerik.pdb
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.Telerik\bin\Debug\Telerik.WinControls.dll
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.Telerik\bin\Debug\Telerik.WinControls.GridView.dll
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.Telerik\bin\Debug\Telerik.WinControls.Themes.Office2010Blue.dll
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.Telerik\bin\Debug\Telerik.WinControls.Themes.Office2010Silver.dll
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.Telerik\bin\Debug\Telerik.WinControls.UI.dll
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.Telerik\bin\Debug\TelerikData.dll
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.Telerik\bin\Debug\TelerikCommon.dll
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.Telerik\bin\Debug\Telerik.WinControls.xml
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.Telerik\bin\Debug\Telerik.WinControls.GridView.xml
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.Telerik\bin\Debug\Telerik.WinControls.UI.xml
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.Telerik\bin\Debug\TelerikData.xml
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.Telerik\obj\Debug\Njit.Program.Telerik.csprojAssemblyReference.cache
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.Telerik\obj\Debug\Njit.Program.Telerik.csproj.CoreCompileInputs.cache
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.Telerik\obj\Debug\Njit.Program.Telerik.csproj.CopyComplete

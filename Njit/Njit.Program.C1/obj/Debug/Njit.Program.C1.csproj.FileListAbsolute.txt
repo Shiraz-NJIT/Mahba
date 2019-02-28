@@ -239,7 +239,4 @@ E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.C1\obj\Debug\Njit.Program.C1.c
 E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.C1\obj\Debug\Njit.Program.C1.dll.licenses
 E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.C1\obj\Debug\Njit.Program.C1.dll
 E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.C1\obj\Debug\Njit.Program.C1.pdb
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.C1\bin\Debug\Njit.Program.dll.config
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.C1\obj\Debug\Njit.Program.C1.csprojAssemblyReference.cache
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.C1\obj\Debug\Njit.Program.C1.csproj.CoreCompileInputs.cache
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.C1\obj\Debug\Njit.Program.C1.csproj.CopyComplete
+E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.Program.C1\obj\Debug\Njit.Program.C1.csprojResolveAssemblyReference.cache

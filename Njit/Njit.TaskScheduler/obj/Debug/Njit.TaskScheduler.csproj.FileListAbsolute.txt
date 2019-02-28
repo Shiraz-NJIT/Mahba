@@ -77,6 +77,4 @@ E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.TaskScheduler\obj\Debug\Njit.TaskSched
 E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.TaskScheduler\obj\Debug\Njit.TaskScheduler.csproj.GenerateResource.Cache
 E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.TaskScheduler\obj\Debug\Njit.TaskScheduler.dll
 E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.TaskScheduler\obj\Debug\Njit.TaskScheduler.pdb
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.TaskScheduler\obj\Debug\Njit.TaskScheduler.csprojAssemblyReference.cache
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.TaskScheduler\obj\Debug\Njit.TaskScheduler.csproj.CoreCompileInputs.cache
-E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.TaskScheduler\obj\Debug\Njit.TaskScheduler.csproj.CopyComplete
+E:\PezeshkiMahba\Version2\Mahba\Njit\Njit.TaskScheduler\obj\Debug\Njit.TaskScheduler.csprojResolveAssemblyReference.cache

@@ -28,8 +28,23 @@ namespace Njit.Program.Telerik.Controls
 
         }
 
-       
 
+        public void BestColumn() {
+            this.AutoSizeColumnsMode = global:: Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.None;
+            //foreach (var item in this.Columns)
+            //{
+            //    item.MinWidth = 100;
+            //    //item.MaxWidth = 300;
+            //}
+            this.BestFitColumns();
+            int width = 0;
+            foreach (var item in this.Columns.Where(t => t.IsVisible))
+                width += item.Width;
+            if (width <= this.Width)
+                this.AutoSizeColumnsMode = global:: Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            else
+                this.AutoSizeColumnsMode = global::Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.None;
+        }
         public void BestFitColumnsSmart()
         {
             //this.AutoSizeColumnsMode = global:: Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.None;

@@ -134,7 +134,7 @@
         private Color reportsForegroundBrush = Color.Black;
         private SolidBrush reportsBackgroundBrushSelected = new SolidBrush(Color.FromKnownColor(KnownColor.Highlight));
         private SolidBrush reportsBackgroundBrush1 = new SolidBrush(Color.White);
-        private SolidBrush reportsBackgroundBrush2 = new SolidBrush(Color.Gray);
+        private SolidBrush reportsBackgroundBrush2 = new SolidBrush(Color.LightSkyBlue);
         void listBox_DrawItem(object sender, DrawItemEventArgs e)
         {
             e.DrawBackground();
@@ -156,7 +156,7 @@
                 else
                 {
                     backgroundBrush = reportsBackgroundBrush2;
-                    Background = Color.Gray;
+                    Background = Color.Transparent;
                 }
                 e.Graphics.FillRectangle(backgroundBrush, e.Bounds);
                 Color foregroundBrush = (selected) ? reportsForegroundBrushSelected : reportsForegroundBrush;

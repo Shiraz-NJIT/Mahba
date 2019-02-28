@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ArchiveDocumentShow));
             this.pnlRight = new System.Windows.Forms.Panel();
             this.pnlInfo = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -42,10 +43,10 @@
             this.button2 = new System.Windows.Forms.Button();
             this.lblDocNumber = new System.Windows.Forms.Label();
             this.pnlSearch = new System.Windows.Forms.Panel();
+            this.txtPersonnelNumber = new AutoCompleteTextBoxSamplePersonel.AutoCompleteTextBoxSamplePersonel();
             this.c1Button1 = new C1.Win.C1Input.C1Button();
-            this.txtNameFamily = new AutoCompleteTextBoxSample.AutoCompleteTextbox();
+            this.txtNameFamily = new AutoCompleteTextBoxSample3.AutoCompleteTextbox3();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtPersonnelNumber = new System.Windows.Forms.TextBox();
             this.lblPersonnelNumber = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.pnlImageView = new System.Windows.Forms.Panel();
@@ -138,7 +139,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(180, 5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 23);
+            this.label2.Size = new System.Drawing.Size(0, 18);
             this.label2.TabIndex = 0;
             // 
             // tabInfo
@@ -158,10 +159,10 @@
             // tabDocument
             // 
             this.tabDocument.Controls.Add(this.radGridViewExtended1);
-            this.tabDocument.Location = new System.Drawing.Point(4, 32);
+            this.tabDocument.Location = new System.Drawing.Point(4, 27);
             this.tabDocument.Name = "tabDocument";
             this.tabDocument.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDocument.Size = new System.Drawing.Size(495, 334);
+            this.tabDocument.Size = new System.Drawing.Size(495, 339);
             this.tabDocument.TabIndex = 0;
             this.tabDocument.Text = "اطلاعات اسناد";
             this.tabDocument.UseVisualStyleBackColor = true;
@@ -185,7 +186,7 @@
             this.radGridViewExtended1.Name = "radGridViewExtended1";
             this.radGridViewExtended1.ReadOnly = true;
             this.radGridViewExtended1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.radGridViewExtended1.Size = new System.Drawing.Size(489, 328);
+            this.radGridViewExtended1.Size = new System.Drawing.Size(489, 333);
             this.radGridViewExtended1.TabIndex = 1;
             this.radGridViewExtended1.Text = "radGridViewExtended1";
             this.radGridViewExtended1.Click += new System.EventHandler(this.radGridViewExtended1_Click);
@@ -195,10 +196,10 @@
             // tabDossier
             // 
             this.tabDossier.AutoScroll = true;
-            this.tabDossier.Location = new System.Drawing.Point(4, 32);
+            this.tabDossier.Location = new System.Drawing.Point(4, 27);
             this.tabDossier.Name = "tabDossier";
             this.tabDossier.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDossier.Size = new System.Drawing.Size(495, 306);
+            this.tabDossier.Size = new System.Drawing.Size(495, 311);
             this.tabDossier.TabIndex = 1;
             this.tabDossier.Text = "اطلاعات پرونده";
             this.tabDossier.UseVisualStyleBackColor = true;
@@ -255,23 +256,35 @@
             this.lblDocNumber.ForeColor = System.Drawing.Color.Blue;
             this.lblDocNumber.Location = new System.Drawing.Point(249, 38);
             this.lblDocNumber.Name = "lblDocNumber";
-            this.lblDocNumber.Size = new System.Drawing.Size(0, 24);
+            this.lblDocNumber.Size = new System.Drawing.Size(0, 19);
             this.lblDocNumber.TabIndex = 0;
             this.lblDocNumber.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // pnlSearch
             // 
             this.pnlSearch.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlSearch.Controls.Add(this.txtPersonnelNumber);
             this.pnlSearch.Controls.Add(this.c1Button1);
             this.pnlSearch.Controls.Add(this.txtNameFamily);
             this.pnlSearch.Controls.Add(this.label1);
-            this.pnlSearch.Controls.Add(this.txtPersonnelNumber);
             this.pnlSearch.Controls.Add(this.lblPersonnelNumber);
             this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSearch.Location = new System.Drawing.Point(0, 0);
             this.pnlSearch.Name = "pnlSearch";
             this.pnlSearch.Size = new System.Drawing.Size(507, 78);
             this.pnlSearch.TabIndex = 0;
+            // 
+            // txtPersonnelNumber
+            // 
+            this.txtPersonnelNumber.AutoCompleteList = ((System.Collections.Generic.List<string>)(resources.GetObject("txtPersonnelNumber.AutoCompleteList")));
+            this.txtPersonnelNumber.CaseSensitive = false;
+            this.txtPersonnelNumber.Location = new System.Drawing.Point(50, 13);
+            this.txtPersonnelNumber.MinTypedCharacters = 1;
+            this.txtPersonnelNumber.Name = "txtPersonnelNumber";
+            this.txtPersonnelNumber.SelectedIndex = -1;
+            this.txtPersonnelNumber.Size = new System.Drawing.Size(315, 26);
+            this.txtPersonnelNumber.TabIndex = 87;
+            this.txtPersonnelNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPersonnelNumber_KeyDown);
             // 
             // c1Button1
             // 
@@ -295,7 +308,7 @@
             this.txtNameFamily.MinTypedCharacters = 1;
             this.txtNameFamily.Name = "txtNameFamily";
             this.txtNameFamily.SelectedIndex = -1;
-            this.txtNameFamily.Size = new System.Drawing.Size(363, 30);
+            this.txtNameFamily.Size = new System.Drawing.Size(363, 26);
             this.txtNameFamily.TabIndex = 11;
             this.txtNameFamily.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNameFamily_KeyDown);
             // 
@@ -304,24 +317,16 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(371, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 23);
+            this.label1.Size = new System.Drawing.Size(126, 18);
             this.label1.TabIndex = 10;
             this.label1.Text = "نام و نام خانوادگی:";
-            // 
-            // txtPersonnelNumber
-            // 
-            this.txtPersonnelNumber.Location = new System.Drawing.Point(50, 10);
-            this.txtPersonnelNumber.Name = "txtPersonnelNumber";
-            this.txtPersonnelNumber.Size = new System.Drawing.Size(315, 30);
-            this.txtPersonnelNumber.TabIndex = 9;
-            this.txtPersonnelNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPersonnelNumber_KeyDown);
             // 
             // lblPersonnelNumber
             // 
             this.lblPersonnelNumber.AutoSize = true;
             this.lblPersonnelNumber.Location = new System.Drawing.Point(371, 13);
             this.lblPersonnelNumber.Name = "lblPersonnelNumber";
-            this.lblPersonnelNumber.Size = new System.Drawing.Size(121, 23);
+            this.lblPersonnelNumber.Size = new System.Drawing.Size(93, 18);
             this.lblPersonnelNumber.TabIndex = 8;
             this.lblPersonnelNumber.Text = "شماره پرونده:";
             // 
@@ -478,7 +483,7 @@
             // 
             // ArchiveDocumentShow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1167, 520);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -526,9 +531,8 @@
         private System.Windows.Forms.TabPage tabDocument;
         private System.Windows.Forms.TabPage tabDossier;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtPersonnelNumber;
         private System.Windows.Forms.Label lblPersonnelNumber;
-        private AutoCompleteTextBoxSample.AutoCompleteTextbox txtNameFamily;
+        private AutoCompleteTextBoxSample3.AutoCompleteTextbox3 txtNameFamily;
         private System.Windows.Forms.Panel pnlListView;
         private System.Windows.Forms.Panel panel3;
         private Njit.ImageListView.ImageListView imageListView;
@@ -548,5 +552,6 @@
         private System.Windows.Forms.Button btnNewDocument;
         private System.Windows.Forms.Button btnNewDossier;
         private C1.Win.C1Input.C1Button c1Button1;
+        private AutoCompleteTextBoxSamplePersonel.AutoCompleteTextBoxSamplePersonel txtPersonnelNumber;
     }
 }
